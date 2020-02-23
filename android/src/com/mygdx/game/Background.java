@@ -28,8 +28,8 @@ public class Background {
     Texture textureWave;
     Wave[] waves;
     public Background(){
-        texture = new Texture();
-        textureWave = new Texture();
+        texture = new Texture("background_okean.jpg");
+        textureWave = new Texture("eWave.png");
         waves  = new Wave[250];
         for (int i = 0; i <waves.length ; i++) {
             waves[i] = new Wave();
