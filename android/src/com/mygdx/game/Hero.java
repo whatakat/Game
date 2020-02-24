@@ -1,8 +1,11 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
+
+import static java.lang.Math.toDegrees;
 
 public class Hero {
     Texture texture;
@@ -37,6 +40,16 @@ public class Hero {
         fireCounter = 0;
         fireRate = 0.25f;
     }
-
+    public void render(SpriteBatch batch){
+        batch.draw(texture,position.x - 32,position.y - 32,32,32,64,64,1,1,
+                (float)toDegrees(angle),0,0,64,64,false,false);
+    }
+    public void update(float dt){
+        position.mulAdd(velocity,dt);
+        velocity.scl(0.97f);
+        if (InputHandler.isJustTouched()){
+            currentEnginePower = lowEnginePower;
+        }
+    }
 
 }
