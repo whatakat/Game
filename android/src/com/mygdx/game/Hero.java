@@ -5,6 +5,11 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
 
+import static java.lang.Math.PI;
+import static java.lang.Math.atan2;
+import static java.lang.Math.cos;
+import static java.lang.Math.floor;
+import static java.lang.Math.sin;
 import static java.lang.Math.toDegrees;
 
 public class Hero {
@@ -50,6 +55,32 @@ public class Hero {
         if (InputHandler.isJustTouched()){
             currentEnginePower = lowEnginePower;
         }
+        if (InputHandler.isTouched()){
+            float tx = InputHandler.getX();
+            float ty = InputHandler.getY();
+            float ang = (float)atan2(ty- position.y, tx - position.x);
+            if (angle> ang){
+                if (angle-ang < PI){
+                    angle -=rotationSpeed*dt;
+                }else {
+                    angle +=rotationSpeed*dt;
+                }
+            }
+            if (angle<ang){
+                if (ang-angle<PI){
+                    angle+=rotationSpeed*dt;
+                }else {
+                    angle-=rotationSpeed*dt;
+                }
+            }
+            currentEnginePower+=100*dt;
+            if (currentEnginePower>maxEnginePower)currentEnginePower = maxEnginePower;
+            velocity.add((float)(currentEnginePower*cos(angle)*dt),(float)(currentEnginePower*
+                    sin(angle)*dt));
+        }
+    }
+    public void fire(){
+        
     }
 
 }
