@@ -80,7 +80,13 @@ public class Hero {
         }
     }
     public void fire(){
-        
+        Arrow[] ar = ArrowEmitter.getInstance().arrows;
+        for (Arrow a: ar){
+            if (!a.active){
+                a.setup(position.x,position.y, 400*(float)cos(angle),400*(float)sin(angle));
+                break;
+            }
+        }
     }
 
 }
