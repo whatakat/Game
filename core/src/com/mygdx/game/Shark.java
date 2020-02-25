@@ -15,12 +15,12 @@ public class Shark {
     int hpMax;
     Circle hitArea;
 
-    public Shark(Vector2 position, Vector2 velosity, float scl,int hpMax){
+    public Shark(Vector2 position, Vector2 velocity, float scl,int hpMax){
         if (texture == null){
             texture = new Texture("gShark.png");
         }
         this.position = position;
-        this.velocity = velosity;
+        this.velocity = velocity;
         this.scl = scl;
         this.hpMax = hpMax;
         this.hp = hpMax;
