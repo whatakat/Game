@@ -33,7 +33,7 @@ public class Hero {
     Circle hitArea;
 
     public Hero(){
-        texture = new Texture("");
+        texture = new Texture("Hero.png");
         position = new Vector2(640, 360);
         velocity = new Vector2(0,0);
         maxEnginePower = 400.0f;
