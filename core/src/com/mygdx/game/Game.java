@@ -15,6 +15,7 @@ public class Game extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		background = new Background();
+		hero = new Hero();
 	}
 
 	@Override
@@ -25,7 +26,7 @@ public class Game extends ApplicationAdapter {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
 		background.render(batch);
-		//hero.render(batch);
+		hero.render(batch);
 		//SharkEmitter.getInstance().render(batch);
 		//ArrowEmitter.getInstance().render(batch);
 		batch.end();

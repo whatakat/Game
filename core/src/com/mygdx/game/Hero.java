@@ -38,7 +38,7 @@ public class Hero {
         velocity = new Vector2(0,0);
         maxEnginePower = 400.0f;
         lowEnginePower = 200.0f;
-        rotationSpeed = 3.14f;
+        rotationSpeed = 0f;
         hpMax=100;
         hp = hpMax;
         hitArea = new Circle(position.x,position.y, 25);
@@ -46,8 +46,8 @@ public class Hero {
         fireRate = 0.25f;
     }
     public void render(SpriteBatch batch){
-        batch.draw(texture,position.x - 32,position.y - 32,32,32,64,64,1,1,
-                (float)toDegrees(angle),0,0,64,64,false,false);
+        batch.draw(texture,position.x -32,position.y - 32,32,32,200,200,1,1,
+                (float)toDegrees(angle),-150,0,350,350,false,false);
     }
     public void update(float dt){
         position.mulAdd(velocity,dt);
