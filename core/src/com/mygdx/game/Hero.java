@@ -34,7 +34,7 @@ public class Hero {
 
     public Hero(){
         texture = new Texture("Hero.png");
-        position = new Vector2(640, 360);
+        position = new Vector2(640, 30);
         velocity = new Vector2(0,0);
         maxEnginePower = 400.0f;
         lowEnginePower = 200.0f;
@@ -58,25 +58,12 @@ public class Hero {
         if (InputHandler.isTouched()){
             float tx = InputHandler.getX();
             float ty = InputHandler.getY();
-            float ang = (float)atan2(ty- position.y, tx - position.x);
-            if (angle> ang){
-                if (angle-ang < PI){
-                    angle -=rotationSpeed*dt;
-                }else {
-                    angle +=rotationSpeed*dt;
-                }
-            }
-            if (angle<ang){
-                if (ang-angle<PI){
-                    angle+=rotationSpeed*dt;
-                }else {
-                    angle-=rotationSpeed*dt;
-                }
-            }
             currentEnginePower+=100*dt;
             if (currentEnginePower>maxEnginePower)currentEnginePower = maxEnginePower;
-            velocity.add((float)(currentEnginePower*cos(angle)*dt),(float)(currentEnginePower*
-                    sin(angle)*dt));
+            if (tx<1000f){
+                velocity.add(-10f,0f);
+            }else velocity.add(10f,0f);
+
         }
     }
     public void fire(){

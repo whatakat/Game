@@ -11,8 +11,8 @@ public class Background {
         float scl;
         public Wave(){
             position = new Vector2((float)Math.random()*2080,(float)Math.random()*1080);
-            velocity = new Vector2((float)(Math.random()-0.5)*5f,(float)(Math.random()-0.5)*5f);
-            scl = 0.5f+(float)Math.random()/4.0f;
+            velocity = new Vector2((float)(Math.random()-0.5)*25f,(float)(Math.random()-0.5)*25f);
+            scl = 0.5f+(float)Math.random()/2.0f;
         }
         public void update(Hero hero, float dt){
             position.mulAdd(velocity, dt);
@@ -30,7 +30,7 @@ public class Background {
     public Background(){
         texture = new Texture("background_okean.jpg");
         textureWave = new Texture("eWave.png");
-        waves  = new Wave[350];
+        waves  = new Wave[500];
         for (int i = 0; i <waves.length ; i++) {
             waves[i] = new Wave();
         }
