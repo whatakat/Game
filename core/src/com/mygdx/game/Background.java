@@ -10,18 +10,18 @@ public class Background {
         Vector2 velocity;
         float scl;
         public Wave(){
-            position = new Vector2((float)Math.random()*1280,(float)Math.random()*720);
+            position = new Vector2((float)Math.random()*2080,(float)Math.random()*1080);
             velocity = new Vector2((float)(Math.random()-0.5)*5f,(float)(Math.random()-0.5)*5f);
             scl = 0.5f+(float)Math.random()/4.0f;
         }
         public void update(Hero hero, float dt){
             position.mulAdd(velocity, dt);
-            position.mulAdd(hero.velocity,-0.001f);
+            position.mulAdd(hero.velocity,-0.009f);
             float half = textureWave.getWidth()*scl;
-            if (position.x<-half)position.x = 1280+half;
-            if (position.x>1280+half)position.x = -half;
-            if (position.y<-half)position.y = 720+half;
-            if (position.y>720+half)position.y = -half;
+            if (position.x<-half)position.x = 2080+half;
+            if (position.x>2080+half)position.x = -half;
+            if (position.y<-half)position.y = 1080+half;
+            if (position.y>1080+half)position.y = -half;
         }
     }
     Texture texture;
@@ -30,7 +30,7 @@ public class Background {
     public Background(){
         texture = new Texture("background_okean.jpg");
         textureWave = new Texture("eWave.png");
-        waves  = new Wave[250];
+        waves  = new Wave[350];
         for (int i = 0; i <waves.length ; i++) {
             waves[i] = new Wave();
         }
@@ -38,8 +38,8 @@ public class Background {
     public void render(SpriteBatch batch){
         batch.draw(texture,0,0);
         for (Wave w: waves){
-            batch.draw(textureWave, w.position.x-8, w.position.y-8,8,8,16,16,
-            w.scl,w.scl,0,0,0,16,16,false,false);
+            batch.draw(textureWave, w.position.x-8, w.position.y-8,8,8,195,146,
+            w.scl,w.scl,0,0,0,195,146,false,false);
         }
     }
     public void update(Hero hero, float dt){
