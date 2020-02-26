@@ -61,9 +61,9 @@ public class Hero {
             currentEnginePower+=100*dt;
             if (currentEnginePower>maxEnginePower)currentEnginePower = maxEnginePower;
             if (tx<1000f&&ty<400f){
-                velocity.add(-10f,0f);
+                velocity.add(-15f,0f);
             }else if (tx>1000f&&ty<400f) {
-                velocity.add(10f, 0f);
+                velocity.add(15f, 0f);
             }else
                 fire();
 
