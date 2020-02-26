@@ -29,7 +29,7 @@ public class Game extends ApplicationAdapter {
 		background.render(batch);
 		hero.render(batch);
 		SharkEmitter.getInstance().render(batch);
-		//ArrowEmitter.getInstance().render(batch);
+		ArrowEmitter.getInstance().render(batch);
 		batch.end();
 			}
 			public void update(float dt){
