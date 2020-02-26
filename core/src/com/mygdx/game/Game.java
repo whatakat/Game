@@ -46,4 +46,7 @@ public class Game extends ApplicationAdapter {
 		batch.dispose();
 		background.dispose();
 	}
+	public void checkCollision(){
+
+	}
 }
