@@ -14,9 +14,9 @@ public class SharkEmitter {
 
     private SharkEmitter(){
         texture = new Texture("gShark.png");
-        sharks = new Shark[2];
+        sharks = new Shark[15];
         for (int i = 0; i <sharks.length ; i++) {
-            sharks[i] = new Shark(new Vector2((float)(Math.random()*2080f),500f),new Vector2(0,-20f),10f,10);
+            sharks[i] = new Shark(new Vector2((float)(Math.random()*2080f),(float)(Math.random()*1080f)),new Vector2(0,-10f),10f,10);
         }
     }
     public void update(float dt){

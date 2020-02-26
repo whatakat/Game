@@ -12,7 +12,7 @@ public class ArrowEmitter {
     Arrow[] arrows;
 
     private ArrowEmitter(){
-        texture = new Texture("");
+        texture = new Texture("gArrow.png");
         arrows = new Arrow[100];
         for (int i = 0; i <arrows.length ; i++) {
             arrows[i] = new Arrow();
