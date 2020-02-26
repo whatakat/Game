@@ -22,7 +22,7 @@ public class Arrow {
     }
     public void update(float dt){
         position.mulAdd(velocity, dt);
-        if (position.x<-20||position.x>1300||position.y<-20||position.y>740){
+        if (position.x<-20||position.x>2080||position.y<-20||position.y>1080){
         destroy();
         }
     }

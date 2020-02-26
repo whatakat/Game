@@ -13,7 +13,7 @@ public class ArrowEmitter {
 
     private ArrowEmitter(){
         texture = new Texture("gArrow.png");
-        arrows = new Arrow[100];
+        arrows = new Arrow[10];
         for (int i = 0; i <arrows.length ; i++) {
             arrows[i] = new Arrow();
         }
@@ -28,7 +28,7 @@ public class ArrowEmitter {
     public void render(SpriteBatch batch){
         for (Arrow a: arrows){
             if (a.active){
-                batch.draw(texture,a.position.x-16,a.position.y-16);
+                batch.draw(texture,a.position.x,a.position.y);
             }
         }
     }
