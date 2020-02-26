@@ -25,7 +25,7 @@ public class Shark {
         this.hpMax = hpMax;
         this.hp = hpMax;
         this.angle = 0.0f;
-        this.hitArea = new Circle(position.x,position.y, 120*scl);
+        this.hitArea = new Circle(position.x,position.y, 25);
     }
     public void render(SpriteBatch batch){
         batch.draw(texture,position.x -128,position.y -128,128,128,256,256,
@@ -44,7 +44,7 @@ public class Shark {
         if (position.x>2080+128*scl)position.x =-128*scl;
         if (position.y<-128*scl)position.y = 1080+128*scl;
         if (position.y>1080+128*scl)position.y =-128*scl;
-        hitArea.x = position.x;
+        hitArea.x = position.x+25;
         hitArea.y = position.y;
 
         }

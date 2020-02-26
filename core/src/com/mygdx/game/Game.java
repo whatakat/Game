@@ -37,8 +37,7 @@ public class Game extends ApplicationAdapter {
 		hero.update(dt);
 				SharkEmitter.getInstance().update(dt);
 				ArrowEmitter.getInstance().update(dt);
-
-
+				checkCollision();
 			}
 	
 	@Override
@@ -47,6 +46,14 @@ public class Game extends ApplicationAdapter {
 		background.dispose();
 	}
 	public void checkCollision(){
+		for (Arrow a:ArrowEmitter.getInstance().arrows){
+				for (Shark s: SharkEmitter.getInstance().sharks){
+					if (s.hitArea.contains(a.position)){
+						s.takeDamage(10);
+						a.destroy();
+					}
+				}
+		}
 
 	}
 }
