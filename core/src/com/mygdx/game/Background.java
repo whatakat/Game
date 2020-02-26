@@ -30,7 +30,7 @@ public class Background {
     public Background(){
         texture = new Texture("background_okean.jpg");
         textureWave = new Texture("eWave.png");
-        waves  = new Wave[500];
+        waves  = new Wave[100];
         for (int i = 0; i <waves.length ; i++) {
             waves[i] = new Wave();
         }
@@ -38,8 +38,8 @@ public class Background {
     public void render(SpriteBatch batch){
         batch.draw(texture,0,0);
         for (Wave w: waves){
-            batch.draw(textureWave, w.position.x-8, w.position.y-8,8,8,195,146,
-            w.scl,w.scl,0,0,0,195,146,false,false);
+            batch.draw(textureWave, w.position.x-8, w.position.y-8,8,8,200,200,
+            w.scl,w.scl,0,0,0,200,200,false,false);
         }
     }
     public void update(Hero hero, float dt){
