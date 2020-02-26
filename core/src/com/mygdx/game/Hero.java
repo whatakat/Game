@@ -73,7 +73,7 @@ public class Hero {
         Arrow[] ar = ArrowEmitter.getInstance().arrows;
         for (Arrow a: ar){
             if (!a.active){
-                a.setup(position.x+75f,position.y, 0f,400f);
+                a.setup(position.x+75f,position.y, 0f,800f);
                 break;
             }
         }
