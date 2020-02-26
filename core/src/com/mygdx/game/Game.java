@@ -28,14 +28,14 @@ public class Game extends ApplicationAdapter {
 		batch.begin();
 		background.render(batch);
 		hero.render(batch);
-		//SharkEmitter.getInstance().render(batch);
+		SharkEmitter.getInstance().render(batch);
 		//ArrowEmitter.getInstance().render(batch);
 		batch.end();
 			}
 			public void update(float dt){
 		background.update(hero,dt);
 		hero.update(dt);
-				//SharkEmitter.getInstance().update(dt);
+				SharkEmitter.getInstance().update(dt);
 				//ArrowEmitter.getInstance().update(dt);
 
 
