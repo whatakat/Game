@@ -36,7 +36,7 @@ public class Game extends ApplicationAdapter {
 		background.update(hero,dt);
 		hero.update(dt);
 				SharkEmitter.getInstance().update(dt);
-				//ArrowEmitter.getInstance().update(dt);
+				ArrowEmitter.getInstance().update(dt);
 
 
 			}
