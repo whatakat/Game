@@ -27,9 +27,9 @@ public class Game extends ApplicationAdapter {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
 		background.render(batch);
-		hero.render(batch);
 		SharkEmitter.getInstance().render(batch);
 		ArrowEmitter.getInstance().render(batch);
+		hero.render(batch);
 		batch.end();
 			}
 			public void update(float dt){
