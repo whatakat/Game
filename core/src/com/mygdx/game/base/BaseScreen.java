@@ -1,8 +1,16 @@
 package com.mygdx.game.base;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 
 public class BaseScreen implements Screen {
+
+    protected Game game;
+    public BaseScreen(Game game){
+        this.game = game;
+    }
+
+
     @Override
     public void show() {
 
@@ -30,6 +38,7 @@ public class BaseScreen implements Screen {
 
     @Override
     public void hide() {
+        dispose();
 
     }
 
