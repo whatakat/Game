@@ -1,8 +1,9 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Pool;
 
-public class Arrow {
+public class Arrow implements Pool.Poolable {
     Vector2 position;
     Vector2 velocity;
     boolean active;
@@ -17,6 +18,13 @@ public class Arrow {
         velocity.set(vx,vy);
         active = true;
     }
+
+    @Override
+    public void reset() {
+        active = false;
+        position.set(0,0);
+    }
+
     public void destroy(){
         active = false;
     }
