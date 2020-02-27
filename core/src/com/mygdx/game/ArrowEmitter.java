@@ -2,36 +2,39 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.Pool;
+
+import java.sql.Clob;
+
+import javax.xml.bind.annotation.XmlElementDecl;
+
+import jdk.nashorn.internal.objects.Global;
+import sun.nio.fs.Globs;
 
 public class ArrowEmitter {
     private static final ArrowEmitter ourInstance = new ArrowEmitter();
     public static ArrowEmitter getInstance(){
         return ourInstance;
     }
-    Texture texture;
-    Arrow[] arrows;
+    final Array<Arrow> activeArrows = new Array<Arrow>();
+    final Pool<Arrow> arrowPool = new Pool<Arrow>(128,512){
+        @Override
+        protected Arrow newObject() {
+            return new Arrow();
+        }
+    };
+    TextureRegion texture;
+
+    public void reset(){
+        arrowPool.clear();
+        activeArrows.clear();
+    }
 
     private ArrowEmitter(){
-        texture = new Texture("gArrow.png");
-        arrows = new Arrow[1];
-        for (int i = 0; i <arrows.length ; i++) {
-            arrows[i] = new Arrow();
-        }
     }
-    public void update(float dt){
-        for (Arrow a: arrows){
-            if (a.active){
-                a.update(dt);
-            }
-        }
-    }
-    public void render(SpriteBatch batch){
-        for (Arrow a: arrows){
-            if (a.active){
-                batch.draw(texture,a.position.x,a.position.y);
-            }
-        }
-    }
+
 
 
 }
