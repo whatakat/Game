@@ -3,7 +3,6 @@ package com.mygdx.game.math;
 import com.badlogic.gdx.math.Matrix3;
 import com.badlogic.gdx.math.Matrix4;
 
-import org.w3c.dom.css.Rect;
 
 public class MatrixUtils {
     private MatrixUtils() {
