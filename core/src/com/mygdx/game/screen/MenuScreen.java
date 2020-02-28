@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.base.BaseScreen;
 
 public class MenuScreen extends BaseScreen {
@@ -33,8 +34,17 @@ public class MenuScreen extends BaseScreen {
 
     @Override
     public void dispose() {
-        batch.dispose();
         img.dispose();
         super.dispose();
+    }
+
+    @Override
+    public void touchDown(Vector2 touch, int pointer) {
+        super.touchDown(touch, pointer);
+    }
+
+    @Override
+    public void touchUp(Vector2 touch, int pointer) {
+        super.touchUp(touch, pointer);
     }
 }
