@@ -4,14 +4,28 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Matrix4;
+import com.mygdx.game.math.Rect;
 
 public class BaseScreen implements Screen, InputProcessor {
 
+    protected SpriteBatch batch;
 
     protected Game game;
+    private Rect screenBounds;
+    private Rect worldBounds;
+
+    protected Matrix4 worldToGl;
+
     public BaseScreen(Game game){
         this.game = game;
+        this.screenBounds = new Rect();
+        this.worldBounds = new Rect();
+        this.worldToGl = new Matrix4();
         Gdx.input.setInputProcessor(this);
+        batch = new SpriteBatch();
+        batch.getProjectionMatrix().idt();
     }
 
 
@@ -27,6 +41,14 @@ public class BaseScreen implements Screen, InputProcessor {
 
     @Override
     public void resize(int width, int height) {
+        screenBounds.setSize(width,height);
+        screenBounds.setLeft(0);
+        screenBounds.setBottom(0);
+
+        float aspect = width/(float)height;
+        worldBounds.setHeight(1f);
+        worldBounds.setWidth(1f*aspect);
+
 
     }
 

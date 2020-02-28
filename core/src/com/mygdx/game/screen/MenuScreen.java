@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.base.BaseScreen;
 
 public class MenuScreen extends BaseScreen {
-    SpriteBatch batch;
     Texture img;
 
     public MenuScreen(Game game){
@@ -19,8 +18,6 @@ public class MenuScreen extends BaseScreen {
     @Override
     public void show() {
         super.show();
-        batch = new SpriteBatch();
-        batch.getProjectionMatrix().idt();
         img = new Texture("background_okean.jpg");
     }
 
