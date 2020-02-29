@@ -24,7 +24,7 @@ public class MenuScreen extends BaseScreen {
         super.show();
         img = new Texture("background_okean.jpg");
         logo = new Sprite(new TextureRegion(img));
-        logo.setSize(2f,1f);
+        logo.setHeightProportion(1f);
 
     }
 
