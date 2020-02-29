@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.base.BaseScreen;
 import com.mygdx.game.math.Rect;
+import com.mygdx.game.math.Rnd;
 import com.mygdx.game.sprite.Background;
 import com.mygdx.game.sprite.Wave;
 
@@ -33,21 +34,25 @@ public class MenuScreen extends BaseScreen {
         background = new Background(new TextureRegion(bg));
         atlas = new TextureAtlas("textures/sharkg.pack");
         TextureRegion waveRegion = atlas.findRegion("eW");
+        wave = new Wave(waveRegion, Rnd.nextFloat(-0.005f,0.005f),Rnd.nextFloat(-0.5f,0.1f),0.01f);
     }
 
     @Override
     public void render(float delta) {
         super.render(delta);
+        wave.update(delta);
         Gdx.gl.glClearColor(1,1,1,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         background.draw(batch);
+        wave.draw(batch);
         batch.end();
     }
 
     @Override
     public void dispose() {
         bg.dispose();
+        atlas.dispose();
         super.dispose();
     }
 
@@ -65,5 +70,6 @@ public class MenuScreen extends BaseScreen {
     public void resize(Rect worldBounds) {
         super.resize(worldBounds);
         background.resize(worldBounds);
+        wave.resize(worldBounds);
     }
 }
