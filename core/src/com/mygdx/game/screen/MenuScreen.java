@@ -18,8 +18,8 @@ import com.mygdx.game.sprite.Wave;
 public class MenuScreen extends BaseScreen {
    private Background background;
    private Texture bg;
-   private Wave wave;
    private TextureAtlas atlas;
+   private Wave wave;
 
 
     public MenuScreen(Game game){
@@ -33,8 +33,10 @@ public class MenuScreen extends BaseScreen {
         bg = new Texture("textures/background_okean.jpg");
         background = new Background(new TextureRegion(bg));
         atlas = new TextureAtlas("textures/sharkg.pack");
-        TextureRegion waveRegion = atlas.findRegion("eW");
-        wave = new Wave(waveRegion, Rnd.nextFloat(-0.005f,0.005f),Rnd.nextFloat(-0.5f,0.1f),0.01f);
+        TextureRegion waveRegion = atlas.findRegion("eWave4");
+        wave = new Wave(waveRegion, Rnd.nextFloat(0.005f,-0.005f),Rnd.nextFloat(0.1f,-0.1f),0.2f);
+
+
     }
 
     @Override
