@@ -1,4 +1,4 @@
-package com.mygdx.game.screen.menu;
+package com.mygdx.game.screen;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -9,10 +9,12 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.base.BaseScreen;
 import com.mygdx.game.base.Sprite;
+import com.mygdx.game.math.Rect;
+import com.mygdx.game.sprite.Background;
 
 public class MenuScreen extends BaseScreen {
-    Texture img;
-    Sprite logo;
+   private Background background;
+   private Texture bg;
 
     public MenuScreen(Game game){
         super(game);
@@ -22,10 +24,8 @@ public class MenuScreen extends BaseScreen {
     @Override
     public void show() {
         super.show();
-        img = new Texture("background_okean.jpg");
-        logo = new Sprite(new TextureRegion(img));
-        logo.setHeightProportion(1f);
-
+        bg = new Texture("textures/background_okean.jpg");
+        background = new Background(new TextureRegion(bg));
     }
 
     @Override
@@ -34,13 +34,13 @@ public class MenuScreen extends BaseScreen {
         Gdx.gl.glClearColor(1,1,1,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-        logo.draw(batch);
+        background.draw(batch);
         batch.end();
     }
 
     @Override
     public void dispose() {
-        img.dispose();
+        bg.dispose();
         super.dispose();
     }
 
@@ -52,5 +52,11 @@ public class MenuScreen extends BaseScreen {
     @Override
     public void touchUp(Vector2 touch, int pointer) {
         super.touchUp(touch, pointer);
+    }
+
+    @Override
+    public void resize(Rect worldBounds) {
+        super.resize(worldBounds);
+        background.resize(worldBounds);
     }
 }

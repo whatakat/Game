@@ -6,7 +6,7 @@ import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
 
 public class Shark {
-//    static Texture texture;
+//    static Texture textures;
 //    Vector2 position;
 //    Vector2 velocity;
 //    float scl;
@@ -16,8 +16,8 @@ public class Shark {
 //    Circle hitArea;
 //
 //    public Shark(Vector2 position, Vector2 velocity, float scl,int hpMax){
-//        if (texture == null){
-//            texture = new Texture("gShark.png");
+//        if (textures == null){
+//            textures = new Texture("gShark.png");
 //        }
 //        this.position = position;
 //        this.velocity = velocity;
@@ -28,7 +28,7 @@ public class Shark {
 //        this.hitArea = new Circle(position.x,position.y, 25);
 //    }
 //    public void render(SpriteBatch batch){
-//        batch.draw(texture,position.x -128,position.y -128,128,128,256,256,
+//        batch.draw(textures,position.x -128,position.y -128,128,128,256,256,
 //                scl,scl,angle,0,0,256,256,false,false);
 //    }
 //    public boolean takeDamage(int dmg){

@@ -9,11 +9,11 @@ public class SharkEmitter {
 //    public static SharkEmitter getInstance(){
 //        return ourInstance;
 //    }
-//    Texture texture;
+//    Texture textures;
 //    Shark[] sharks;
 //
 //    private SharkEmitter(){
-//        texture = new Texture("gShark.png");
+//        textures = new Texture("gShark.png");
 //        sharks = new Shark[15];
 //        for (int i = 0; i <sharks.length ; i++) {
 //            sharks[i] = new Shark(new Vector2((float)(Math.random()*2080f),(float)(Math.random()*1080f)),new Vector2(0,-10f),10f,10);
@@ -26,7 +26,7 @@ public class SharkEmitter {
 //    }
 //    public void render(SpriteBatch batch){
 //        for (Shark a: sharks){
-//                batch.draw(texture,a.position.x-16,a.position.y-16);
+//                batch.draw(textures,a.position.x-16,a.position.y-16);
 //
 //        }
 //    }

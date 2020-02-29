@@ -20,7 +20,7 @@ public class ArrowEmitter {
 //            return new Arrow();
 //        }
 //    };
-//    TextureRegion texture;
+//    TextureRegion textures;
 //
 //    public void reset(){
 //        arrowPool.clear();

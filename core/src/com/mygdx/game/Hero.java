@@ -13,7 +13,7 @@ import static java.lang.Math.sin;
 import static java.lang.Math.toDegrees;
 
 public class Hero {
-//    Texture texture;
+//    Texture textures;
 //    Vector2 position;
 //    Vector2 velocity;
 //    float angle;
@@ -33,7 +33,7 @@ public class Hero {
 //    Circle hitArea;
 //
 //    public Hero(){
-//        texture = new Texture("Hero.png");
+//        textures = new Texture("Hero.png");
 //        position = new Vector2(640, 30);
 //        velocity = new Vector2(0,0);
 //        maxEnginePower = 400.0f;
@@ -46,7 +46,7 @@ public class Hero {
 //        fireRate = 0.25f;
 //    }
 //    public void render(SpriteBatch batch){
-//        batch.draw(texture,position.x -32,position.y - 32,32,32,200,200,1,1,
+//        batch.draw(textures,position.x -32,position.y - 32,32,32,200,200,1,1,
 //                (float)toDegrees(angle),-150,0,350,350,false,false);
 //    }
 //    public void update(float dt){

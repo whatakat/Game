@@ -24,11 +24,11 @@ public class Background {
 //            if (position.y>1080+half)position.y = -half;
 //        }
 //    }
-//    Texture texture;
+//    Texture textures;
 //    Texture textureWave;
 //    Wave[] waves;
 //    public Background(){
-//        texture = new Texture("background_okean.jpg");
+//        textures = new Texture("background_okean.jpg");
 //        textureWave = new Texture("eWave.png");
 //        waves  = new Wave[100];
 //        for (int i = 0; i <waves.length ; i++) {
@@ -36,7 +36,7 @@ public class Background {
 //        }
 //    }
 //    public void render(SpriteBatch batch){
-//        batch.draw(texture,0,0);
+//        batch.draw(textures,0,0);
 //        for (Wave w: waves){
 //            batch.draw(textureWave, w.position.x-8, w.position.y-8,8,8,200,200,
 //            w.scl,w.scl,0,0,0,200,200,false,false);
@@ -48,7 +48,7 @@ public class Background {
 //        }
 //    }
 //    public void dispose(){
-//        texture.dispose();
+//        textures.dispose();
 //        textureWave.dispose();
 //    }
 }
