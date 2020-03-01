@@ -1,24 +1,25 @@
-package com.mygdx.game.sprite;
+package com.mygdx.game.base;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
-import com.mygdx.game.base.Sprite;
 
 public class ScaledTouchUpButton extends Sprite {
 
     private int pointer;
     private boolean pressed;
     private float pressScale;
+    private ActionListener actionListener;
 
 
-    public ScaledTouchUpButton(TextureRegion region, float pressScale) {
+    public ScaledTouchUpButton(TextureRegion region,ActionListener actionListener, float pressScale) {
         super(region);
         this.pressScale = pressScale;
+        this.actionListener = actionListener;
         this.pressed = false;
     }
 
     @Override
-    public void touchDown(Vector2 touch, int pointer) {
+    public void touchDown(Vector2 touch,  int pointer) {
         if (pressed||!isMe(touch)){
             return;
         }
@@ -33,7 +34,7 @@ public class ScaledTouchUpButton extends Sprite {
             return;
         }
         if (isMe(touch)){
-            // do something
+            actionListener.actionPerformed(this);
             return;
         }
         this.pressed = false;
