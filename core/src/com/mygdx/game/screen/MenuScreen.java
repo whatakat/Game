@@ -32,7 +32,7 @@ public class MenuScreen extends BaseScreen {
         super.show();
         bg = new Texture("textures/background_okean.jpg");
         background = new Background(new TextureRegion(bg));
-        atlas = new TextureAtlas("textures/sharkg.pack");
+        atlas = new TextureAtlas("textures/atlas.pack");
         TextureRegion waveRegion = atlas.findRegion("eWave4");
         wave = new Wave[WAVE_COUNT];
         for (int i = 0; i <wave.length ; i++) {
