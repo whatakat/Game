@@ -26,7 +26,7 @@ public class Wave extends Sprite {
 
     @Override
     public void update(float delta) {
-        pos.mulAdd(v,delta);
+        pos.mulAdd(v,-delta);
         checkAndHandleBounds();
     }
     private void checkAndHandleBounds(){
