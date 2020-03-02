@@ -7,19 +7,28 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
+import com.mygdx.game.base.ActionListener;
 import com.mygdx.game.base.BaseScreen;
 import com.mygdx.game.math.Rect;
 import com.mygdx.game.math.Rnd;
 import com.mygdx.game.sprite.Background;
+import com.mygdx.game.sprite.ButtonExit;
 import com.mygdx.game.sprite.Wave;
 
-public class MenuScreen extends BaseScreen {
+public class MenuScreen extends BaseScreen implements ActionListener {
     private static final int WAVE_COUNT = 250;
     private static final float WAVE_HEIGHT = 0.13f;
+
+    private static final float PRESS_SCALE = 0.9f;
+    private static final float BUTTON_HEIGHT = 0.15f;
+
    private Background background;
    private Texture bg;
    private TextureAtlas atlas;
    private Wave wave[];
+
+   private ButtonExit buttonExit;
+
 
 
     public MenuScreen(Game game){
@@ -39,6 +48,8 @@ public class MenuScreen extends BaseScreen {
            // wave[i] = new Wave(waveRegion, Rnd.nextFloat(0.005f,-0.005f),Rnd.nextFloat(0.1f,-0.1f),0.1f);
             wave[i] = new Wave(waveRegion, 0.004f,0.04f,WAVE_HEIGHT);
         }
+        buttonExit = new ButtonExit(atlas,this,PRESS_SCALE);
+        buttonExit.setHeightProportion(BUTTON_HEIGHT);
 
 
 
@@ -55,6 +66,7 @@ public class MenuScreen extends BaseScreen {
         for (int i = 0; i <wave.length ; i++) {
             wave[i].draw(batch);
         }
+        buttonExit.draw(batch);
         batch.end();
     }
 
@@ -68,11 +80,14 @@ public class MenuScreen extends BaseScreen {
     @Override
     public void touchDown(Vector2 touch, int pointer) {
         super.touchDown(touch, pointer);
+        buttonExit.touchDown(touch,pointer);
     }
 
     @Override
     public void touchUp(Vector2 touch, int pointer) {
+
         super.touchUp(touch, pointer);
+        buttonExit.touchUp(touch,pointer);
     }
 
     @Override
@@ -88,5 +103,15 @@ public class MenuScreen extends BaseScreen {
         for (int i = 0; i <wave.length ; i++) {
             wave[i].update(delta);
         }
+    }
+
+    @Override
+    public void actionPerformed(Object src) {
+        if (src == buttonExit){
+            Gdx.app.exit();
+        }else {
+            throw new RuntimeException("Unknown rsc");
+        }
+
     }
 }
