@@ -119,6 +119,7 @@ public class MenuScreen extends BaseScreen implements ActionListener {
         if (src == buttonExit){
             Gdx.app.exit();
         }else if (src == buttonPlay){
+            game.setScreen(new GameScreen(game));
 
         }
         else {
