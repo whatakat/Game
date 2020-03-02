@@ -97,6 +97,7 @@ public class MenuScreen extends BaseScreen implements ActionListener {
         for (int i = 0; i <wave.length ; i++) {
             wave[i].resize(worldBounds);
         }
+        buttonExit.resize(worldBounds);
 
     }
     public void update(float delta){
