@@ -13,6 +13,7 @@ import com.mygdx.game.math.Rect;
 import com.mygdx.game.math.Rnd;
 import com.mygdx.game.sprite.Background;
 import com.mygdx.game.sprite.ButtonExit;
+import com.mygdx.game.sprite.ButtonPlay;
 import com.mygdx.game.sprite.Wave;
 
 public class MenuScreen extends BaseScreen implements ActionListener {
@@ -28,6 +29,7 @@ public class MenuScreen extends BaseScreen implements ActionListener {
    private Wave wave[];
 
    private ButtonExit buttonExit;
+   private ButtonPlay buttonPlay;
 
 
 
@@ -50,6 +52,8 @@ public class MenuScreen extends BaseScreen implements ActionListener {
         }
         buttonExit = new ButtonExit(atlas,this,PRESS_SCALE);
         buttonExit.setHeightProportion(BUTTON_HEIGHT);
+        buttonPlay = new ButtonPlay(atlas,this,PRESS_SCALE);
+        buttonPlay.setHeightProportion(BUTTON_HEIGHT);
 
 
 
@@ -67,6 +71,7 @@ public class MenuScreen extends BaseScreen implements ActionListener {
             wave[i].draw(batch);
         }
         buttonExit.draw(batch);
+        buttonPlay.draw(batch);
         batch.end();
     }
 
@@ -81,6 +86,7 @@ public class MenuScreen extends BaseScreen implements ActionListener {
     public void touchDown(Vector2 touch, int pointer) {
         super.touchDown(touch, pointer);
         buttonExit.touchDown(touch,pointer);
+        buttonPlay.touchDown(touch,pointer);
     }
 
     @Override
@@ -88,6 +94,7 @@ public class MenuScreen extends BaseScreen implements ActionListener {
 
         super.touchUp(touch, pointer);
         buttonExit.touchUp(touch,pointer);
+        buttonPlay.touchUp(touch,pointer);
     }
 
     @Override
@@ -98,6 +105,7 @@ public class MenuScreen extends BaseScreen implements ActionListener {
             wave[i].resize(worldBounds);
         }
         buttonExit.resize(worldBounds);
+        buttonPlay.resize(worldBounds);
 
     }
     public void update(float delta){
@@ -110,7 +118,10 @@ public class MenuScreen extends BaseScreen implements ActionListener {
     public void actionPerformed(Object src) {
         if (src == buttonExit){
             Gdx.app.exit();
-        }else {
+        }else if (src == buttonPlay){
+
+        }
+        else {
             throw new RuntimeException("Unknown rsc");
         }
 
