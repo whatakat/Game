@@ -20,9 +20,16 @@ public class WaveBg extends Sprite {
     public void resize(Rect worldBounds) {
         this.worldBounds = worldBounds;
         float posX = 0;//Rnd.nextFloat(worldBounds.getLeft(),worldBounds.getRight());
-        float posY = 0;//Rnd.nextFloat(worldBounds.getBottom(), worldBounds.getTop());
+        float posY = 0;
         pos.set(posX,posY);
     }
+    public void resize(Rect worldBounds, float y) {
+        this.worldBounds = worldBounds;
+        float posX = 0;//Rnd.nextFloat(worldBounds.getLeft(),worldBounds.getRight());
+        float posY = 0+y;
+        pos.set(posX,posY);
+    }
+
 
     @Override
     public void update(float delta) {
@@ -30,9 +37,6 @@ public class WaveBg extends Sprite {
         checkAndHandleBounds();
     }
     private void checkAndHandleBounds(){
-//        if (getRight()<worldBounds.getLeft())setLeft(worldBounds.getRight());// it's for moving to the left or right
-//        if (getLeft()>worldBounds.getRight())setRight(worldBounds.getLeft());
         if (getTop()<worldBounds.getBottom())setBottom(worldBounds.getTop());
-        if (getBottom()>worldBounds.getTop())setTop(worldBounds.getBottom());
     }
 }

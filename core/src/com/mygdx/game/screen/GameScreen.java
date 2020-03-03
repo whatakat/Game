@@ -12,22 +12,20 @@ import com.mygdx.game.sprite.Background;
 import com.mygdx.game.sprite.MainShip;
 import com.mygdx.game.sprite.Wave;
 import com.mygdx.game.sprite.WaveBg;
-import com.mygdx.game.sprite.WaveBg2;
-import com.mygdx.game.sprite.WaveBg3;
 
 public class GameScreen extends BaseScreen {
     private static final int WAVE_COUNT = 125;
-    private static final float WAVE_HEIGHT = 0.26f;
+    private static final int WAVEBG_COUNT = 3;
+    private static final float WAVE_HEIGHT = 0.1f;
+    private float SPEED_WAVE = 0.2f;
 
     private Background background;
     private Texture bg;
     private TextureAtlas atlas;
     private TextureAtlas atlasShip;
-    private Wave wave[];
+    private Wave[] wave;
     private MainShip mainShip;
-    private WaveBg waveBg;
-    private WaveBg2 waveBg2;
-    private WaveBg3 waveBg3;
+    private WaveBg[] waveBg;
 
     public GameScreen(Game game) {
         super(game);
@@ -36,15 +34,16 @@ public class GameScreen extends BaseScreen {
     @Override
     public void show() {
         super.show();
-        //bg = new Texture("textures/background_okean.jpg");
-       // background = new Background(new TextureRegion(bg));
+        bg = new Texture("textures/background_okean.jpg");
+        background = new Background(new TextureRegion(bg));
         atlas = new TextureAtlas("textures/atlas.pack");
         TextureRegion waveBgRegion = atlas.findRegion("background_okean");
-        waveBg = new WaveBg(waveBgRegion,0f,0.4f,1f);
-        waveBg2 = new WaveBg2(waveBgRegion,0f,0.4f,1f);
-        waveBg3 = new WaveBg3(waveBgRegion,0f,0.4f,1f);
+        waveBg = new WaveBg[WAVEBG_COUNT];
+        for (int i = 0; i <waveBg.length ; i++) {
+            waveBg[i] = new WaveBg(waveBgRegion,0f,SPEED_WAVE,1f);
+        }
         atlasShip = new TextureAtlas("textures/ship.pack");
-        TextureRegion waveRegion = atlas.findRegion("eWave4");
+        TextureRegion waveRegion = atlas.findRegion("eWave3");
         wave = new Wave[WAVE_COUNT];
         for (int i = 0; i <wave.length ; i++) {
             // wave[i] = new Wave(waveRegion, Rnd.nextFloat(0.005f,-0.005f),Rnd.nextFloat(0.1f,-0.1f),0.1f);
@@ -62,22 +61,22 @@ public class GameScreen extends BaseScreen {
         Gdx.gl.glClearColor(1,1,1,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-        //background.draw(batch);
-        waveBg.draw(batch);
-        waveBg2.draw(batch);
-        waveBg3.draw(batch);
-        for (int i = 0; i <wave.length ; i++) {
-            wave[i].draw(batch);
+        background.draw(batch);
+        for (WaveBg w:waveBg){
+            w.draw(batch);
+        }
+        for (Wave w: wave){
+            w.draw(batch);
         }
         mainShip.draw(batch);
         batch.end();
     }
     public void update(float delta){
-        waveBg.update(delta);
-        waveBg2.update(delta);
-        waveBg3.update(delta);
-        for (int i = 0; i <wave.length ; i++) {
-            wave[i].update(delta);
+        for (WaveBg w: waveBg){
+            w.update(delta);
+        }
+        for (Wave w: wave){
+            w.update(delta);
         }
         mainShip.update(delta);
 
@@ -93,19 +92,22 @@ public class GameScreen extends BaseScreen {
     @Override
     public void resize(Rect worldBounds) {
         super.resize(worldBounds);
-        ///background.resize(worldBounds);
-        waveBg.resize(worldBounds);
-        waveBg2.resize(worldBounds);
-        waveBg3.resize(worldBounds);
-        for (int i = 0; i <wave.length ; i++) {
-            wave[i].resize(worldBounds);
+        background.resize(worldBounds);
+        for (int i = 0; i <waveBg.length ; i++) {
+            if (i==1){
+                waveBg[i].resize(worldBounds,1f);
+            }else
+            waveBg[i].resize(worldBounds);
+        }
+        for (Wave w: wave){
+            w.resize(worldBounds);
         }
         mainShip.resize(worldBounds);
     }
 
     @Override
     public void dispose() {
-       // bg.dispose();
+        bg.dispose();
         atlas.dispose();
         atlasShip.dispose();
         super.dispose();
