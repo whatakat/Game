@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.mygdx.game.base.BaseScreen;
 import com.mygdx.game.math.Rect;
 import com.mygdx.game.sprite.Background;
+import com.mygdx.game.sprite.MainShip;
 import com.mygdx.game.sprite.Wave;
 
 public class GameScreen extends BaseScreen {
@@ -19,6 +20,7 @@ public class GameScreen extends BaseScreen {
     private Texture bg;
     private TextureAtlas atlas;
     private Wave wave[];
+    private MainShip mainShip;
 
     public GameScreen(Game game) {
         super(game);
@@ -36,6 +38,7 @@ public class GameScreen extends BaseScreen {
             // wave[i] = new Wave(waveRegion, Rnd.nextFloat(0.005f,-0.005f),Rnd.nextFloat(0.1f,-0.1f),0.1f);
             wave[i] = new Wave(waveRegion, 0.004f,0.04f,WAVE_HEIGHT);
         }
+        mainShip = new MainShip(atlas);
     }
 
     @Override
@@ -51,12 +54,14 @@ public class GameScreen extends BaseScreen {
         for (int i = 0; i <wave.length ; i++) {
             wave[i].draw(batch);
         }
+        mainShip.draw(batch);
         batch.end();
     }
     public void update(float delta){
         for (int i = 0; i <wave.length ; i++) {
             wave[i].update(delta);
         }
+        mainShip.update(delta);
 
     }
 
@@ -74,6 +79,7 @@ public class GameScreen extends BaseScreen {
         for (int i = 0; i <wave.length ; i++) {
             wave[i].resize(worldBounds);
         }
+        mainShip.resize(worldBounds);
     }
 
     @Override
