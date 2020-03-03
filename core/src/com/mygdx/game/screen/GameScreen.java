@@ -19,6 +19,7 @@ public class GameScreen extends BaseScreen {
     private Background background;
     private Texture bg;
     private TextureAtlas atlas;
+    private TextureAtlas atlasShip;
     private Wave wave[];
     private MainShip mainShip;
 
@@ -32,13 +33,14 @@ public class GameScreen extends BaseScreen {
         bg = new Texture("textures/background_okean.jpg");
         background = new Background(new TextureRegion(bg));
         atlas = new TextureAtlas("textures/atlas.pack");
+        atlasShip = new TextureAtlas("textures/ship.pack");
         TextureRegion waveRegion = atlas.findRegion("eWave4");
         wave = new Wave[WAVE_COUNT];
         for (int i = 0; i <wave.length ; i++) {
             // wave[i] = new Wave(waveRegion, Rnd.nextFloat(0.005f,-0.005f),Rnd.nextFloat(0.1f,-0.1f),0.1f);
             wave[i] = new Wave(waveRegion, 0.004f,0.04f,WAVE_HEIGHT);
         }
-        mainShip = new MainShip(atlas);
+        mainShip = new MainShip(atlasShip);
     }
 
     @Override
@@ -86,6 +88,7 @@ public class GameScreen extends BaseScreen {
     public void dispose() {
         bg.dispose();
         atlas.dispose();
+        atlasShip.dispose();
         super.dispose();
     }
 }

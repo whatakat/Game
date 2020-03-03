@@ -17,70 +17,70 @@ Hero
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero10
+Hero
   rotate: false
   xy: 1, 554
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero1
+Hero
   rotate: false
   xy: 2283, 1636
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero2
+Hero
   rotate: false
   xy: 1, 202
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero3
+Hero
   rotate: false
   xy: 123, 554
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero4
+Hero
   rotate: false
   xy: 2283, 1284
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero5
+Hero
   rotate: false
   xy: 2405, 1636
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero6
+Hero
   rotate: false
   xy: 123, 202
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero7
+Hero
   rotate: false
   xy: 245, 554
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero8
+Hero
   rotate: false
   xy: 2283, 932
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero9
+Hero
   rotate: false
   xy: 2405, 1284
   size: 120, 350
