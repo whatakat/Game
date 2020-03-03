@@ -11,6 +11,9 @@ import com.mygdx.game.math.Rect;
 import com.mygdx.game.sprite.Background;
 import com.mygdx.game.sprite.MainShip;
 import com.mygdx.game.sprite.Wave;
+import com.mygdx.game.sprite.WaveBg;
+import com.mygdx.game.sprite.WaveBg2;
+import com.mygdx.game.sprite.WaveBg3;
 
 public class GameScreen extends BaseScreen {
     private static final int WAVE_COUNT = 125;
@@ -22,6 +25,9 @@ public class GameScreen extends BaseScreen {
     private TextureAtlas atlasShip;
     private Wave wave[];
     private MainShip mainShip;
+    private WaveBg waveBg;
+    private WaveBg2 waveBg2;
+    private WaveBg3 waveBg3;
 
     public GameScreen(Game game) {
         super(game);
@@ -30,9 +36,13 @@ public class GameScreen extends BaseScreen {
     @Override
     public void show() {
         super.show();
-        bg = new Texture("textures/background_okean.jpg");
-        background = new Background(new TextureRegion(bg));
+        //bg = new Texture("textures/background_okean.jpg");
+       // background = new Background(new TextureRegion(bg));
         atlas = new TextureAtlas("textures/atlas.pack");
+        TextureRegion waveBgRegion = atlas.findRegion("background_okean");
+        waveBg = new WaveBg(waveBgRegion,0f,0.4f,1f);
+        waveBg2 = new WaveBg2(waveBgRegion,0f,0.4f,1f);
+        waveBg3 = new WaveBg3(waveBgRegion,0f,0.4f,1f);
         atlasShip = new TextureAtlas("textures/ship.pack");
         TextureRegion waveRegion = atlas.findRegion("eWave4");
         wave = new Wave[WAVE_COUNT];
@@ -52,7 +62,10 @@ public class GameScreen extends BaseScreen {
         Gdx.gl.glClearColor(1,1,1,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-        background.draw(batch);
+        //background.draw(batch);
+        waveBg.draw(batch);
+        waveBg2.draw(batch);
+        waveBg3.draw(batch);
         for (int i = 0; i <wave.length ; i++) {
             wave[i].draw(batch);
         }
@@ -60,6 +73,9 @@ public class GameScreen extends BaseScreen {
         batch.end();
     }
     public void update(float delta){
+        waveBg.update(delta);
+        waveBg2.update(delta);
+        waveBg3.update(delta);
         for (int i = 0; i <wave.length ; i++) {
             wave[i].update(delta);
         }
@@ -77,7 +93,10 @@ public class GameScreen extends BaseScreen {
     @Override
     public void resize(Rect worldBounds) {
         super.resize(worldBounds);
-        background.resize(worldBounds);
+        ///background.resize(worldBounds);
+        waveBg.resize(worldBounds);
+        waveBg2.resize(worldBounds);
+        waveBg3.resize(worldBounds);
         for (int i = 0; i <wave.length ; i++) {
             wave[i].resize(worldBounds);
         }
@@ -86,7 +105,7 @@ public class GameScreen extends BaseScreen {
 
     @Override
     public void dispose() {
-        bg.dispose();
+       // bg.dispose();
         atlas.dispose();
         atlasShip.dispose();
         super.dispose();
