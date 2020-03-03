@@ -1,0 +1,82 @@
+
+ship.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Hero
+  rotate: false
+  xy: 1, 353
+  size: 120, 350
+  orig: 120, 350
+  offset: 0, 0
+  index: -1
+Hero10
+  rotate: false
+  xy: 1, 353
+  size: 120, 350
+  orig: 120, 350
+  offset: 0, 0
+  index: -1
+Hero1
+  rotate: false
+  xy: 1, 1
+  size: 120, 350
+  orig: 120, 350
+  offset: 0, 0
+  index: -1
+Hero2
+  rotate: false
+  xy: 123, 353
+  size: 120, 350
+  orig: 120, 350
+  offset: 0, 0
+  index: -1
+Hero3
+  rotate: false
+  xy: 123, 1
+  size: 120, 350
+  orig: 120, 350
+  offset: 0, 0
+  index: -1
+Hero4
+  rotate: false
+  xy: 245, 353
+  size: 120, 350
+  orig: 120, 350
+  offset: 0, 0
+  index: -1
+Hero5
+  rotate: false
+  xy: 245, 1
+  size: 120, 350
+  orig: 120, 350
+  offset: 0, 0
+  index: -1
+Hero6
+  rotate: false
+  xy: 367, 353
+  size: 120, 350
+  orig: 120, 350
+  offset: 0, 0
+  index: -1
+Hero7
+  rotate: false
+  xy: 367, 1
+  size: 120, 350
+  orig: 120, 350
+  offset: 0, 0
+  index: -1
+Hero8
+  rotate: false
+  xy: 489, 353
+  size: 120, 350
+  orig: 120, 350
+  offset: 0, 0
+  index: -1
+Hero9
+  rotate: false
+  xy: 489, 1
+  size: 120, 350
+  orig: 120, 350
+  offset: 0, 0
+  index: -1
