@@ -6,9 +6,10 @@ import com.mygdx.game.base.Sprite;
 
 public class MainShip extends Sprite {
 
-    private static final float SHIP_HEIGHT = 0.15f;
+    private static final float SHIP_HEIGHT = 0.2f;
 
     public MainShip(TextureAtlas atlas) {
         super(atlas.findRegion("Hero"));
+        setHeightProportion(SHIP_HEIGHT);
     }
 }

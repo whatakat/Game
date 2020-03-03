@@ -1,0 +1,145 @@
+
+shark.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+gShark1
+  rotate: false
+  xy: 1, 208
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark11
+  rotate: false
+  xy: 1, 208
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark10
+  rotate: false
+  xy: 1, 1
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark2
+  rotate: false
+  xy: 1, 1
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark12
+  rotate: false
+  xy: 129, 208
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark20
+  rotate: false
+  xy: 129, 208
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark13
+  rotate: false
+  xy: 129, 1
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark19
+  rotate: false
+  xy: 129, 1
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark14
+  rotate: false
+  xy: 257, 208
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark18
+  rotate: false
+  xy: 257, 208
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark15
+  rotate: false
+  xy: 257, 1
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark17
+  rotate: false
+  xy: 257, 1
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark16
+  rotate: false
+  xy: 385, 208
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark3
+  rotate: false
+  xy: 385, 1
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark9
+  rotate: false
+  xy: 385, 1
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark4
+  rotate: false
+  xy: 513, 208
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark8
+  rotate: false
+  xy: 513, 208
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark5
+  rotate: false
+  xy: 513, 1
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark7
+  rotate: false
+  xy: 513, 1
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
+gShark6
+  rotate: false
+  xy: 641, 208
+  size: 126, 205
+  orig: 126, 205
+  offset: 0, 0
+  index: -1
