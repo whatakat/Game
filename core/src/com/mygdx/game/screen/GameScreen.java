@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.mygdx.game.base.BaseScreen;
 import com.mygdx.game.math.Rect;
+import com.mygdx.game.pools.ArrowPool;
 import com.mygdx.game.sprite.Background;
 import com.mygdx.game.sprite.MainShip;
 import com.mygdx.game.sprite.Wave;
@@ -26,6 +27,7 @@ public class GameScreen extends BaseScreen {
     private Wave[] wave;
     private MainShip mainShip;
     private WaveBg[] waveBg;
+    private ArrowPool arrowPool;
 
     public GameScreen(Game game) {
         super(game);
@@ -49,7 +51,8 @@ public class GameScreen extends BaseScreen {
             // wave[i] = new Wave(waveRegion, Rnd.nextFloat(0.005f,-0.005f),Rnd.nextFloat(0.1f,-0.1f),0.1f);
             wave[i] = new Wave(waveRegion, 0.004f,0.04f,WAVE_HEIGHT);
         }
-        mainShip = new MainShip(atlasShip);
+        arrowPool = new ArrowPool();
+        mainShip = new MainShip(atlasShip,arrowPool);
     }
 
     @Override
@@ -69,6 +72,7 @@ public class GameScreen extends BaseScreen {
             w.draw(batch);
         }
         mainShip.draw(batch);
+        arrowPool.drawActiveSprites(batch);
         batch.end();
     }
     public void update(float delta){
@@ -79,6 +83,7 @@ public class GameScreen extends BaseScreen {
             w.update(delta);
         }
         mainShip.update(delta);
+        arrowPool.updateActiveSprites(delta);
 
     }
 
@@ -86,6 +91,7 @@ public class GameScreen extends BaseScreen {
 
     }
     public void deleteAllDestroyed(){
+        arrowPool.freeAllDestroyedActiveSprites();
 
     }
 
@@ -110,6 +116,7 @@ public class GameScreen extends BaseScreen {
         bg.dispose();
         atlas.dispose();
         atlasShip.dispose();
+        arrowPool.dispose();
         super.dispose();
     }
 }
