@@ -38,6 +38,7 @@ public class Arrow extends Sprite {
     public void update(float delta) {
         this.pos.mulAdd(v,delta);
         if (isOutside(worldBounds)){
+            destroy();
 
         }
     }
