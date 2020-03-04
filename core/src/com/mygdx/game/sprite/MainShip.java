@@ -11,13 +11,13 @@ public class MainShip extends Ship {
     float currentEnginePower;
     float maxEnginePower;
 
-    private static final float SHIP_HEIGHT = 0.2f;
-    private static final float BOTTOM_MARGIN = 0.05f;
+    private static final float SHIP_HEIGHT = 0.1f;
+    private static final float BOTTOM_MARGIN = 0.1f;
     private Vector2 v = new Vector2();
     private Rect worldBounds;
 
     public MainShip(TextureAtlas atlas, ArrowPool arrowPool) {
-        super(atlas.findRegion("Hero5"));
+        super(atlas.findRegion("Hero5"),2,5,10);
         setHeightProportion(SHIP_HEIGHT);
         this.arrowPool = arrowPool;
         this.arrowRegion = atlas.findRegion("gArrow");
