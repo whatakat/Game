@@ -40,6 +40,7 @@ public class MainShip extends Ship {
         if (InputHandler.isJustTouched()){
             currentEnginePower = lowEnginePower;
         }
+
         if (InputHandler.isTouched()){
             float tx = InputHandler.getX();
             float ty = InputHandler.getY();
@@ -49,8 +50,10 @@ public class MainShip extends Ship {
                 v.add(-0.2f,0f);
             }else if (tx>1000f&&ty<400f) {
                 v.add(0.2f, 0f);
-            }else;
-             shoot();
+            }else{
+                shoot();
+            }
+
         }
         checkAndHandleBounds();
 
