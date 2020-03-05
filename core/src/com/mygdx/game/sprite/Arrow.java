@@ -37,7 +37,7 @@ public class Arrow extends Sprite {
     @Override
     public void update(float delta) {
         this.pos.mulAdd(v,delta);
-        if (isOutside(worldBounds)){// mistake throws out the application
+        if (isOutside(worldBounds)){
             destroy();
         }
     }
