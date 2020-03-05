@@ -52,6 +52,7 @@ public class Sprite extends Rect {
 
     }
 
+
     public float getAngle() {
         return angle;
     }

@@ -2,7 +2,6 @@ package com.mygdx.game.sprite;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.utils.Pool;
 import com.mygdx.game.base.Sprite;
 import com.mygdx.game.math.Rect;
 
@@ -38,10 +37,9 @@ public class Arrow extends Sprite {
     @Override
     public void update(float delta) {
         this.pos.mulAdd(v,delta);
-//        if (isOutside(worldBounds)){// mistake throws out the application
-//            destroy();
-//
-//        }
+        if (isOutside(worldBounds)){// mistake throws out the application
+            destroy();
+        }
     }
 
     public int getDamage() {

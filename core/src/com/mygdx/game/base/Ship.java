@@ -28,6 +28,6 @@ public class Ship extends Sprite {
 
     protected void shoot(){
         Arrow arrow = arrowPool.obtain();
-        arrow.set(this,arrowRegion,pos, arrowV, arrowHeight,worldBounds,arrowDamage);
+        arrow.set(this,arrowRegion,pos, arrowV, arrowHeight,arrow,arrowDamage);
     }
 }
