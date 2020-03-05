@@ -20,6 +20,9 @@ public class Ship extends Sprite {
     public Ship(TextureRegion region, int rows, int cols, int frames) {
         super(region, rows, cols, frames);
     }
+    public Ship(TextureRegion region) {
+        super(region);
+    }
 
     @Override
     public void resize(Rect worldBounds) {

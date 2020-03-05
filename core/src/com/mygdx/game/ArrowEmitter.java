@@ -1,11 +1,9 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Pool;
-
+import com.mygdx.game.sprite.Arrow;
 
 
 public class ArrowEmitter {
@@ -13,7 +11,7 @@ public class ArrowEmitter {
 //    public static ArrowEmitter getInstance(){
 //        return ourInstance;
 //    }
-//    final Array<Arrow> activeArrows = new Array<Arrow>();
+//    final Array<Arrow> activeArrows = new Array<>();
 //    final Pool<Arrow> arrowPool = new Pool<Arrow>(128,512){
 //        @Override
 //        protected Arrow newObject() {
@@ -21,6 +19,8 @@ public class ArrowEmitter {
 //        }
 //    };
 //    TextureRegion textures;
+//    public Arrow[] arrows;
+//
 //
 //    public void reset(){
 //        arrowPool.clear();

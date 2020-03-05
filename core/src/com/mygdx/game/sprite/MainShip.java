@@ -17,7 +17,7 @@ public class MainShip extends Ship {
     private Rect worldBounds;
 
     public MainShip(TextureAtlas atlas, ArrowPool arrowPool) {
-        super(atlas.findRegion("Hero5"),2,5,10);
+        super(atlas.findRegion("Hero5"));//,2,5,10);
         setHeightProportion(SHIP_HEIGHT);
         this.arrowPool = arrowPool;
         this.arrowRegion = atlas.findRegion("gArrow");

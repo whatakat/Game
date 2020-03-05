@@ -18,7 +18,7 @@ public class GameScreen extends BaseScreen {
     private static final int WAVE_COUNT = 125;
     private static final int WAVEBG_COUNT = 3;
     private static final float WAVE_HEIGHT = 0.1f;
-    private float SPEED_WAVE = 0.2f;
+    private float SPEED_WAVE = 0.02f;
 
     private Background background;
     private Texture bg;
