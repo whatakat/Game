@@ -5,78 +5,85 @@ filter: Nearest,Nearest
 repeat: none
 Hero
   rotate: false
-  xy: 1, 353
+  xy: 1, 438
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero10
   rotate: false
-  xy: 1, 353
+  xy: 1, 438
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero1
   rotate: false
-  xy: 1, 1
+  xy: 1, 86
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero2
   rotate: false
-  xy: 123, 353
+  xy: 123, 438
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero3
   rotate: false
-  xy: 123, 1
+  xy: 123, 86
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero4
   rotate: false
-  xy: 245, 353
+  xy: 245, 438
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero5
   rotate: false
-  xy: 245, 1
+  xy: 245, 86
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero6
   rotate: false
-  xy: 367, 353
+  xy: 367, 438
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero7
   rotate: false
-  xy: 367, 1
+  xy: 367, 86
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero8
   rotate: false
-  xy: 489, 353
+  xy: 489, 438
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero9
   rotate: false
-  xy: 489, 1
+  xy: 489, 86
   size: 120, 350
   orig: 120, 350
+  offset: 0, 0
+  index: -1
+gArrow
+  rotate: false
+  xy: 1, 1
+  size: 32, 83
+  orig: 32, 83
   offset: 0, 0
   index: -1
