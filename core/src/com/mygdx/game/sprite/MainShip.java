@@ -11,8 +11,8 @@ public class MainShip extends Ship {
     float currentEnginePower;
     float maxEnginePower;
 
-    private static final float SHIP_HEIGHT = 0.1f;
-    private static final float BOTTOM_MARGIN = 0.1f;
+    private static final float SHIP_HEIGHT = 0.16f;
+    private static final float BOTTOM_MARGIN = 0.05f;
     private Vector2 v = new Vector2();
     private Rect worldBounds;
 
@@ -21,8 +21,8 @@ public class MainShip extends Ship {
         setHeightProportion(SHIP_HEIGHT);
         this.arrowPool = arrowPool;
         this.arrowRegion = atlas.findRegion("gArrow");
-        this.arrowHeight = 0.01f;
-        this.arrowV.set(0,0.5f);
+        this.arrowHeight = 0.07f;
+        this.arrowV.set(0,1f);
         this.arrowDamage = 1;
 
     }
