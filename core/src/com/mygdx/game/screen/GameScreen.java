@@ -9,10 +9,12 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.mygdx.game.base.BaseScreen;
 import com.mygdx.game.math.Rect;
 import com.mygdx.game.pools.ArrowPool;
+import com.mygdx.game.pools.EnemyPool;
 import com.mygdx.game.sprite.Background;
 import com.mygdx.game.sprite.MainShip;
 import com.mygdx.game.sprite.Wave;
 import com.mygdx.game.sprite.WaveBg;
+import com.mygdx.game.utils.EnemiesEmitter;
 
 public class GameScreen extends BaseScreen {
     private static final int WAVE_COUNT = 250;
@@ -28,10 +30,15 @@ public class GameScreen extends BaseScreen {
     private MainShip mainShip;
     private WaveBg[] waveBg;
     private ArrowPool arrowPool;
+    private EnemyPool enemyPool;
+    private EnemiesEmitter enemiesEmitter;
+    private Rect worldBounds;
 
     public GameScreen(Game game) {
         super(game);
     }
+
+
 
     @Override
     public void show() {
@@ -53,6 +60,7 @@ public class GameScreen extends BaseScreen {
         }
         arrowPool = new ArrowPool();
         mainShip = new MainShip(atlasShip,arrowPool);
+        enemyPool = new EnemyPool(arrowPool,worldBounds);
     }
 
     @Override
