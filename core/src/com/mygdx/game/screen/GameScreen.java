@@ -32,7 +32,6 @@ public class GameScreen extends BaseScreen {
     private ArrowPool arrowPool;
     private EnemyPool enemyPool;
     private EnemiesEmitter enemiesEmitter;
-    private Rect worldBounds;
 
     public GameScreen(Game game) {
         super(game);
@@ -61,6 +60,7 @@ public class GameScreen extends BaseScreen {
         arrowPool = new ArrowPool();
         mainShip = new MainShip(atlasShip,arrowPool);
         enemyPool = new EnemyPool(arrowPool,worldBounds);
+        this.enemiesEmitter = new EnemiesEmitter(worldBounds,enemyPool,atlas);
     }
 
     @Override
@@ -81,6 +81,7 @@ public class GameScreen extends BaseScreen {
         }
         mainShip.draw(batch);
         arrowPool.drawActiveSprites(batch);
+        enemyPool.drawActiveSprites(batch);
         batch.end();
     }
     public void update(float delta){
@@ -92,6 +93,8 @@ public class GameScreen extends BaseScreen {
         }
         mainShip.update(delta);
         arrowPool.updateActiveSprites(delta);
+        enemyPool.updateActiveSprites(delta);
+        enemiesEmitter.generateEnemies(delta);
 
     }
 
@@ -100,6 +103,7 @@ public class GameScreen extends BaseScreen {
     }
     public void deleteAllDestroyed(){
         arrowPool.freeAllDestroyedActiveSprites();
+        enemyPool.freeAllDestroyedActiveSprites();
 
     }
 
@@ -125,6 +129,7 @@ public class GameScreen extends BaseScreen {
         atlas.dispose();
         atlasShip.dispose();
         arrowPool.dispose();
+        enemyPool.dispose();
         super.dispose();
     }
 }
