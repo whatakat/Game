@@ -25,6 +25,7 @@ public class MainShip extends Ship {
         this.arrowHeight = 0.07f;
         this.arrowV.set(0,1.5f);
         this.arrowDamage = 1;
+        this.reloadInterval = 2f;
 
     }
 
@@ -37,6 +38,12 @@ public class MainShip extends Ship {
     @Override
     public void update(float delta) {
         pos.mulAdd(v,delta);
+        reloadTimer +=delta;
+        if (reloadTimer>=reloadInterval){
+            reloadTimer = 0f;
+            shoot();
+
+        }
         v.scl(0.1f);
         if (InputHandler.isJustTouched()){
             currentEnginePower = lowEnginePower;
