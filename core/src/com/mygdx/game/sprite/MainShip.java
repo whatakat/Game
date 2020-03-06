@@ -1,5 +1,6 @@
 package com.mygdx.game.sprite;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.base.Ship;
@@ -22,7 +23,7 @@ public class MainShip extends Ship {
         this.arrowPool = arrowPool;
         this.arrowRegion = atlas.findRegion("gArrow");
         this.arrowHeight = 0.07f;
-        this.arrowV.set(0,1f);
+        this.arrowV.set(0,1.5f);
         this.arrowDamage = 1;
 
     }
@@ -39,6 +40,7 @@ public class MainShip extends Ship {
         v.scl(0.1f);
         if (InputHandler.isJustTouched()){
             currentEnginePower = lowEnginePower;
+            shoot();
         }
 
         if (InputHandler.isTouched()){
@@ -51,7 +53,6 @@ public class MainShip extends Ship {
             }else if (tx>1000f&&ty<400f) {
                 v.add(0.2f, 0f);
             }else{
-                shoot();
             }
 
         }
@@ -61,7 +62,5 @@ public class MainShip extends Ship {
     private void checkAndHandleBounds(){
         if (getRight()<worldBounds.getLeft()+0.1f)setRight(worldBounds.getLeft()+0.1f);
         if (getLeft()>worldBounds.getRight()-0.1f)setLeft(worldBounds.getRight()-0.1f);
-//        if (getTop()<worldBounds.getBottom())setBottom(worldBounds.getTop());
-//        if (getBottom()>worldBounds.getTop())setTop(worldBounds.getBottom());// it's could be interested
     }
 }

@@ -15,10 +15,10 @@ import com.mygdx.game.sprite.Wave;
 import com.mygdx.game.sprite.WaveBg;
 
 public class GameScreen extends BaseScreen {
-    private static final int WAVE_COUNT = 125;
+    private static final int WAVE_COUNT = 250;
     private static final int WAVEBG_COUNT = 3;
-    private static final float WAVE_HEIGHT = 0.1f;
-    private float SPEED_WAVE = 0.02f;
+    private static final float WAVE_HEIGHT = 0.25f;
+    private float SPEED_WAVE = 0.03f;
 
     private Background background;
     private Texture bg;
@@ -49,7 +49,7 @@ public class GameScreen extends BaseScreen {
         wave = new Wave[WAVE_COUNT];
         for (int i = 0; i <wave.length ; i++) {
             // wave[i] = new Wave(waveRegion, Rnd.nextFloat(0.005f,-0.005f),Rnd.nextFloat(0.1f,-0.1f),0.1f);
-            wave[i] = new Wave(waveRegion, 0.004f,0.04f,WAVE_HEIGHT);
+            wave[i] = new Wave(waveRegion, 0.004f,0.06f,WAVE_HEIGHT);
         }
         arrowPool = new ArrowPool();
         mainShip = new MainShip(atlasShip,arrowPool);

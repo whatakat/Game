@@ -3,6 +3,7 @@ package com.mygdx.game.sprite;
 import com.badlogic.gdx.Gdx;
 
 public class InputHandler {
+
     public static boolean isTouched(){
         return Gdx.input.isTouched();
     }

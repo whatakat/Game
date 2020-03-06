@@ -17,6 +17,10 @@ public class Ship extends Sprite {
     protected float arrowHeight;
     protected int arrowDamage;
 
+    protected float reloadInterval;
+    protected float reloadTimer;
+
+
     public Ship(TextureRegion region, int rows, int cols, int frames) {
         super(region, rows, cols, frames);
     }
