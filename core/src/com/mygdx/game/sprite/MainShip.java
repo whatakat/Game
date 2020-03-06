@@ -16,7 +16,9 @@ public class MainShip extends Ship {
     private static final float BOTTOM_MARGIN = 0.05f;
     private Vector2 v = new Vector2();
     private Rect worldBounds;
-
+    /**
+     * @param reloadInterval for auto shooting
+     * */
     public MainShip(TextureAtlas atlas, ArrowPool arrowPool) {
         super(atlas.findRegion("Hero"),1,1,1);
         setHeightProportion(SHIP_HEIGHT);
