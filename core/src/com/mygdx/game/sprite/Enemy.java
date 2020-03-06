@@ -18,4 +18,27 @@ public class Enemy extends Ship {
     public void update(float delta) {
         super.update(delta);
     }
+    public void set(
+            TextureRegion[] regions,
+            Vector2 v0,
+            TextureRegion arrowRegion,
+            float arrowHeight,
+            float arrowVY,
+            int arrowDamage,
+            float reloadInterval,
+            float height
+    ){
+        this.regions = regions;
+        this.v0.set(v0);
+        this.arrowRegion = arrowRegion;
+        this.arrowHeight  =arrowHeight;
+        this.arrowV.set(0f,arrowVY);
+        this.arrowDamage = arrowDamage;
+        this.reloadInterval = reloadInterval;
+        setHeightProportion(height);
+        reloadTimer = reloadInterval;
+        v.set(v0);
+
+
+    }
 }
