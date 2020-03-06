@@ -17,7 +17,7 @@ public class MainShip extends Ship {
     private Vector2 v = new Vector2();
     private Rect worldBounds;
     /**
-     * @param reloadInterval for auto shooting
+     * param reloadInterval for auto shooting
      * */
     public MainShip(TextureAtlas atlas, ArrowPool arrowPool) {
         super(atlas.findRegion("Hero"),1,1,1);
