@@ -2,6 +2,7 @@ package com.mygdx.game.screen;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -30,6 +31,7 @@ public class MenuScreen extends BaseScreen implements ActionListener {
 
    private ButtonExit buttonExit;
    private ButtonPlay buttonPlay;
+   private Music music;
 
 
 
@@ -43,6 +45,9 @@ public class MenuScreen extends BaseScreen implements ActionListener {
         super.show();
         bg = new Texture("textures/port.jpg");
         background = new Background(new TextureRegion(bg));
+        music = Gdx.audio.newMusic(Gdx.files.internal("sounds/backgroundSound.mp3"));
+        music.setLooping(true);
+        music.play();
         atlas = new TextureAtlas("textures/atlas.pack");
         TextureRegion waveRegion = atlas.findRegion("eWave4");
         wave = new Wave[WAVE_COUNT];
