@@ -3,338 +3,352 @@ atlas.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-background_okean
+background_ocean
   rotate: false
-  xy: 1, 906
+  xy: 1, 910
   size: 2280, 1080
   orig: 2280, 1080
   offset: 0, 0
   index: -1
-Hero
+exit
   rotate: false
-  xy: 1, 554
-  size: 120, 350
-  orig: 120, 350
+  xy: 1, 1
+  size: 1241, 907
+  orig: 1241, 907
+  offset: 0, 0
+  index: -1
+play
+  rotate: false
+  xy: 2283, 1233
+  size: 912, 757
+  orig: 912, 757
+  offset: 0, 0
+  index: -1
+boatEnemy
+  rotate: false
+  xy: 1244, 462
+  size: 170, 446
+  orig: 170, 446
   offset: 0, 0
   index: -1
 Hero
   rotate: false
-  xy: 1, 554
+  xy: 3197, 1640
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero
+Hero10
   rotate: false
-  xy: 2283, 1636
+  xy: 3197, 1640
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero
+Hero1
   rotate: false
-  xy: 1, 202
+  xy: 1244, 110
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero
+Hero2
   rotate: false
-  xy: 123, 554
+  xy: 1416, 558
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero
+Hero3
   rotate: false
-  xy: 2283, 1284
+  xy: 3197, 1288
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero
+Hero4
   rotate: false
-  xy: 2405, 1636
+  xy: 3319, 1640
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero
+Hero5
   rotate: false
-  xy: 123, 202
+  xy: 1538, 558
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero
+Hero6
   rotate: false
-  xy: 245, 554
+  xy: 3319, 1288
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero
+Hero7
   rotate: false
-  xy: 2283, 932
+  xy: 3441, 1640
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero
+Hero8
   rotate: false
-  xy: 2405, 1284
+  xy: 1660, 558
+  size: 120, 350
+  orig: 120, 350
+  offset: 0, 0
+  index: -1
+Hero9
+  rotate: false
+  xy: 3441, 1288
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 eW
   rotate: false
-  xy: 1, 1
+  xy: 2283, 1032
   size: 202, 199
   orig: 202, 199
   offset: 0, 0
   index: -1
 gShark1
   rotate: false
-  xy: 2527, 1781
+  xy: 3563, 1785
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark11
   rotate: false
-  xy: 2527, 1781
+  xy: 3563, 1785
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark10
   rotate: false
-  xy: 367, 699
+  xy: 1782, 703
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark2
   rotate: false
-  xy: 367, 699
+  xy: 1782, 703
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark12
   rotate: false
-  xy: 2527, 1574
+  xy: 3563, 1578
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark20
   rotate: false
-  xy: 2527, 1574
+  xy: 3563, 1578
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark13
   rotate: false
-  xy: 2655, 1781
+  xy: 3691, 1785
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark19
   rotate: false
-  xy: 2655, 1781
+  xy: 3691, 1785
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark14
   rotate: false
-  xy: 495, 699
+  xy: 1910, 703
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark18
   rotate: false
-  xy: 495, 699
+  xy: 1910, 703
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark15
   rotate: false
-  xy: 2527, 1367
+  xy: 3563, 1371
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark17
   rotate: false
-  xy: 2527, 1367
+  xy: 3563, 1371
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark16
   rotate: false
-  xy: 2655, 1574
+  xy: 3691, 1578
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark3
   rotate: false
-  xy: 2783, 1781
+  xy: 3819, 1785
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark9
   rotate: false
-  xy: 2783, 1781
+  xy: 3819, 1785
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark4
   rotate: false
-  xy: 623, 699
+  xy: 2038, 703
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark8
   rotate: false
-  xy: 623, 699
+  xy: 2038, 703
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark5
   rotate: false
-  xy: 2655, 1367
+  xy: 3691, 1371
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark7
   rotate: false
-  xy: 2655, 1367
+  xy: 3691, 1371
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
 gShark6
   rotate: false
-  xy: 2783, 1574
+  xy: 3819, 1578
   size: 126, 205
   orig: 126, 205
   offset: 0, 0
   index: -1
-exit
-  rotate: false
-  xy: 2911, 1836
-  size: 150, 150
-  orig: 150, 150
-  offset: 0, 0
-  index: -1
-play
-  rotate: false
-  xy: 751, 754
-  size: 150, 150
-  orig: 150, 150
-  offset: 0, 0
-  index: -1
 eWave
   rotate: false
-  xy: 367, 585
+  xy: 2283, 918
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave1
   rotate: false
-  xy: 3063, 1874
+  xy: 2487, 1119
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave10
   rotate: false
-  xy: 903, 792
+  xy: 1782, 589
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave2
   rotate: false
-  xy: 552, 585
+  xy: 2672, 1119
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave3
   rotate: false
-  xy: 3248, 1874
+  xy: 1967, 589
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave4
   rotate: false
-  xy: 1088, 792
+  xy: 2857, 1119
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave5
   rotate: false
-  xy: 3433, 1874
+  xy: 1416, 444
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave6
   rotate: false
-  xy: 1273, 792
+  xy: 1601, 444
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave7
   rotate: false
-  xy: 3618, 1874
+  xy: 2487, 1005
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave8
   rotate: false
-  xy: 1458, 792
+  xy: 2672, 1005
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave9
   rotate: false
-  xy: 3803, 1874
+  xy: 2857, 1005
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
+ic_shark
+  rotate: false
+  xy: 1244, 48
+  size: 92, 60
+  orig: 92, 60
+  offset: 0, 0
+  index: -1
 dolphin
   rotate: false
-  xy: 245, 447
+  xy: 3947, 1885
   size: 45, 105
   orig: 45, 105
   offset: 0, 0
   index: -1
 gArrow
   rotate: false
-  xy: 2405, 1199
+  xy: 2166, 825
   size: 32, 83
   orig: 32, 83
   offset: 0, 0
