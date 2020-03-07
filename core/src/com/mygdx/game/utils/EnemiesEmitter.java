@@ -32,7 +32,7 @@ public class EnemiesEmitter {
     public EnemiesEmitter(Rect worldBounds, EnemyPool enemyPool, TextureAtlas atlas) {
         this.worldBounds = worldBounds;
         this.enemyPool = enemyPool;
-        TextureRegion textureRegion0 = atlas.findRegion("yourEnemy");//I'll create pack
+        TextureRegion textureRegion0 = atlas.findRegion("boatEnemy");
         this.enemySmallRegion = Regions.split(textureRegion0,1,2,2);
         this.arrowRegion = atlas.findRegion("bulletEnemy");//I'll create pack
     }
