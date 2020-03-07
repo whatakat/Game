@@ -17,7 +17,7 @@ import com.mygdx.game.sprite.ButtonPlay;
 import com.mygdx.game.sprite.Wave;
 
 public class MenuScreen extends BaseScreen implements ActionListener {
-    private static final int WAVE_COUNT = 250;
+    private static final int WAVE_COUNT = 0;
     private static final float WAVE_HEIGHT = 0.13f;
 
     private static final float PRESS_SCALE = 0.9f;

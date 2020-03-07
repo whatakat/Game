@@ -10,9 +10,9 @@ import com.mygdx.game.sprite.Enemy;
 
 public class EnemiesEmitter {
 
-    private static final float ENEMY_SMALL_HEIGHT = 0.1f;
-    private static final float ENEMY_SMALL_ARROW_HEIGHT = 0.01f;
-    private static final float ENEMY_SMALL_ARROW_VY = -0.3f;
+    private static final float ENEMY_SMALL_HEIGHT = 0.2f;
+    private static final float ENEMY_SMALL_ARROW_HEIGHT = 0.1f;
+    private static final float ENEMY_SMALL_ARROW_VY = -0.1f;
     private static final int ENEMY_SMALL_ARROW_DAMAGE = 1;
     private static final float ENEMY_SMALL_RELOAD_INTERVAL = 0.1f;
 
@@ -23,7 +23,7 @@ public class EnemiesEmitter {
 
     private TextureRegion[] enemySmallRegion;
 
-    private Vector2 enemySmallV = new Vector2(0f,-0.2f);
+    private Vector2 enemySmallV = new Vector2(0f,-0.1f);
 
     private TextureRegion arrowRegion;
 
@@ -33,7 +33,7 @@ public class EnemiesEmitter {
         this.worldBounds = worldBounds;
         this.enemyPool = enemyPool;
         TextureRegion textureRegion0 = atlas.findRegion("boatEnemy");
-        this.enemySmallRegion = Regions.split(textureRegion0,1,2,2);
+        this.enemySmallRegion = Regions.split(textureRegion0,1,1,1);
         this.arrowRegion = atlas.findRegion("bulletEnemy");
     }
     public void generateEnemies(float delta){
