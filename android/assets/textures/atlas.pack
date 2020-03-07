@@ -332,6 +332,13 @@ eWave9
   orig: 183, 112
   offset: 0, 0
   index: -1
+bulletEnemy
+  rotate: false
+  xy: 3947, 1872
+  size: 51, 118
+  orig: 51, 118
+  offset: 0, 0
+  index: -1
 ic_shark
   rotate: false
   xy: 1244, 48
@@ -341,14 +348,14 @@ ic_shark
   index: -1
 dolphin
   rotate: false
-  xy: 3947, 1885
+  xy: 2166, 803
   size: 45, 105
   orig: 45, 105
   offset: 0, 0
   index: -1
 gArrow
   rotate: false
-  xy: 2166, 825
+  xy: 3819, 1493
   size: 32, 83
   orig: 32, 83
   offset: 0, 0

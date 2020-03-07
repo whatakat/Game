@@ -34,7 +34,7 @@ public class EnemiesEmitter {
         this.enemyPool = enemyPool;
         TextureRegion textureRegion0 = atlas.findRegion("boatEnemy");
         this.enemySmallRegion = Regions.split(textureRegion0,1,2,2);
-        this.arrowRegion = atlas.findRegion("bulletEnemy");//I'll create pack
+        this.arrowRegion = atlas.findRegion("bulletEnemy");
     }
     public void generateEnemies(float delta){
         generateTimer+=delta;
