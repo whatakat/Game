@@ -45,7 +45,7 @@ public class GameScreen extends BaseScreen {
         bg = new Texture("textures/background_okean.jpg");
         background = new Background(new TextureRegion(bg));
         atlas = new TextureAtlas("textures/atlas.pack");
-        TextureRegion waveBgRegion = atlas.findRegion("background_okean");
+        TextureRegion waveBgRegion = atlas.findRegion("background_ocean");
         waveBg = new WaveBg[WAVEBG_COUNT];
         for (int i = 0; i <waveBg.length ; i++) {
             waveBg[i] = new WaveBg(waveBgRegion,0f,SPEED_WAVE,1f);
