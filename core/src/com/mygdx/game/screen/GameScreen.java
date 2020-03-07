@@ -2,6 +2,7 @@ package com.mygdx.game.screen;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -32,6 +33,7 @@ public class GameScreen extends BaseScreen {
     private ArrowPool arrowPool;
     private EnemyPool enemyPool;
     private EnemiesEmitter enemiesEmitter;
+    private Music music;
 
     public GameScreen(Game game) {
         super(game);
@@ -44,6 +46,9 @@ public class GameScreen extends BaseScreen {
         super.show();
         bg = new Texture("textures/background_okean.jpg");
         background = new Background(new TextureRegion(bg));
+        music = Gdx.audio.newMusic(Gdx.files.internal("sounds/myBoat.mp3"));
+        music.setLooping(true);
+        music.play();
         atlas = new TextureAtlas("textures/atlas.pack");
         TextureRegion waveBgRegion = atlas.findRegion("background_ocean");
         waveBg = new WaveBg[WAVEBG_COUNT];
