@@ -41,7 +41,7 @@ public class MenuScreen extends BaseScreen implements ActionListener {
     @Override
     public void show() {
         super.show();
-        bg = new Texture("textures/background_okean.jpg");
+        bg = new Texture("textures/port.jpg");
         background = new Background(new TextureRegion(bg));
         atlas = new TextureAtlas("textures/atlas.pack");
         TextureRegion waveRegion = atlas.findRegion("eWave4");
