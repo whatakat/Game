@@ -18,12 +18,12 @@ public class EnemiesEmitter {
 
     private Rect worldBounds;
 
-    private float generateInterval = 4f;
+    private float generateInterval = 25f;
     private float generateTimer;
 
     private TextureRegion[] enemySmallRegion;
 
-    private Vector2 enemySmallV = new Vector2(0f,-0.1f);
+    private Vector2 enemySmallV = new Vector2(0f,-0.05f);
 
     private TextureRegion arrowRegion;
 
