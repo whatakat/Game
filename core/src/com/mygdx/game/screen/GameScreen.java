@@ -7,11 +7,14 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.base.BaseScreen;
 import com.mygdx.game.math.Rect;
 import com.mygdx.game.pools.ArrowPool;
 import com.mygdx.game.pools.EnemyPool;
+import com.mygdx.game.pools.ExplosionPool;
 import com.mygdx.game.sprite.Background;
+import com.mygdx.game.sprite.Explosion;
 import com.mygdx.game.sprite.MainShip;
 import com.mygdx.game.sprite.Wave;
 import com.mygdx.game.sprite.WaveBg;
@@ -27,13 +30,16 @@ public class GameScreen extends BaseScreen {
     private Texture bg;
     private TextureAtlas atlas;
     private TextureAtlas atlasShip;
+    private TextureAtlas explosionSh;
     private Wave[] wave;
     private MainShip mainShip;
     private WaveBg[] waveBg;
     private ArrowPool arrowPool;
     private EnemyPool enemyPool;
+    private ExplosionPool explosionPool;
     private EnemiesEmitter enemiesEmitter;
     private Music music;
+
 
     public GameScreen(Game game) {
         super(game);
@@ -50,6 +56,7 @@ public class GameScreen extends BaseScreen {
         music.setLooping(true);
         music.play();
         atlas = new TextureAtlas("textures/atlas.pack");
+        explosionSh =new TextureAtlas("textures/shark.pack");
         TextureRegion waveBgRegion = atlas.findRegion("background_ocean");
         waveBg = new WaveBg[WAVEBG_COUNT];
         for (int i = 0; i <waveBg.length ; i++) {
@@ -65,7 +72,8 @@ public class GameScreen extends BaseScreen {
         arrowPool = new ArrowPool();
         mainShip = new MainShip(atlasShip,arrowPool);
         enemyPool = new EnemyPool(arrowPool,worldBounds);
-        this.enemiesEmitter = new EnemiesEmitter(worldBounds,enemyPool,atlas);
+        enemiesEmitter = new EnemiesEmitter(worldBounds,enemyPool,atlas);
+        explosionPool = new ExplosionPool(explosionSh);
     }
 
     @Override
@@ -87,6 +95,7 @@ public class GameScreen extends BaseScreen {
         mainShip.draw(batch);
         arrowPool.drawActiveSprites(batch);
         enemyPool.drawActiveSprites(batch);
+        explosionPool.drawActiveSprites(batch);
         batch.end();
     }
     public void update(float delta){
@@ -99,6 +108,7 @@ public class GameScreen extends BaseScreen {
         mainShip.update(delta);
         arrowPool.updateActiveSprites(delta);
         enemyPool.updateActiveSprites(delta);
+        explosionPool.updateActiveSprites(delta);
         enemiesEmitter.generateEnemies(delta);
 
     }
@@ -109,6 +119,7 @@ public class GameScreen extends BaseScreen {
     public void deleteAllDestroyed(){
         arrowPool.freeAllDestroyedActiveSprites();
         enemyPool.freeAllDestroyedActiveSprites();
+        explosionPool.freeAllDestroyedActiveSprites();
 
     }
 
@@ -132,9 +143,18 @@ public class GameScreen extends BaseScreen {
     public void dispose() {
         bg.dispose();
         atlas.dispose();
+        explosionSh.dispose();
         atlasShip.dispose();
         arrowPool.dispose();
         enemyPool.dispose();
+        explosionPool.dispose();
         super.dispose();
+    }
+
+    @Override
+    public void touchDown(Vector2 touch, int pointer) {
+        mainShip.touchDown(touch, pointer);
+        Explosion explosion = explosionPool.obtain();
+        explosion.set(0.3f, touch);
     }
 }
