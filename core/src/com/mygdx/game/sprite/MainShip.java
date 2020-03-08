@@ -27,7 +27,7 @@ public class MainShip extends Ship {
         this.arrowHeight = 0.07f;
         this.arrowV.set(0,1.5f);
         this.arrowDamage = 1;
-        this.reloadInterval = 2f;
+        this.reloadInterval = 1000f;
 
     }
 
