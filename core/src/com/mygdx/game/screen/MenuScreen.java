@@ -45,7 +45,7 @@ public class MenuScreen extends BaseScreen implements ActionListener {
         super.show();
         bg = new Texture("textures/port.jpg");
         background = new Background(new TextureRegion(bg));
-        music = Gdx.audio.newMusic(Gdx.files.internal("sounds/backgroundSound.mp3"))
+        music = Gdx.audio.newMusic(Gdx.files.internal("sounds/backgroundSound.mp3"));
         music.play();
         atlas = new TextureAtlas("textures/atlas.pack");
         TextureRegion waveRegion = atlas.findRegion("eWave4");
