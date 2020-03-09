@@ -114,8 +114,8 @@ public class MenuScreen extends BaseScreen implements ActionListener {
 
     }
     public void update(float delta){
-        for (int i = 0; i <wave.length ; i++) {
-            wave[i].update(delta);
+        for (Wave w: wave){
+            w.update(delta);
         }
     }
 
