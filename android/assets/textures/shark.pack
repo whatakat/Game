@@ -1,12 +1,12 @@
 
 shark.png
 format: RGBA8888
-filter: MipMapLinearNearest,Linear
+filter: MipMapNearestLinear,Linear
 repeat: none
-gShark1
+gShark
   rotate: false
-  xy: 1, 208
-  size: 126, 205
-  orig: 126, 205
+  xy: 1, 622
+  size: 205, 205
+  orig: 205, 205
   offset: 0, 0
   index: 0
