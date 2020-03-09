@@ -27,7 +27,7 @@ public class MenuScreen extends BaseScreen implements ActionListener {
    private Background background;
    private Texture bg;
    private TextureAtlas atlas;
-   private Wave wave[];
+   private Wave[] wave;
 
    private ButtonExit buttonExit;
    private ButtonPlay buttonPlay;
