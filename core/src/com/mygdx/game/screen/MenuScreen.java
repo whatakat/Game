@@ -71,8 +71,8 @@ public class MenuScreen extends BaseScreen implements ActionListener {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         background.draw(batch);
-        for (int i = 0; i <wave.length ; i++) {
-            wave[i].draw(batch);
+        for (Wave w: wave){
+            w.draw(batch);
         }
         buttonExit.draw(batch);
         buttonPlay.draw(batch);
@@ -83,6 +83,7 @@ public class MenuScreen extends BaseScreen implements ActionListener {
     public void dispose() {
         bg.dispose();
         atlas.dispose();
+        music.dispose();
         super.dispose();
     }
 
