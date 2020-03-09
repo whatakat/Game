@@ -5,7 +5,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.base.Sprite;
 
 public class Explosion extends Sprite {
-    private float animateInterval = 0.017f;
+    private float animateInterval = 0.30f;
     private float animateTimer;
 
     public Explosion(TextureRegion region,int rows,int cols, int frames){

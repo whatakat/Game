@@ -5,217 +5,224 @@ filter: MipMapLinearNearest,Linear
 repeat: none
 background_ocean
   rotate: false
-  xy: 1, 910
+  xy: 1, 967
   size: 2280, 1080
   orig: 2280, 1080
   offset: 0, 0
   index: -1
 exit
   rotate: false
-  xy: 1, 1
+  xy: 1, 60
   size: 1241, 907
   orig: 1241, 907
   offset: 0, 0
   index: -1
+shark
+  rotate: false
+  xy: 2283, 1023
+  size: 1024, 1024
+  orig: 1024, 1024
+  offset: 0, 0
+  index: -1
 play
   rotate: false
-  xy: 2283, 1233
+  xy: 1244, 210
   size: 912, 757
   orig: 912, 757
   offset: 0, 0
   index: -1
 boatEnemy
   rotate: false
-  xy: 1244, 462
+  xy: 3309, 1601
   size: 170, 446
   orig: 170, 446
   offset: 0, 0
   index: -1
 Hero
   rotate: false
-  xy: 3197, 1640
+  xy: 2158, 617
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero10
   rotate: false
-  xy: 3197, 1640
+  xy: 2158, 617
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero1
   rotate: false
-  xy: 1244, 110
+  xy: 3309, 1251
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero2
   rotate: false
-  xy: 1416, 558
+  xy: 3481, 1697
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero3
   rotate: false
-  xy: 3197, 1288
+  xy: 2158, 267
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero4
   rotate: false
-  xy: 3319, 1640
+  xy: 3603, 1697
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero5
   rotate: false
-  xy: 1538, 558
+  xy: 3725, 1697
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero6
   rotate: false
-  xy: 3319, 1288
+  xy: 3847, 1697
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero7
   rotate: false
-  xy: 3441, 1640
+  xy: 3969, 1697
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 Hero8
   rotate: false
-  xy: 1660, 558
-  size: 120, 350
-  orig: 120, 350
-  offset: 0, 0
-  index: -1
-Hero9
-  rotate: false
-  xy: 3441, 1288
+  xy: 3431, 1251
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 eW
   rotate: false
-  xy: 2283, 1032
+  xy: 3309, 1052
   size: 202, 199
   orig: 202, 199
   offset: 0, 0
   index: -1
-gShark1
+Hero9
   rotate: false
-  xy: 3563, 1785
-  size: 126, 205
-  orig: 126, 205
+  xy: 3553, 1347
+  size: 120, 350
+  orig: 120, 350
   offset: 0, 0
-  index: 0
+  index: -1
+eWave
+  rotate: false
+  xy: 1244, 98
+  size: 183, 112
+  orig: 183, 112
+  offset: 0, 0
+  index: -1
 eWave1
   rotate: false
-  xy: 2487, 1119
+  xy: 3675, 1585
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave10
   rotate: false
-  xy: 1782, 589
+  xy: 1429, 98
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave2
   rotate: false
-  xy: 2672, 1119
+  xy: 3675, 1473
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave3
   rotate: false
-  xy: 1967, 589
+  xy: 3860, 1585
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave4
   rotate: false
-  xy: 2857, 1119
+  xy: 1614, 98
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave5
   rotate: false
-  xy: 1416, 444
+  xy: 3675, 1361
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave6
   rotate: false
-  xy: 1601, 444
+  xy: 3860, 1473
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave7
   rotate: false
-  xy: 2487, 1005
+  xy: 1799, 98
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave8
   rotate: false
-  xy: 2672, 1005
+  xy: 3860, 1361
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 eWave9
   rotate: false
-  xy: 2857, 1005
+  xy: 1984, 98
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 bulletEnemy
   rotate: false
-  xy: 3947, 1872
+  xy: 3513, 1133
   size: 51, 118
   orig: 51, 118
   offset: 0, 0
   index: -1
 ic_shark
   rotate: false
-  xy: 1244, 48
+  xy: 1, 0
   size: 92, 60
   orig: 92, 60
   offset: 0, 0
   index: -1
 dolphin
   rotate: false
-  xy: 2166, 803
+  xy: 4045, 1592
   size: 45, 105
   orig: 45, 105
   offset: 0, 0
   index: -1
 gArrow
   rotate: false
-  xy: 3819, 1493
+  xy: 3481, 1614
   size: 32, 83
   orig: 32, 83
   offset: 0, 0

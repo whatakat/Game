@@ -1,12 +1,180 @@
 
 shark.png
 format: RGBA8888
-filter: MipMapNearestLinear,Linear
+filter: MipMapLinearNearest,Linear
 repeat: none
 gShark
   rotate: false
-  xy: 1, 622
-  size: 205, 205
-  orig: 205, 205
+  xy: 0, 816
+  size: 204, 204
+  orig: 204, 204
   offset: 0, 0
-  index: 0
+  index: -1
+gShark10
+  rotate: false
+  xy: 0, 612
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark11
+  rotate: false
+  xy: 204, 816
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark12
+  rotate: false
+  xy: 0, 408
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark13
+  rotate: false
+  xy: 204, 612
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark14
+  rotate: false
+  xy: 408, 816
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark15
+  rotate: false
+  xy: 0, 204
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark16
+  rotate: false
+  xy: 204, 408
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark17
+  rotate: false
+  xy: 408, 612
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark18
+  rotate: false
+  xy: 612, 816
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark19
+  rotate: false
+  xy: 0, 0
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark2
+  rotate: false
+  xy: 204, 204
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark20
+  rotate: false
+  xy: 408, 408
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark21
+  rotate: false
+  xy: 612, 612
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark22
+  rotate: false
+  xy: 816, 816
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark23
+  rotate: false
+  xy: 204, 0
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark24
+  rotate: false
+  xy: 408, 204
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark25
+  rotate: false
+  xy: 612, 408
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark3
+  rotate: false
+  xy: 816, 612
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark4
+  rotate: false
+  xy: 408, 0
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark5
+  rotate: false
+  xy: 612, 204
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark6
+  rotate: false
+  xy: 816, 408
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark7
+  rotate: false
+  xy: 612, 0
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark8
+  rotate: false
+  xy: 816, 204
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1
+gShark9
+  rotate: false
+  xy: 816, 0
+  size: 204, 204
+  orig: 204, 204
+  offset: 0, 0
+  index: -1

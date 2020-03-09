@@ -10,11 +10,11 @@ public class ExplosionPool extends SpritesPool<Explosion> {
     private TextureRegion textureRegion;
 
     public ExplosionPool(TextureAtlas atlas) {
-        textureRegion = atlas.findRegion("gShark1");
+        textureRegion = atlas.findRegion("shark");
     }
 
     @Override
     protected Explosion newObject() {
-        return new Explosion(textureRegion,2,2,4);
+        return new Explosion(textureRegion,5,5,25);
     }
 }

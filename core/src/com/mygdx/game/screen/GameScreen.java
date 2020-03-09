@@ -30,7 +30,6 @@ public class GameScreen extends BaseScreen {
     private Texture bg;
     private TextureAtlas atlas;
     private TextureAtlas atlasShip;
-    private TextureAtlas explosionSh;
     private Wave[] wave;
     private MainShip mainShip;
     private WaveBg[] waveBg;
@@ -56,7 +55,6 @@ public class GameScreen extends BaseScreen {
         music.setLooping(true);
         music.play();
         atlas = new TextureAtlas("textures/atlas.pack");
-        explosionSh =new TextureAtlas("textures/shark.pack");
         TextureRegion waveBgRegion = atlas.findRegion("background_ocean");
         waveBg = new WaveBg[WAVEBG_COUNT];
         for (int i = 0; i <waveBg.length ; i++) {
@@ -73,7 +71,7 @@ public class GameScreen extends BaseScreen {
         mainShip = new MainShip(atlasShip,arrowPool);
         enemyPool = new EnemyPool(arrowPool,worldBounds);
         enemiesEmitter = new EnemiesEmitter(worldBounds,enemyPool,atlas);
-        explosionPool = new ExplosionPool(explosionSh);
+        explosionPool = new ExplosionPool(atlas);
     }
 
     @Override
@@ -143,7 +141,6 @@ public class GameScreen extends BaseScreen {
     public void dispose() {
         bg.dispose();
         atlas.dispose();
-        explosionSh.dispose();
         atlasShip.dispose();
         arrowPool.dispose();
         enemyPool.dispose();
