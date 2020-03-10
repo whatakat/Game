@@ -24,16 +24,18 @@ public class Ship extends Sprite {
 
     protected float reloadInterval;
     protected float reloadTimer;
-    protected Sound sound;
+    protected Sound shootSound;
 
 
-    public Ship(TextureRegion region, int rows, int cols, int frames) {
+    public Ship(TextureRegion region, int rows, int cols, int frames, Sound sound) {
         super(region, rows, cols, frames);
+        this.shootSound = sound;
     }
-    public Ship(ArrowPool arrowPool, Rect worldBounds, ExplosionPool explosionPool) {
+    public Ship(ArrowPool arrowPool, Rect worldBounds, ExplosionPool explosionPool,Sound sound) {
         this.arrowPool = arrowPool;
         this.worldBounds = worldBounds;
         this.explosionPool = explosionPool;
+        this.shootSound = sound;
     }
 
     @Override
@@ -41,14 +43,9 @@ public class Ship extends Sprite {
         this.worldBounds = worldBounds;
     }
 
-    public void shootSound(){
-        sound = Gdx.audio.newSound(Gdx.files.internal("sounds/arrow.wav"));
-        sound.play();
-    }
-
     protected void shoot(){
         Arrow arrow = arrowPool.obtain();
         arrow.set(this,arrowRegion,pos, arrowV, arrowHeight,arrow,arrowDamage);
-        shootSound();
+        shootSound.play();
     }
 }
