@@ -3,6 +3,7 @@ package com.mygdx.game.screen;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -38,6 +39,7 @@ public class GameScreen extends BaseScreen {
     private ExplosionPool explosionPool;
     private EnemiesEmitter enemiesEmitter;
     private Music music;
+    private Sound explosionSound;
 
 
     public GameScreen(Game game) {
@@ -52,8 +54,10 @@ public class GameScreen extends BaseScreen {
         bg = new Texture("textures/background_okean.jpg");
         background = new Background(new TextureRegion(bg));
         music = Gdx.audio.newMusic(Gdx.files.internal("sounds/myBoat.mp3"));
+        explosionSound = Gdx.audio.newSound(Gdx.files.internal("sounds/arrowSh.wav"));
         music.setLooping(true);
         music.play();
+
         atlas = new TextureAtlas("textures/atlas.pack");
         TextureRegion waveBgRegion = atlas.findRegion("background_ocean");
         waveBg = new WaveBg[WAVEBG_COUNT];
@@ -71,7 +75,7 @@ public class GameScreen extends BaseScreen {
         mainShip = new MainShip(atlasShip,arrowPool);
         enemyPool = new EnemyPool(arrowPool,worldBounds);
         enemiesEmitter = new EnemiesEmitter(worldBounds,enemyPool,atlas);
-        explosionPool = new ExplosionPool(atlas);
+        explosionPool = new ExplosionPool(atlas,explosionSound);
     }
 
     @Override
@@ -147,6 +151,8 @@ public class GameScreen extends BaseScreen {
         arrowPool.dispose();
         enemyPool.dispose();
         explosionPool.dispose();
+        music.dispose();
+        explosionSound.dispose();
         super.dispose();
     }
 
