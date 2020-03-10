@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.base.Ship;
 import com.mygdx.game.math.Rect;
 import com.mygdx.game.pools.ArrowPool;
+import com.mygdx.game.pools.ExplosionPool;
 
 public class MainShip extends Ship {
     float lowEnginePower;
@@ -19,7 +20,7 @@ public class MainShip extends Ship {
     /**
      * param reloadInterval for auto shooting
      * */
-    public MainShip(TextureAtlas atlas, ArrowPool arrowPool) {
+    public MainShip(TextureAtlas atlas, ArrowPool arrowPool, ExplosionPool explosionPool) {
         super(atlas.findRegion("Hero"),1,1,1);
         setHeightProportion(SHIP_HEIGHT);
         this.arrowPool = arrowPool;
@@ -28,6 +29,7 @@ public class MainShip extends Ship {
         this.arrowV.set(0,1.5f);
         this.arrowDamage = 1;
         this.reloadInterval = 1000f;
+        this.explosionPool = explosionPool;
 
     }
 
