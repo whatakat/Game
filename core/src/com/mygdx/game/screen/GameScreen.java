@@ -72,10 +72,11 @@ public class GameScreen extends BaseScreen {
             wave[i] = new Wave(waveRegion, 0f,0.07f,WAVE_HEIGHT);
         }
         arrowPool = new ArrowPool();
-        mainShip = new MainShip(atlasShip,arrowPool);
+        explosionPool = new ExplosionPool(atlas,explosionSound);
+        mainShip = new MainShip(atlasShip,arrowPool,explosionPool);
         enemyPool = new EnemyPool(arrowPool,worldBounds);
         enemiesEmitter = new EnemiesEmitter(worldBounds,enemyPool,atlas);
-        explosionPool = new ExplosionPool(atlas,explosionSound);
+
     }
 
     @Override
