@@ -5,12 +5,13 @@ import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.base.Ship;
 import com.mygdx.game.math.Rect;
 import com.mygdx.game.pools.ArrowPool;
+import com.mygdx.game.pools.ExplosionPool;
 
 public class Enemy extends Ship {
 
     private Vector2 v0 = new Vector2();
-    public Enemy(ArrowPool arrowPool, Rect worldBounds) {
-        super(arrowPool, worldBounds);
+    public Enemy(ArrowPool arrowPool, Rect worldBounds, ExplosionPool explosionPool) {
+        super(arrowPool, worldBounds, explosionPool);
         this.v.set(v0);
     }
 
