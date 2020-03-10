@@ -2,6 +2,7 @@ package com.mygdx.game.base;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.math.Rect;
@@ -21,7 +22,7 @@ public class Ship extends Sprite {
 
     protected float reloadInterval;
     protected float reloadTimer;
-    protected Music music;
+    protected Sound sound;
 
 
     public Ship(TextureRegion region, int rows, int cols, int frames) {
@@ -36,9 +37,10 @@ public class Ship extends Sprite {
     public void resize(Rect worldBounds) {
         this.worldBounds = worldBounds;
     }
+
     public void shootSound(){
-        music = Gdx.audio.newMusic(Gdx.files.internal("sounds/arrow.mp3"));
-        music.play();
+        sound = Gdx.audio.newSound(Gdx.files.internal("sounds/arrow.wav"));
+        sound.play();
     }
 
     protected void shoot(){
