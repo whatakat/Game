@@ -30,6 +30,9 @@ public class Sprite extends Rect {
         regions = Regions.split(region,rows,cols,frames);
     }
     public void draw(SpriteBatch batch){
+        if (isDestroyed){
+            return;
+        }
         batch.draw(regions[frame],getLeft(),getBottom(),halfWidth,halfHeight,getWidth(),getHeight(),
                 scale,scale,angle);
     }

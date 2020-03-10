@@ -156,10 +156,10 @@ public class GameScreen extends BaseScreen {
         super.dispose();
     }
 
-    @Override
-    public void touchDown(Vector2 touch, int pointer) {
-        mainShip.touchDown(touch, pointer);
-        Explosion explosion = explosionPool.obtain();
-        explosion.set(0.3f, touch);
-    }
+//    @Override
+//    public void touchDown(Vector2 touch, int pointer) {
+//        mainShip.touchDown(touch, pointer);
+//        Explosion explosion = explosionPool.obtain();
+//        explosion.set(0.3f, touch);
+//    }
 }
