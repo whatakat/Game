@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.math.Rect;
 import com.mygdx.game.pools.ArrowPool;
+import com.mygdx.game.pools.ExplosionPool;
 import com.mygdx.game.sprite.Arrow;
 
 public class Ship extends Sprite {
@@ -14,6 +15,7 @@ public class Ship extends Sprite {
     protected Rect worldBounds;
 
     protected ArrowPool arrowPool;
+    protected ExplosionPool explosionPool;
     protected TextureRegion arrowRegion;
 
     protected final Vector2 arrowV = new Vector2();
@@ -28,9 +30,10 @@ public class Ship extends Sprite {
     public Ship(TextureRegion region, int rows, int cols, int frames) {
         super(region, rows, cols, frames);
     }
-    public Ship(ArrowPool arrowPool, Rect worldBounds) {
+    public Ship(ArrowPool arrowPool, Rect worldBounds, ExplosionPool explosionPool) {
         this.arrowPool = arrowPool;
         this.worldBounds = worldBounds;
+        this.explosionPool = explosionPool;
     }
 
     @Override
