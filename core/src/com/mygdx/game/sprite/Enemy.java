@@ -1,5 +1,6 @@
 package com.mygdx.game.sprite;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.base.Ship;
@@ -10,8 +11,8 @@ import com.mygdx.game.pools.ExplosionPool;
 public class Enemy extends Ship {
 
     private Vector2 v0 = new Vector2();
-    public Enemy(ArrowPool arrowPool, Rect worldBounds, ExplosionPool explosionPool) {
-        super(arrowPool, worldBounds, explosionPool);
+    public Enemy(ArrowPool arrowPool, Rect worldBounds, ExplosionPool explosionPool, Sound sound) {
+        super(arrowPool, worldBounds, explosionPool, sound);
         this.v.set(v0);
     }
 
