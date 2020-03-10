@@ -65,7 +65,7 @@ public class GameScreen extends BaseScreen {
         wave = new Wave[WAVE_COUNT];
         for (int i = 0; i <wave.length ; i++) {
             // wave[i] = new Wave(waveRegion, Rnd.nextFloat(0.005f,-0.005f),Rnd.nextFloat(0.1f,-0.1f),0.1f);
-            wave[i] = new Wave(waveRegion, 0.004f,0.06f,WAVE_HEIGHT);
+            wave[i] = new Wave(waveRegion, 0f,0.07f,WAVE_HEIGHT);
         }
         arrowPool = new ArrowPool();
         mainShip = new MainShip(atlasShip,arrowPool);
@@ -127,9 +127,11 @@ public class GameScreen extends BaseScreen {
         background.resize(worldBounds);
         for (int i = 0; i <waveBg.length ; i++) {
             if (i==1){
-                waveBg[i].resize(worldBounds,1f);
-            }else
-            waveBg[i].resize(worldBounds);
+                waveBg[i].resize(worldBounds,0.4f);
+            }else if (i==2){
+                waveBg[i].resize(worldBounds,1.2f);
+            }else waveBg[i].resize(worldBounds);
+
         }
         for (Wave w: wave){
             w.resize(worldBounds);

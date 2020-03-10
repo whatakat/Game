@@ -1,5 +1,6 @@
 package com.mygdx.game.sprite;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.base.Sprite;
@@ -33,6 +34,6 @@ public class Wave extends Sprite {
         if (getRight()<worldBounds.getLeft())setLeft(worldBounds.getRight());
         if (getLeft()>worldBounds.getRight())setRight(worldBounds.getLeft());
         if (getTop()<worldBounds.getBottom())setBottom(worldBounds.getTop());
-        if (getBottom()>worldBounds.getTop())setTop(worldBounds.getBottom());
+        if (getBottom()>worldBounds.getTop()) setTop(worldBounds.getBottom());
     }
 }
