@@ -74,7 +74,7 @@ public class GameScreen extends BaseScreen {
         arrowPool = new ArrowPool();
         explosionPool = new ExplosionPool(atlas,explosionSound);
         mainShip = new MainShip(atlasShip,arrowPool,explosionPool);
-        enemyPool = new EnemyPool(arrowPool,worldBounds);
+        enemyPool = new EnemyPool(arrowPool,worldBounds,explosionPool);
         enemiesEmitter = new EnemiesEmitter(worldBounds,enemyPool,atlas);
 
     }
