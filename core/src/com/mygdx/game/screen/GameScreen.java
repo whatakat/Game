@@ -40,6 +40,8 @@ public class GameScreen extends BaseScreen {
     private EnemiesEmitter enemiesEmitter;
     private Music music;
     private Sound explosionSound;
+    private Sound arrowSound;
+    private Sound enemyBulletSound;
 
 
     public GameScreen(Game game) {
@@ -55,6 +57,8 @@ public class GameScreen extends BaseScreen {
         background = new Background(new TextureRegion(bg));
         music = Gdx.audio.newMusic(Gdx.files.internal("sounds/myBoat.mp3"));
         explosionSound = Gdx.audio.newSound(Gdx.files.internal("sounds/arrowSh.wav"));
+        arrowSound = Gdx.audio.newSound(Gdx.files.internal("sounds/arrow.wav"));
+        enemyBulletSound = Gdx.audio.newSound(Gdx.files.internal("sounds/enemySh.wav"));
         music.setLooping(true);
         music.play();
 
@@ -73,8 +77,8 @@ public class GameScreen extends BaseScreen {
         }
         arrowPool = new ArrowPool();
         explosionPool = new ExplosionPool(atlas,explosionSound);
-        mainShip = new MainShip(atlasShip,arrowPool,explosionPool);
-        enemyPool = new EnemyPool(arrowPool,worldBounds,explosionPool);
+        mainShip = new MainShip(atlasShip,arrowPool,explosionPool,arrowSound);
+        enemyPool = new EnemyPool(arrowPool,worldBounds,explosionPool,enemyBulletSound);
         enemiesEmitter = new EnemiesEmitter(worldBounds,enemyPool,atlas);
 
     }
@@ -154,6 +158,8 @@ public class GameScreen extends BaseScreen {
         explosionPool.dispose();
         music.dispose();
         explosionSound.dispose();
+        arrowSound.dispose();
+        enemyBulletSound.dispose();
         super.dispose();
     }
 
