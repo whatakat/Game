@@ -58,7 +58,7 @@ public class GameScreen extends BaseScreen {
         music = Gdx.audio.newMusic(Gdx.files.internal("sounds/myBoat.mp3"));
         explosionSound = Gdx.audio.newSound(Gdx.files.internal("sounds/arrowSh.wav"));
         arrowSound = Gdx.audio.newSound(Gdx.files.internal("sounds/arrow.wav"));
-        enemyBulletSound = Gdx.audio.newSound(Gdx.files.internal("sounds/enemySh.wav"));
+        enemyBulletSound = Gdx.audio.newSound(Gdx.files.internal("sounds/SonarPing.wav"));
         music.setLooping(true);
         music.play();
 

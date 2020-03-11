@@ -11,7 +11,7 @@ import com.mygdx.game.sprite.Enemy;
 public class EnemiesEmitter {
 
     private static final float ENEMY_SMALL_HEIGHT = 0.2f;
-    private static final float ENEMY_SMALL_ARROW_HEIGHT = 0.1f;
+    private static final float ENEMY_SMALL_ARROW_HEIGHT = 0.4f;
     private static final float ENEMY_SMALL_ARROW_VY = -0.6f;
     private static final int ENEMY_SMALL_ARROW_DAMAGE = 1;
     private static final float ENEMY_SMALL_RELOAD_INTERVAL = 14f;
@@ -23,7 +23,7 @@ public class EnemiesEmitter {
 
     private TextureRegion[] enemySmallRegion;
 
-    private Vector2 enemySmallV = new Vector2(0f,-0.2f);
+    private Vector2 enemySmallV = new Vector2(0f,-0.15f);
 
     private TextureRegion arrowRegion;
 
