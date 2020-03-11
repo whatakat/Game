@@ -15,6 +15,22 @@ public class EnemiesEmitter {
     private static final float ENEMY_SMALL_ARROW_VY = -0.6f;
     private static final int ENEMY_SMALL_ARROW_DAMAGE = 1;
     private static final float ENEMY_SMALL_RELOAD_INTERVAL = 14f;
+    private static final int ENEMY_SMALL_HP = 1;
+
+    private static final float ENEMY_MEDIUM_HEIGHT = 0.2f;
+    private static final float ENEMY_MEDIUM_ARROW_HEIGHT = 0.4f;
+    private static final float ENEMY_MEDIUM_ARROW_VY = -0.6f;
+    private static final int ENEMY_MEDIUM_ARROW_DAMAGE = 1;
+    private static final float ENEMY_MEDIUM_RELOAD_INTERVAL = 14f;
+    private static final int ENEMY_MEDIUM_HP = 5;
+
+    private static final float ENEMY_BIG_HEIGHT = 0.2f;
+    private static final float ENEMY_BIG_ARROW_HEIGHT = 0.4f;
+    private static final float ENEMY_BIG_ARROW_VY = -0.6f;
+    private static final int ENEMY_BIG_ARROW_DAMAGE = 1;
+    private static final float ENEMY_BIG_RELOAD_INTERVAL = 14f;
+    private static final int ENEMY_BIG_HP = 20;
+
 
     private Rect worldBounds;
 
@@ -24,6 +40,8 @@ public class EnemiesEmitter {
     private TextureRegion[] enemySmallRegion;
 
     private Vector2 enemySmallV = new Vector2(0f,-0.15f);
+    private Vector2 enemyMediumV = new Vector2(0f,-0.05f);
+    private Vector2 enemyBigV = new Vector2(0f,-0.005f);
 
     private TextureRegion arrowRegion;
 
