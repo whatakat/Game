@@ -22,7 +22,7 @@ public class MainShip extends Ship {
      * param reloadInterval for auto shooting
      * */
     public MainShip(TextureAtlas atlas, ArrowPool arrowPool, ExplosionPool explosionPool, Sound sound) {
-        super(atlas.findRegion("Hero"),1,1,1,sound);
+        super(atlas.findRegion("hero"),1,1,1,sound);
         setHeightProportion(SHIP_HEIGHT);
         this.arrowPool = arrowPool;
         this.arrowRegion = atlas.findRegion("gArrow");

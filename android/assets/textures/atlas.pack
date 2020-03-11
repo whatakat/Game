@@ -5,224 +5,84 @@ filter: MipMapLinearNearest,Linear
 repeat: none
 background_ocean
   rotate: false
-  xy: 1, 967
+  xy: 1, 910
   size: 2280, 1080
   orig: 2280, 1080
   offset: 0, 0
   index: -1
 exit
   rotate: false
-  xy: 1, 60
+  xy: 1, 1
   size: 1241, 907
   orig: 1241, 907
   offset: 0, 0
   index: -1
 shark
   rotate: false
-  xy: 2283, 1023
+  xy: 2283, 966
   size: 1024, 1024
   orig: 1024, 1024
   offset: 0, 0
   index: -1
 play
   rotate: false
-  xy: 1244, 210
+  xy: 1244, 151
   size: 912, 757
   orig: 912, 757
   offset: 0, 0
   index: -1
+echo
+  rotate: false
+  xy: 3309, 1580
+  size: 409, 410
+  orig: 409, 410
+  offset: 0, 0
+  index: -1
 boatEnemy
   rotate: false
-  xy: 3309, 1601
+  xy: 3309, 1132
   size: 170, 446
   orig: 170, 446
   offset: 0, 0
   index: -1
-Hero
+hero
   rotate: false
-  xy: 2158, 617
+  xy: 2158, 558
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
-Hero10
+sharkSmall
   rotate: false
-  xy: 2158, 617
-  size: 120, 350
-  orig: 120, 350
-  offset: 0, 0
-  index: -1
-Hero1
-  rotate: false
-  xy: 3309, 1251
-  size: 120, 350
-  orig: 120, 350
-  offset: 0, 0
-  index: -1
-Hero2
-  rotate: false
-  xy: 3481, 1697
-  size: 120, 350
-  orig: 120, 350
-  offset: 0, 0
-  index: -1
-Hero3
-  rotate: false
-  xy: 2158, 267
-  size: 120, 350
-  orig: 120, 350
-  offset: 0, 0
-  index: -1
-Hero4
-  rotate: false
-  xy: 3603, 1697
-  size: 120, 350
-  orig: 120, 350
-  offset: 0, 0
-  index: -1
-Hero5
-  rotate: false
-  xy: 3725, 1697
-  size: 120, 350
-  orig: 120, 350
-  offset: 0, 0
-  index: -1
-Hero6
-  rotate: false
-  xy: 3847, 1697
-  size: 120, 350
-  orig: 120, 350
-  offset: 0, 0
-  index: -1
-Hero7
-  rotate: false
-  xy: 3969, 1697
-  size: 120, 350
-  orig: 120, 350
-  offset: 0, 0
-  index: -1
-Hero8
-  rotate: false
-  xy: 3431, 1251
-  size: 120, 350
-  orig: 120, 350
-  offset: 0, 0
-  index: -1
-eW
-  rotate: false
-  xy: 3309, 1052
-  size: 202, 199
-  orig: 202, 199
-  offset: 0, 0
-  index: -1
-Hero9
-  rotate: false
-  xy: 3553, 1347
-  size: 120, 350
-  orig: 120, 350
+  xy: 3720, 1786
+  size: 204, 204
+  orig: 204, 204
   offset: 0, 0
   index: -1
 eWave
   rotate: false
-  xy: 1244, 98
+  xy: 1244, 37
   size: 183, 112
   orig: 183, 112
-  offset: 0, 0
-  index: -1
-eWave1
-  rotate: false
-  xy: 3675, 1585
-  size: 183, 112
-  orig: 183, 112
-  offset: 0, 0
-  index: -1
-eWave10
-  rotate: false
-  xy: 1429, 98
-  size: 183, 112
-  orig: 183, 112
-  offset: 0, 0
-  index: -1
-eWave2
-  rotate: false
-  xy: 3675, 1473
-  size: 183, 112
-  orig: 183, 112
-  offset: 0, 0
-  index: -1
-eWave3
-  rotate: false
-  xy: 3860, 1585
-  size: 183, 112
-  orig: 183, 112
-  offset: 0, 0
-  index: -1
-eWave4
-  rotate: false
-  xy: 1614, 98
-  size: 183, 112
-  orig: 183, 112
-  offset: 0, 0
-  index: -1
-eWave5
-  rotate: false
-  xy: 3675, 1361
-  size: 183, 112
-  orig: 183, 112
-  offset: 0, 0
-  index: -1
-eWave6
-  rotate: false
-  xy: 3860, 1473
-  size: 183, 112
-  orig: 183, 112
-  offset: 0, 0
-  index: -1
-eWave7
-  rotate: false
-  xy: 1799, 98
-  size: 183, 112
-  orig: 183, 112
-  offset: 0, 0
-  index: -1
-eWave8
-  rotate: false
-  xy: 3860, 1361
-  size: 183, 112
-  orig: 183, 112
-  offset: 0, 0
-  index: -1
-eWave9
-  rotate: false
-  xy: 1984, 98
-  size: 183, 112
-  orig: 183, 112
-  offset: 0, 0
-  index: -1
-bulletEnemy
-  rotate: false
-  xy: 3513, 1133
-  size: 51, 118
-  orig: 51, 118
   offset: 0, 0
   index: -1
 ic_shark
   rotate: false
-  xy: 1, 0
+  xy: 3309, 1070
   size: 92, 60
   orig: 92, 60
   offset: 0, 0
   index: -1
 dolphin
   rotate: false
-  xy: 4045, 1592
+  xy: 3481, 1473
   size: 45, 105
   orig: 45, 105
   offset: 0, 0
   index: -1
 gArrow
   rotate: false
-  xy: 3481, 1614
+  xy: 2158, 473
   size: 32, 83
   orig: 32, 83
   offset: 0, 0

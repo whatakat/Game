@@ -32,9 +32,9 @@ public class EnemiesEmitter {
     public EnemiesEmitter(Rect worldBounds, EnemyPool enemyPool, TextureAtlas atlas) {
         this.worldBounds = worldBounds;
         this.enemyPool = enemyPool;
-        TextureRegion textureRegion0 = atlas.findRegion("boatEnemy");
+        TextureRegion textureRegion0 = atlas.findRegion("sharkSmall");
         this.enemySmallRegion = Regions.split(textureRegion0,1,1,1);
-        this.arrowRegion = atlas.findRegion("bulletEnemy");
+        this.arrowRegion = atlas.findRegion("echo");
     }
     public void generateEnemies(float delta){
         generateTimer+=delta;

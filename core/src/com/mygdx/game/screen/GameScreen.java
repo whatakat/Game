@@ -22,7 +22,7 @@ import com.mygdx.game.sprite.WaveBg;
 import com.mygdx.game.utils.EnemiesEmitter;
 
 public class GameScreen extends BaseScreen {
-    private static final int WAVE_COUNT = 250;
+    private static final int WAVE_COUNT = 4;
     private static final int WAVEBG_COUNT = 3;
     private static final float WAVE_HEIGHT = 0.25f;
     private float SPEED_WAVE = 0.03f;
@@ -68,8 +68,7 @@ public class GameScreen extends BaseScreen {
         for (int i = 0; i <waveBg.length ; i++) {
             waveBg[i] = new WaveBg(waveBgRegion,0f,SPEED_WAVE,1f);
         }
-        atlasShip = new TextureAtlas("textures/ship.pack");
-        TextureRegion waveRegion = atlas.findRegion("eWave3");
+        TextureRegion waveRegion = atlas.findRegion("eWave");
         wave = new Wave[WAVE_COUNT];
         for (int i = 0; i <wave.length ; i++) {
             // wave[i] = new Wave(waveRegion, Rnd.nextFloat(0.005f,-0.005f),Rnd.nextFloat(0.1f,-0.1f),0.1f);
@@ -77,7 +76,7 @@ public class GameScreen extends BaseScreen {
         }
         arrowPool = new ArrowPool();
         explosionPool = new ExplosionPool(atlas,explosionSound);
-        mainShip = new MainShip(atlasShip,arrowPool,explosionPool,arrowSound);
+        mainShip = new MainShip(atlas,arrowPool,explosionPool,arrowSound);
         enemyPool = new EnemyPool(arrowPool,worldBounds,explosionPool,enemyBulletSound);
         enemiesEmitter = new EnemiesEmitter(worldBounds,enemyPool,atlas);
 
@@ -152,7 +151,6 @@ public class GameScreen extends BaseScreen {
     public void dispose() {
         bg.dispose();
         atlas.dispose();
-        atlasShip.dispose();
         arrowPool.dispose();
         enemyPool.dispose();
         explosionPool.dispose();
