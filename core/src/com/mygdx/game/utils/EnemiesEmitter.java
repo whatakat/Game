@@ -12,9 +12,9 @@ public class EnemiesEmitter {
 
     private static final float ENEMY_SMALL_HEIGHT = 0.2f;
     private static final float ENEMY_SMALL_ARROW_HEIGHT = 0.1f;
-    private static final float ENEMY_SMALL_ARROW_VY = -0.1f;
+    private static final float ENEMY_SMALL_ARROW_VY = -0.4f;
     private static final int ENEMY_SMALL_ARROW_DAMAGE = 1;
-    private static final float ENEMY_SMALL_RELOAD_INTERVAL = 0.1f;
+    private static final float ENEMY_SMALL_RELOAD_INTERVAL = 14f;
 
     private Rect worldBounds;
 
