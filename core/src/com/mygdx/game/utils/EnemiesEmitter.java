@@ -38,6 +38,8 @@ public class EnemiesEmitter {
     private float generateTimer;
 
     private TextureRegion[] enemySmallRegion;
+    private TextureRegion[] enemyMediumRegion;
+    private TextureRegion[] enemyBigRegion;
 
     private Vector2 enemySmallV = new Vector2(0f,-0.15f);
     private Vector2 enemyMediumV = new Vector2(0f,-0.05f);
@@ -52,6 +54,10 @@ public class EnemiesEmitter {
         this.enemyPool = enemyPool;
         TextureRegion textureRegion0 = atlas.findRegion("sharkSmall");
         this.enemySmallRegion = Regions.split(textureRegion0,1,1,1);
+        TextureRegion textureRegion1 = atlas.findRegion("sharkMedium");
+        this.enemyMediumRegion = Regions.split(textureRegion1,1,1,1);
+        TextureRegion textureRegion2 = atlas.findRegion("sharkMedium");
+        this.enemyBigRegion = Regions.split(textureRegion2,1,1,1);
         this.arrowRegion = atlas.findRegion("echo");
     }
     public void generateEnemies(float delta){

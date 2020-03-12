@@ -38,9 +38,16 @@ echo
   orig: 409, 410
   offset: 0, 0
   index: -1
+sharkMedium
+  rotate: false
+  xy: 3309, 1169
+  size: 406, 409
+  orig: 406, 409
+  offset: 0, 0
+  index: -1
 boatEnemy
   rotate: false
-  xy: 3309, 1132
+  xy: 3720, 1544
   size: 170, 446
   orig: 170, 446
   offset: 0, 0
@@ -54,7 +61,7 @@ hero
   index: -1
 sharkSmall
   rotate: false
-  xy: 3720, 1786
+  xy: 3309, 963
   size: 204, 204
   orig: 204, 204
   offset: 0, 0
@@ -68,21 +75,21 @@ eWave
   index: -1
 ic_shark
   rotate: false
-  xy: 3309, 1070
+  xy: 3892, 1930
   size: 92, 60
   orig: 92, 60
   offset: 0, 0
   index: -1
 dolphin
   rotate: false
-  xy: 3481, 1473
+  xy: 2158, 451
   size: 45, 105
   orig: 45, 105
   offset: 0, 0
   index: -1
 gArrow
   rotate: false
-  xy: 2158, 473
+  xy: 3515, 1084
   size: 32, 83
   orig: 32, 83
   offset: 0, 0
