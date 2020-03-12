@@ -34,7 +34,8 @@ public class Enemy extends Ship {
             float arrowVY,
             int arrowDamage,
             float reloadInterval,
-            float height
+            float height,
+            int hp
     ){
         this.regions = regions;
         this.v0.set(v0);
@@ -46,6 +47,7 @@ public class Enemy extends Ship {
         setHeightProportion(height);
         reloadTimer = reloadInterval;
         v.set(v0);
+        this.hp = hp;
 
 
     }
