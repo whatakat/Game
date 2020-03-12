@@ -40,7 +40,7 @@ public class GameScreen extends BaseScreen {
     private Music music;
     private Sound explosionSound;
     private Sound arrowSound;
-    private Sound enemyBulletSound;
+    private Sound enemySonarSound;
 
 
     public GameScreen(Game game) {
@@ -57,7 +57,7 @@ public class GameScreen extends BaseScreen {
         music = Gdx.audio.newMusic(Gdx.files.internal("sounds/myBoat.mp3"));
         explosionSound = Gdx.audio.newSound(Gdx.files.internal("sounds/arrowSh.wav"));
         arrowSound = Gdx.audio.newSound(Gdx.files.internal("sounds/arrow.wav"));
-        enemyBulletSound = Gdx.audio.newSound(Gdx.files.internal("sounds/SonarPing.wav"));
+        enemySonarSound = Gdx.audio.newSound(Gdx.files.internal("sounds/SonarPing.wav"));
         music.setLooping(true);
         music.play();
 
@@ -69,7 +69,7 @@ public class GameScreen extends BaseScreen {
         }
         arrowPool = new ArrowPool();
         explosionPool = new ExplosionPool(atlas,explosionSound);
-        enemyPool = new EnemyPool(arrowPool,worldBounds,explosionPool,enemyBulletSound);
+        enemyPool = new EnemyPool(arrowPool,worldBounds,explosionPool,enemySonarSound);
         enemiesEmitter = new EnemiesEmitter(worldBounds,enemyPool,atlas);
         TextureRegion waveRegion = atlas.findRegion("eWave");
         wave = new Wave[WAVE_COUNT];
@@ -157,7 +157,7 @@ public class GameScreen extends BaseScreen {
         music.dispose();
         explosionSound.dispose();
         arrowSound.dispose();
-        enemyBulletSound.dispose();
+        enemySonarSound.dispose();
         super.dispose();
     }
 
