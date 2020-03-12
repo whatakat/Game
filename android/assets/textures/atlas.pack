@@ -3,7 +3,7 @@ atlas.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-over
+overG
   rotate: false
   xy: 0, 1892
   size: 2048, 2048
