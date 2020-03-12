@@ -10,23 +10,39 @@ import com.mygdx.game.pools.ExplosionPool;
 
 public class Enemy extends Ship {
 
+    private enum State{DESCENT,FIGHT}
+    private State state;
+
     private Vector2 v0 = new Vector2();
+    private Vector2 descentV = new Vector2(0,-0.5f);
     public Enemy(ArrowPool arrowPool, Rect worldBounds, ExplosionPool explosionPool, Sound sound) {
         super(arrowPool, worldBounds, explosionPool, sound);
         this.v.set(v0);
+        this.state = State.DESCENT;
+        this.v.set(descentV);
     }
 
     @Override
     public void update(float delta) {
         super.update(delta);
         pos.mulAdd(v,delta);
-        reloadTimer +=delta;
-        if (reloadTimer>=reloadInterval){
-            reloadTimer = 0f;
-            shoot();
-        }
-        if (getBottom()<worldBounds.getBottom()){
-            destroy();
+        switch (state){
+            case DESCENT:
+            if(getTop() <= worldBounds.getTop()){
+                v.set(v0);
+                state=State.FIGHT;
+            }
+            break;
+            case FIGHT:
+                reloadTimer +=delta;
+                if (reloadTimer>=reloadInterval){
+                    reloadTimer = 0f;
+                    shoot();
+                }
+                if (getTop()<worldBounds.getBottom()){
+                    destroy();
+                }
+                break;
         }
     }
     public void set(
@@ -49,7 +65,8 @@ public class Enemy extends Ship {
         this.reloadInterval = reloadInterval;
         setHeightProportion(height);
         reloadTimer = reloadInterval;
-        v.set(v0);
+        this.v.set(descentV);
+        this.state = State.DESCENT;
         this.hp = hp;
 
 
