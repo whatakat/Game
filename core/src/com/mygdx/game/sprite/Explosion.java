@@ -1,16 +1,17 @@
 package com.mygdx.game.sprite;
 
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.base.Sprite;
 
 public class Explosion extends Sprite {
-    private Sound sound;
-    private float animateInterval = 0.30f;
+    private Music sound;
+    private float animateInterval = 0.03f;
     private float animateTimer;
 
-    public Explosion(TextureRegion region, int rows, int cols, int frames, Sound sound){
+    public Explosion(TextureRegion region, int rows, int cols, int frames, Music sound){
         super(region, rows, cols, frames);
         this.sound = sound;
     }

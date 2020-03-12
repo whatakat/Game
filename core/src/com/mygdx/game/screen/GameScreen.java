@@ -38,7 +38,7 @@ public class GameScreen extends BaseScreen {
     private ExplosionPool explosionPool;
     private EnemiesEmitter enemiesEmitter;
     private Music music;
-    private Sound explosionSound;
+    private Music explosionSound;
     private Sound arrowSound;
     private Sound enemySonarSound;
 
@@ -55,7 +55,7 @@ public class GameScreen extends BaseScreen {
         bg = new Texture("textures/background_okean.jpg");
         background = new Background(new TextureRegion(bg));
         music = Gdx.audio.newMusic(Gdx.files.internal("sounds/myBoat.mp3"));
-        explosionSound = Gdx.audio.newSound(Gdx.files.internal("sounds/arrowSh.wav"));
+        explosionSound = Gdx.audio.newMusic(Gdx.files.internal("sounds/shark_water.mp3"));
         arrowSound = Gdx.audio.newSound(Gdx.files.internal("sounds/arrow.wav"));
         enemySonarSound = Gdx.audio.newSound(Gdx.files.internal("sounds/SonarPing.wav"));
         music.setLooping(true);

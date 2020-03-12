@@ -1,95 +1,102 @@
 
 atlas.png
 format: RGBA8888
-filter: MipMapLinearNearest,Linear
+filter: Nearest,Nearest
 repeat: none
+over
+  rotate: false
+  xy: 0, 1892
+  size: 2048, 2048
+  orig: 2048, 2048
+  offset: 0, 0
+  index: -1
 background_ocean
   rotate: false
-  xy: 1, 910
+  xy: 0, 812
   size: 2280, 1080
   orig: 2280, 1080
   offset: 0, 0
   index: -1
-exit
-  rotate: false
-  xy: 1, 1
-  size: 1241, 907
-  orig: 1241, 907
-  offset: 0, 0
-  index: -1
 shark
   rotate: false
-  xy: 2283, 966
+  xy: 2048, 2916
   size: 1024, 1024
   orig: 1024, 1024
   offset: 0, 0
   index: -1
 play
   rotate: false
-  xy: 1244, 151
-  size: 912, 757
-  orig: 912, 757
+  xy: 0, 397
+  size: 500, 415
+  orig: 500, 415
   offset: 0, 0
   index: -1
 echo
   rotate: false
-  xy: 3309, 1580
+  xy: 2048, 2506
   size: 409, 410
   orig: 409, 410
   offset: 0, 0
   index: -1
 sharkMedium
   rotate: false
-  xy: 3309, 1169
+  xy: 3072, 3531
   size: 406, 409
   orig: 406, 409
   offset: 0, 0
   index: -1
+exit
+  rotate: false
+  xy: 0, 105
+  size: 400, 292
+  orig: 400, 292
+  offset: 0, 0
+  index: -1
 boatEnemy
   rotate: false
-  xy: 3720, 1544
+  xy: 2048, 2060
   size: 170, 446
   orig: 170, 446
   offset: 0, 0
   index: -1
 hero
   rotate: false
-  xy: 2158, 558
+  xy: 500, 462
   size: 120, 350
   orig: 120, 350
   offset: 0, 0
   index: -1
 sharkSmall
   rotate: false
-  xy: 3309, 963
+  xy: 2457, 2712
   size: 204, 204
   orig: 204, 204
   offset: 0, 0
   index: -1
 eWave
   rotate: false
-  xy: 1244, 37
+  xy: 3072, 3419
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
 ic_shark
   rotate: false
-  xy: 3892, 1930
+  xy: 3478, 3880
   size: 92, 60
   orig: 92, 60
   offset: 0, 0
   index: -1
 dolphin
   rotate: false
-  xy: 2158, 451
+  xy: 0, 0
   size: 45, 105
   orig: 45, 105
   offset: 0, 0
   index: -1
 gArrow
   rotate: false
-  xy: 3515, 1084
+  xy: 400, 314
   size: 32, 83
   orig: 32, 83
   offset: 0, 0

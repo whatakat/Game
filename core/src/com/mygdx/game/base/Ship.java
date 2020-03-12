@@ -53,6 +53,6 @@ public class Ship extends Sprite {
     }
     protected void death(){
         Explosion explosion = explosionPool.obtain();
-        explosion.set(getHeight()*(float) 1.5,pos);
+        explosion.set(getHeight(),pos);
     }
 }
