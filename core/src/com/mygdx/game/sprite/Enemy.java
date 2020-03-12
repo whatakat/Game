@@ -25,6 +25,9 @@ public class Enemy extends Ship {
             reloadTimer = 0f;
             shoot();
         }
+        if (getBottom()<worldBounds.getBottom()){
+            destroy();
+        }
     }
     public void set(
             TextureRegion[] regions,
