@@ -22,9 +22,9 @@ import com.mygdx.game.sprite.WaveBg;
 import com.mygdx.game.utils.EnemiesEmitter;
 
 public class GameScreen extends BaseScreen {
-    private static final int WAVE_COUNT = 250;
+    private static final int WAVE_COUNT = 300;
     private static final int WAVEBG_COUNT = 3;
-    private static final float WAVE_HEIGHT = 0.3f;
+    private static final float WAVE_HEIGHT = 0.25f;
     private float SPEED_WAVE = 0.03f;
 
     private Background background;
