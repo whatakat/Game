@@ -24,6 +24,8 @@ public class Ship extends Sprite {
 
     protected float reloadInterval;
     protected float reloadTimer;
+
+    protected int hp;
     protected Sound shootSound;
 
 
