@@ -9,6 +9,7 @@ import com.mygdx.game.math.Rect;
 import com.mygdx.game.pools.ArrowPool;
 import com.mygdx.game.pools.ExplosionPool;
 import com.mygdx.game.sprite.Arrow;
+import com.mygdx.game.sprite.Explosion;
 
 public class Ship extends Sprite {
     protected Vector2 v = new Vector2();
@@ -49,5 +50,9 @@ public class Ship extends Sprite {
         Arrow arrow = arrowPool.obtain();
         arrow.set(this,arrowRegion,pos, arrowV, arrowHeight,arrow,arrowDamage);
         shootSound.play();
+    }
+    protected void death(){
+        Explosion explosion = explosionPool.obtain();
+        explosion.set(getHeight()*(float) 1.5,pos);
     }
 }
