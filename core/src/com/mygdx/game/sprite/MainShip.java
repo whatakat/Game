@@ -31,6 +31,7 @@ public class MainShip extends Ship {
         this.arrowDamage = 1;
         this.reloadInterval = 1000f;
         this.explosionPool = explosionPool;
+        this.hp = 100;
 
     }
 
