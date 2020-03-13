@@ -69,7 +69,11 @@ public class Enemy extends Ship {
         this.v.set(descentV);
         this.state = State.DESCENT;
         this.hp = hp;
-
-
+    }
+    public boolean isArrowCollision(Rect arrow){
+        return !(arrow.getRight()<getLeft()
+                ||arrow.getLeft()>getRight()
+                ||arrow.getBottom()>getTop()
+                ||arrow.getTop()<pos.y);
     }
 }
