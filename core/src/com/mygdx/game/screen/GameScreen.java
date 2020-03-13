@@ -15,11 +15,14 @@ import com.mygdx.game.pools.ArrowPool;
 import com.mygdx.game.pools.EnemyPool;
 import com.mygdx.game.pools.ExplosionPool;
 import com.mygdx.game.sprite.Background;
+import com.mygdx.game.sprite.Enemy;
 import com.mygdx.game.sprite.Explosion;
 import com.mygdx.game.sprite.MainShip;
 import com.mygdx.game.sprite.Wave;
 import com.mygdx.game.sprite.WaveBg;
 import com.mygdx.game.utils.EnemiesEmitter;
+
+import java.util.List;
 
 public class GameScreen extends BaseScreen {
     private static final int WAVE_COUNT = 300;
@@ -120,6 +123,17 @@ public class GameScreen extends BaseScreen {
     }
 
     public void checkCollisions(){
+        List<Enemy> enemyList = enemyPool.getActiveObjects();
+        for (Enemy enemy: enemyList){
+            if (enemy.isDestroyed()){
+                continue;
+            }
+            float minDist = enemy.getHalfWidth()+mainShip.getHalfWidth();
+            if (enemy.pos.dst2(mainShip.pos)< minDist*minDist){
+                enemy.destroy();
+                return;
+            }
+        }
 
     }
     public void deleteAllDestroyed(){
