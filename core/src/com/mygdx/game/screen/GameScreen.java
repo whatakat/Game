@@ -144,7 +144,7 @@ public class GameScreen extends BaseScreen {
                 if (arrow.getOwner() != mainShip || arrow.isDestroyed()){
                     continue;
                 }
-                if (!arrow.isOutside(enemy)){
+                if (enemy.isArrowCollision(arrow)){
                     enemy.damage(arrow.getDamage());
                     arrow.destroy();
                 }
