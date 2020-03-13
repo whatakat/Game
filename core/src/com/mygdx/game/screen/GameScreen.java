@@ -14,6 +14,7 @@ import com.mygdx.game.math.Rect;
 import com.mygdx.game.pools.ArrowPool;
 import com.mygdx.game.pools.EnemyPool;
 import com.mygdx.game.pools.ExplosionPool;
+import com.mygdx.game.sprite.Arrow;
 import com.mygdx.game.sprite.Background;
 import com.mygdx.game.sprite.Enemy;
 import com.mygdx.game.sprite.Explosion;
@@ -133,6 +134,22 @@ public class GameScreen extends BaseScreen {
                 enemy.destroy();
                 return;
             }
+        }
+        List<Arrow> arrowList = arrowPool.getActiveObjects();
+        for (Enemy enemy: enemyList){
+            if (enemy.isDestroyed()){
+                continue;
+            }
+            for (Arrow arrow: arrowList){
+                if (arrow.getOwner() != mainShip || arrow.isDestroyed()){
+                    continue;
+                }
+                if (!arrow.isOutside(enemy)){
+                    enemy.damage(arrow.getDamage());
+                    arrow.destroy();
+                }
+            }
+
         }
 
     }

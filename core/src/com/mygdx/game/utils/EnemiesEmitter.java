@@ -53,11 +53,11 @@ public class EnemiesEmitter {
         this.worldBounds = worldBounds;
         this.enemyPool = enemyPool;
         TextureRegion textureRegion0 = atlas.findRegion("sharkSmall");
-        this.enemySmallRegion = Regions.split(textureRegion0,1,1,1);
+        this.enemySmallRegion = Regions.split(textureRegion0,1,2,2);
         TextureRegion textureRegion1 = atlas.findRegion("sharkMedium");
-        this.enemyMediumRegion = Regions.split(textureRegion1,1,1,1);
+        this.enemyMediumRegion = Regions.split(textureRegion1,1,2,2);
         TextureRegion textureRegion2 = atlas.findRegion("sharkMedium");
-        this.enemyBigRegion = Regions.split(textureRegion2,1,1,1);
+        this.enemyBigRegion = Regions.split(textureRegion2,1,2,2);
         this.arrowRegion = atlas.findRegion("echo");
     }
     public void generateEnemies(float delta){
