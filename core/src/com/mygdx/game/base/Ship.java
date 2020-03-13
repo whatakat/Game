@@ -12,6 +12,10 @@ import com.mygdx.game.sprite.Arrow;
 import com.mygdx.game.sprite.Explosion;
 
 public class Ship extends Sprite {
+
+    private static final float DAMAGE_ANIMATE_INTERVAL = 0.1f;
+    private float damageAnimateTimer = DAMAGE_ANIMATE_INTERVAL;
+
     protected Vector2 v = new Vector2();
     protected Rect worldBounds;
 
@@ -34,7 +38,17 @@ public class Ship extends Sprite {
         super(region, rows, cols, frames);
         this.shootSound = sound;
     }
-    public Ship(ArrowPool arrowPool, Rect worldBounds, ExplosionPool explosionPool,Sound sound) {
+
+    @Override
+    public void update(float delta) {
+        super.update(delta);
+        damageAnimateTimer +=delta;
+        if (damageAnimateTimer>=DAMAGE_ANIMATE_INTERVAL){
+            frame = 0;
+        }
+    }
+
+    public Ship(ArrowPool arrowPool, Rect worldBounds, ExplosionPool explosionPool, Sound sound) {
         this.arrowPool = arrowPool;
         this.worldBounds = worldBounds;
         this.explosionPool = explosionPool;
@@ -51,8 +65,12 @@ public class Ship extends Sprite {
         arrow.set(this,arrowRegion,pos, arrowV, arrowHeight,arrow,arrowDamage);
         shootSound.play();
     }
-    protected void death(){
+    public void death(){
         Explosion explosion = explosionPool.obtain();
         explosion.set(getHeight(),pos);
+    }
+    public void damage(int damage){
+        frame = 1;
+        damageAnimateTimer = 0f;
     }
 }
