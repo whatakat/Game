@@ -73,6 +73,7 @@ public class GameScreen extends BaseScreen {
         }
         arrowPool = new ArrowPool();
         explosionPool = new ExplosionPool(atlas,explosionSound);
+        mainShip = new MainShip(atlas,arrowPool,explosionPool,arrowSound);
         enemyPool = new EnemyPool(arrowPool,worldBounds,explosionPool, mainShip, enemySonarSound);
         enemiesEmitter = new EnemiesEmitter(worldBounds,enemyPool,atlas);
         TextureRegion waveRegion = atlas.findRegion("eWave");
@@ -81,8 +82,6 @@ public class GameScreen extends BaseScreen {
             // wave[i] = new Wave(waveRegion, Rnd.nextFloat(0.005f,-0.005f),Rnd.nextFloat(0.1f,-0.1f),0.1f);
             wave[i] = new Wave(waveRegion, 0f,0.07f,WAVE_HEIGHT);
         }
-        mainShip = new MainShip(atlas,arrowPool,explosionPool,arrowSound);
-
 
     }
 

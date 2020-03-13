@@ -16,7 +16,7 @@ public class Enemy extends Ship {
     private State state;
 
     private Vector2 v0 = new Vector2();
-    private Vector2 descentV = new Vector2(0,-0.5f);
+    private Vector2 descentV = new Vector2(0,-0.3f);
     public Enemy(ArrowPool arrowPool, Rect worldBounds, ExplosionPool explosionPool,MainShip mainShip, Sound sound) {
         super(arrowPool, worldBounds, explosionPool, sound);
         this.v.set(v0);
@@ -43,7 +43,7 @@ public class Enemy extends Ship {
                     shoot();
                 }
                 if (getBottom()<worldBounds.getBottom()){
-                   // mainShip.damage(arrowDamage);
+                    mainShip.damage(arrowDamage);
                     death();
                     destroy();
                 }
