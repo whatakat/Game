@@ -11,15 +11,18 @@ import com.mygdx.game.pools.ExplosionPool;
 public class Enemy extends Ship {
 
     private enum State{DESCENT,FIGHT}
+
+    private MainShip mainShip;
     private State state;
 
     private Vector2 v0 = new Vector2();
     private Vector2 descentV = new Vector2(0,-0.5f);
-    public Enemy(ArrowPool arrowPool, Rect worldBounds, ExplosionPool explosionPool, Sound sound) {
+    public Enemy(ArrowPool arrowPool, Rect worldBounds, ExplosionPool explosionPool,MainShip mainShip, Sound sound) {
         super(arrowPool, worldBounds, explosionPool, sound);
         this.v.set(v0);
         this.state = State.DESCENT;
         this.v.set(descentV);
+        this.mainShip = mainShip;
     }
 
     @Override
@@ -40,6 +43,7 @@ public class Enemy extends Ship {
                     shoot();
                 }
                 if (getBottom()<worldBounds.getBottom()){
+                   // mainShip.damage(arrowDamage);
                     death();
                     destroy();
                 }
