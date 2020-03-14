@@ -31,7 +31,7 @@ public class Ship extends Sprite {
     protected float reloadTimer;
 
     protected int hp;
-    protected Sound shootSound;
+    private Sound shootSound;
 
 
     public Ship(TextureRegion region, int rows, int cols, int frames, Sound sound) {
@@ -67,7 +67,7 @@ public class Ship extends Sprite {
     }
     protected void death(){
         Explosion explosion = explosionPool.obtain();
-        explosion.set(getHeight(),pos);
+        explosion.set(getHeight()-getHeight()/(float)3,pos);
     }
     public void damage(int damage){
         frame = 1;

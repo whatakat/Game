@@ -11,22 +11,22 @@ import com.mygdx.game.sprite.Enemy;
 public class EnemiesEmitter {
 
     private static final float ENEMY_SMALL_HEIGHT = 0.14f;
-    private static final float ENEMY_SMALL_ARROW_HEIGHT = 0.4f;
-    private static final float ENEMY_SMALL_ARROW_VY = -0.6f;
+    private static final float ENEMY_SMALL_ARROW_HEIGHT = 0.2f;
+    private static final float ENEMY_SMALL_ARROW_VY = -0.7f;
     private static final int ENEMY_SMALL_ARROW_DAMAGE = 1;
-    private static final float ENEMY_SMALL_RELOAD_INTERVAL = 3f;
+    private static final float ENEMY_SMALL_RELOAD_INTERVAL = 1f;
     private static final int ENEMY_SMALL_HP = 3;
 
     private static final float ENEMY_MEDIUM_HEIGHT = 0.3f;
     private static final float ENEMY_MEDIUM_ARROW_HEIGHT = 0.4f;
-    private static final float ENEMY_MEDIUM_ARROW_VY = -0.6f;
+    private static final float ENEMY_MEDIUM_ARROW_VY = -0.8f;
     private static final int ENEMY_MEDIUM_ARROW_DAMAGE = 1;
-    private static final float ENEMY_MEDIUM_RELOAD_INTERVAL = 3f;
+    private static final float ENEMY_MEDIUM_RELOAD_INTERVAL = 2f;
     private static final int ENEMY_MEDIUM_HP = 10;
 
     private static final float ENEMY_BIG_HEIGHT = 0.5f;
-    private static final float ENEMY_BIG_ARROW_HEIGHT = 0.4f;
-    private static final float ENEMY_BIG_ARROW_VY = -0.6f;
+    private static final float ENEMY_BIG_ARROW_HEIGHT = 0.6f;
+    private static final float ENEMY_BIG_ARROW_VY = -0.9f;
     private static final int ENEMY_BIG_ARROW_DAMAGE = 1;
     private static final float ENEMY_BIG_RELOAD_INTERVAL = 3f;
     private static final int ENEMY_BIG_HP = 20;
