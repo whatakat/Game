@@ -80,4 +80,7 @@ public class Enemy extends Ship {
                 ||arrow.getBottom()>getTop()
                 ||arrow.getTop()<pos.y);
     }
+    public void setVelocity(){
+        this.v.set(0,-0.02f);
+    }
 }

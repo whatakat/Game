@@ -14,7 +14,7 @@ public class Wave extends Sprite {
     public Wave(TextureRegion region, float vx, float vy, float height) {
         super(region);
         v.set(vx,vy);
-        setHeightProportion(height);
+        setHeightProportion(height*1.02f);
     }
 
     @Override
@@ -34,6 +34,7 @@ public class Wave extends Sprite {
         if (getRight()<worldBounds.getLeft())setLeft(worldBounds.getRight());
         if (getLeft()>worldBounds.getRight())setRight(worldBounds.getLeft());
         if (getTop()<worldBounds.getBottom())setBottom(worldBounds.getTop());
+
         if (getBottom()>worldBounds.getTop()) setTop(worldBounds.getBottom());
     }
 }
