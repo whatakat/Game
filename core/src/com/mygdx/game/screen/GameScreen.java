@@ -133,6 +133,7 @@ public class GameScreen extends BaseScreen {
                 enemy.destroy();
                 return;
             }
+
         }
         List<Arrow> arrowList = arrowPool.getActiveObjects();
         for (Arrow arrow: arrowList){
@@ -143,6 +144,13 @@ public class GameScreen extends BaseScreen {
                 mainShip.damage(arrow.getDamage());
                 arrow.destroy();
             }
+            for (Enemy enemy: enemyList){
+                if (mainShip.isArrowCollision(arrow)){
+                    enemy.setVelocity(0f,-0.2f);
+                }
+
+            }
+
         }
         for (Enemy enemy: enemyList){
             if (enemy.isDestroyed()){
@@ -157,9 +165,7 @@ public class GameScreen extends BaseScreen {
                     arrow.destroy();
                     enemy.setVelocity(0f,-0.03f);//I have change
                 }
-                if (mainShip.isArrowCollision(arrow)){
-                    enemy.setVelocity(0f,-0.7f);//I have change
-                }
+
             }
 
         }
