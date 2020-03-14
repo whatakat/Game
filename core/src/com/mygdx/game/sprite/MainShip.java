@@ -77,4 +77,10 @@ public class MainShip extends Ship {
         if (getRight()<worldBounds.getLeft()+0.1f)setRight(worldBounds.getLeft()+0.1f);
         if (getLeft()>worldBounds.getRight()-0.1f)setLeft(worldBounds.getRight()-0.1f);
     }
+    public boolean isArrowCollision(Rect arrow){
+        return !(arrow.getRight()<getLeft()
+                ||arrow.getLeft()>getRight()
+                ||arrow.getBottom()>pos.y
+                ||arrow.getTop()<getBottom());
+    }
 }

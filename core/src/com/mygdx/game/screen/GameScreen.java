@@ -135,6 +135,15 @@ public class GameScreen extends BaseScreen {
             }
         }
         List<Arrow> arrowList = arrowPool.getActiveObjects();
+        for (Arrow arrow: arrowList){
+            if (arrow.isDestroyed() || arrow.getOwner() == mainShip){
+                continue;
+            }
+            if (mainShip.isArrowCollision(arrow)){
+                mainShip.damage(arrow.getDamage());
+                arrow.destroy();
+            }
+        }
         for (Enemy enemy: enemyList){
             if (enemy.isDestroyed()){
                 continue;
