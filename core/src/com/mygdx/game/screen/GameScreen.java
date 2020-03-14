@@ -155,7 +155,10 @@ public class GameScreen extends BaseScreen {
                 if (enemy.isArrowCollision(arrow)){
                     enemy.damage(arrow.getDamage());
                     arrow.destroy();
-                    enemy.setVelocity();
+                    enemy.setVelocity(0f,-0.03f);//I have change
+                }
+                if (mainShip.isArrowCollision(arrow)){
+                    enemy.setVelocity(0f,-0.7f);//I have change
                 }
             }
 
