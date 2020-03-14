@@ -65,12 +65,22 @@ public class Ship extends Sprite {
         arrow.set(this,arrowRegion,pos, arrowV, arrowHeight,arrow,arrowDamage);
         shootSound.play();
     }
-    public void death(){
+    protected void death(){
         Explosion explosion = explosionPool.obtain();
         explosion.set(getHeight(),pos);
     }
     public void damage(int damage){
         frame = 1;
         damageAnimateTimer = 0f;
+        hp -=damage;
+        if (hp<=0){
+            death();
+            destroy();
+        }
     }
+
+    public int getHp() {
+        return hp;
+    }
+
 }

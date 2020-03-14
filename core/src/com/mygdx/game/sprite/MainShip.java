@@ -62,10 +62,10 @@ public class MainShip extends Ship {
             float ty = InputHandler.getY();
             currentEnginePower+=100*delta;
             if (currentEnginePower>maxEnginePower)currentEnginePower = maxEnginePower;
-            if (tx<1000f&&ty<400f){
-                v.add(-0.2f,0f);
-            }else if (tx>1000f&&ty<400f) {
-                v.add(0.2f, 0f);
+            if (tx<300f&&ty<300f){
+                v.add(-0.4f,0f);
+            }else if (tx>300f&&ty<300f&&tx<600f) {
+                v.add(0.4f, 0f);
             }else{
             }
 
