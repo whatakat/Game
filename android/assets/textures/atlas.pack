@@ -5,98 +5,112 @@ filter: Nearest,Nearest
 repeat: none
 overG
   rotate: false
-  xy: 0, 1787
+  xy: 0, 2048
   size: 2048, 2048
   orig: 2048, 2048
   offset: 0, 0
   index: -1
 background_ocean
   rotate: false
-  xy: 0, 707
+  xy: 0, 968
   size: 2280, 1080
   orig: 2280, 1080
   offset: 0, 0
   index: -1
 shark
   rotate: false
-  xy: 2048, 2811
+  xy: 2048, 3072
   size: 1024, 1024
   orig: 1024, 1024
   offset: 0, 0
   index: -1
-play
-  rotate: false
-  xy: 0, 292
-  size: 500, 415
-  orig: 500, 415
-  offset: 0, 0
-  index: -1
 echo
   rotate: false
-  xy: 2048, 2401
+  xy: 0, 558
   size: 409, 410
   orig: 409, 410
   offset: 0, 0
   index: -1
 hero
   rotate: false
-  xy: 3072, 3579
+  xy: 2048, 2816
   size: 512, 256
   orig: 512, 256
   offset: 0, 0
   index: -1
 sharkMedium
   rotate: false
-  xy: 3584, 3579
+  xy: 3072, 3840
   size: 512, 256
   orig: 512, 256
   offset: 0, 0
   index: -1
 sharkSmall
   rotate: false
-  xy: 500, 451
+  xy: 3584, 3840
   size: 512, 256
   orig: 512, 256
   offset: 0, 0
   index: -1
-exit
-  rotate: false
-  xy: 0, 0
-  size: 400, 292
-  orig: 400, 292
-  offset: 0, 0
-  index: -1
 boatEnemy
   rotate: false
-  xy: 2048, 1955
+  xy: 0, 112
   size: 170, 446
   orig: 170, 446
   offset: 0, 0
   index: -1
 eWave
   rotate: false
-  xy: 2457, 2699
+  xy: 0, 0
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
+exit
+  rotate: false
+  xy: 409, 891
+  size: 256, 77
+  orig: 256, 77
+  offset: 0, 0
+  index: -1
+play
+  rotate: false
+  xy: 2048, 2739
+  size: 256, 77
+  orig: 256, 77
+  offset: 0, 0
+  index: -1
+newGame
+  rotate: false
+  xy: 2560, 3004
+  size: 256, 68
+  orig: 256, 68
+  offset: 0, 0
+  index: -1
+gameOver
+  rotate: false
+  xy: 3072, 3783
+  size: 256, 57
+  orig: 256, 57
+  offset: 0, 0
+  index: -1
 ic_shark
   rotate: false
-  xy: 3072, 3519
+  xy: 170, 498
   size: 92, 60
   orig: 92, 60
   offset: 0, 0
   index: -1
 dolphin
   rotate: false
-  xy: 500, 346
+  xy: 409, 786
   size: 45, 105
   orig: 45, 105
   offset: 0, 0
   index: -1
 gArrow
   rotate: false
-  xy: 1012, 624
+  xy: 2048, 2656
   size: 32, 83
   orig: 32, 83
   offset: 0, 0

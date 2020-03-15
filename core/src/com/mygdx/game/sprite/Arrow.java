@@ -8,7 +8,7 @@ import com.mygdx.game.math.Rect;
 
 public class Arrow extends Sprite {
     private Rect worldBounds;
-    private  Vector2 v = new Vector2();
+    public   Vector2 v = new Vector2();
     private int damage;
     private Object owner;
 
