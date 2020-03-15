@@ -208,6 +208,7 @@ public class GameScreen extends BaseScreen {
     }
     public void startNewGame(){
         countDeath = 0;
+        mainShip.setNewGame();
         arrowPool.freeAllActiveSprites();
         enemyPool.freeAllActiveSprites();
         explosionPool.freeAllActiveSprites();
