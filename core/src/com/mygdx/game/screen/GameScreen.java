@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.base.ActionListener;
 import com.mygdx.game.base.BaseScreen;
+import com.mygdx.game.base.Font;
 import com.mygdx.game.math.Rect;
 import com.mygdx.game.pools.ArrowPool;
 import com.mygdx.game.pools.EnemyPool;
@@ -32,6 +33,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
     private static final int WAVEBG_COUNT = 3;
     private static final float WAVE_HEIGHT = 0.25f;
     private float SPEED_WAVE = 0.03f;
+    private static final float FONT_SIZE = 0.02f;
 
     private enum State{PLAYING, GAME_OVER}
     private State state;
@@ -53,6 +55,11 @@ public class GameScreen extends BaseScreen implements ActionListener {
 
     private MassageGameOver massageGameOver;
     private ButtonNewGame buttonNewGame;
+
+    private Font font;
+    private StringBuilder sbCt = new StringBuilder();
+    private StringBuilder sbHp = new StringBuilder();
+    private StringBuilder sbStage = new StringBuilder();
 
     private int countDeath;
 
@@ -93,8 +100,17 @@ public class GameScreen extends BaseScreen implements ActionListener {
         }
         massageGameOver = new MassageGameOver(atlas);
         buttonNewGame = new ButtonNewGame(atlas,this);
+        font = new Font("font/font.fnt","font/font.png");
+        font.setWorldSize(FONT_SIZE);
         startNewGame();
-
+    }
+    private void printInfo(){
+        sbCt.setLength(0);
+        sbHp.setLength(0);
+        sbStage.setLength(0);
+        font.draw(batch,sbCt.append("Count shark:").append(countDeath),worldBounds.getTop(),worldBounds.getTop());
+        font.draw(batch,sbHp.append(">").append(mainShip.getHp()),mainShip.pos.x+mainShip.getWidth()/(float)4,mainShip.pos.y);
+        font.draw(batch,sbStage.append("Stage:").append(countDeath),worldBounds.getLeft(),worldBounds.getTop());
 
     }
 
@@ -122,6 +138,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
             massageGameOver.draw(batch);
             buttonNewGame.draw(batch);
         }
+        printInfo();
         batch.end();
     }
     public void update(float delta){
@@ -235,6 +252,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
         explosionSound.dispose();
         arrowSound.dispose();
         enemySonarSound.dispose();
+        font.dispose();
         super.dispose();
     }
 
