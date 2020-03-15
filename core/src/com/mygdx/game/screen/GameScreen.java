@@ -44,6 +44,8 @@ public class GameScreen extends BaseScreen {
     private Sound arrowSound;
     private Sound enemySonarSound;
 
+    private int countDeath;
+
 
     public GameScreen(Game game) {
         super(game);
@@ -153,7 +155,13 @@ public class GameScreen extends BaseScreen {
                 if (enemy.isArrowCollision(arrow)){
                     enemy.damage(arrow.getDamage());
                     arrow.destroy();
-                    enemy.setVelocity(0f,-0.03f);//I have change
+                    if (!enemy.isDestroyed()){
+                        enemy.setVelocity(0f,-0.03f);//I have change
+                    }
+                    if (enemy.isDestroyed()){
+                        countDeath++;
+                        break;
+                    }
                 }
             }
 
