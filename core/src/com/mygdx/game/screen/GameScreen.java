@@ -206,11 +206,8 @@ public class GameScreen extends BaseScreen {
         enemySonarSound.dispose();
         super.dispose();
     }
+    public void startNewGame(){
+        countDeath = 0;
 
-//    @Override
-//    public void touchDown(Vector2 touch, int pointer) {
-//        mainShip.touchDown(touch, pointer);
-//        Explosion explosion = explosionPool.obtain();
-//        explosion.set(0.3f, touch);
-//    }
+    }
 }
