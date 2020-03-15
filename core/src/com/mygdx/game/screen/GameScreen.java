@@ -159,7 +159,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
             float minDist = enemy.getHalfWidth()+mainShip.getHalfWidth();
             if (enemy.pos.dst2(mainShip.pos)< minDist*minDist){
                 enemy.destroy();
-                mainShip.death();
+                mainShip.death();//I have override method for myShip
                 mainShip.destroy();
                 state = State.GAME_OVER;
                 return;
@@ -183,7 +183,6 @@ public class GameScreen extends BaseScreen implements ActionListener {
                 if (arrow.getOwner() != mainShip || arrow.isDestroyed()){
                     continue;
                 }
-
                 if (enemy.isArrowCollision(arrow)){
                     enemy.damage(arrow.getDamage());
                     arrow.destroy();
