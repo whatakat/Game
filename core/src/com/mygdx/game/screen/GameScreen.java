@@ -29,6 +29,9 @@ public class GameScreen extends BaseScreen {
     private static final float WAVE_HEIGHT = 0.25f;
     private float SPEED_WAVE = 0.03f;
 
+    private enum State{PLAYING, GAME_OVER}
+    private State state;
+
     private Background background;
     private Texture bg;
     private TextureAtlas atlas;
@@ -130,6 +133,8 @@ public class GameScreen extends BaseScreen {
             float minDist = enemy.getHalfWidth()+mainShip.getHalfWidth();
             if (enemy.pos.dst2(mainShip.pos)< minDist*minDist){
                 enemy.destroy();
+                mainShip.death();
+                mainShip.destroy();
                 return;
             }
         }
@@ -207,6 +212,7 @@ public class GameScreen extends BaseScreen {
         super.dispose();
     }
     public void startNewGame(){
+        state = State.PLAYING;
         countDeath = 0;
         mainShip.setNewGame();
         arrowPool.freeAllActiveSprites();
