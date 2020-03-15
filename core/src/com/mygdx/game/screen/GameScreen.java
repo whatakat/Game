@@ -64,7 +64,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
     private int countDeath;
 
 
-    public GameScreen(Game game) {
+    protected GameScreen(Game game) {
         super(game);
     }
 
@@ -174,9 +174,14 @@ public class GameScreen extends BaseScreen implements ActionListener {
                 continue;
             }
             float minDist = enemy.getHalfWidth()+mainShip.getHalfWidth();
-            if (enemy.pos.dst2(mainShip.pos)< minDist*minDist){
+            if (enemy.pos.dst2(mainShip.pos)< minDist*minDist/(float)3){
                 enemy.destroy();
-                mainShip.death();//I have override method for myShip
+                mainShip.setHp(mainShip.getHp()-2);
+                continue;
+            }
+            if (enemy.pos.dst2(mainShip.pos)< minDist*minDist&&mainShip.getHp()<3){
+                enemy.destroy();
+                mainShip.death();
                 mainShip.destroy();
                 state = State.GAME_OVER;
                 return;
@@ -188,8 +193,9 @@ public class GameScreen extends BaseScreen implements ActionListener {
                 continue;
             }
             if (mainShip.isArrowCollision(arrow)){
-                mainShip.damage(arrow.getDamage());
-                arrow.destroy();
+                //mainShip.damage(arrow.getDamage());
+                //arrow.destroy();
+                arrow.v.set(0f,0.5f);
             }
         }
         for (Enemy enemy: enemyList){
@@ -197,14 +203,19 @@ public class GameScreen extends BaseScreen implements ActionListener {
                 continue;
             }
             for (Arrow arrow: arrowList){
-                if (arrow.getOwner() != mainShip || arrow.isDestroyed()){
-                    continue;
+//                if (arrow.getOwner() != mainShip || arrow.isDestroyed()){
+//                    continue;
+//                }
+                if (arrow.getOwner() != mainShip&&enemy.isArrowCollision(arrow)){
+                    enemy.setVelocity(0f,-0.8f);
+
                 }
+
                 if (enemy.isArrowCollision(arrow)){
                     enemy.damage(arrow.getDamage());
                     arrow.destroy();
-                    if (!enemy.isDestroyed()){
-                        enemy.setVelocity(0f,-0.03f);//I have change
+                    if (!enemy.isDestroyed()&&arrow.getOwner() != enemy){
+                       enemy.setVelocity(0f,-0.03f);//I have change
                     }
                     if (enemy.isDestroyed()){
                         countDeath++;
@@ -268,7 +279,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
         buttonNewGame.touchUp(touch, pointer);
     }
 
-    public void startNewGame(){
+    private void startNewGame(){
         state = State.PLAYING;
         countDeath = 0;
         mainShip.setNewGame();

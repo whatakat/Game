@@ -69,10 +69,9 @@ public class MainShip extends Ship {
             currentEnginePower+=100*delta;
             if (currentEnginePower>maxEnginePower)currentEnginePower = maxEnginePower;
             if (tx<300f&&ty<300f){
-                v.add(-0.4f,0f);
-            }else if (tx>300f&&ty<300f&&tx<600f) {
-                v.add(0.4f, 0f);
-            }else{
+                v.add(-0.6f,0f);
+            }else if (tx>300f&&ty<300f&&tx<800f) {
+                v.add(0.6f, 0f);
             }
 
         }
@@ -95,4 +94,5 @@ public class MainShip extends Ship {
                 ||arrow.getBottom()>pos.y
                 ||arrow.getTop()<getBottom());
     }
+
 }
