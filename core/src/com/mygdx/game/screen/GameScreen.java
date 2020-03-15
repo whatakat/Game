@@ -17,6 +17,7 @@ import com.mygdx.game.sprite.Arrow;
 import com.mygdx.game.sprite.Background;
 import com.mygdx.game.sprite.Enemy;
 import com.mygdx.game.sprite.MainShip;
+import com.mygdx.game.sprite.MassageGameOver;
 import com.mygdx.game.sprite.Wave;
 import com.mygdx.game.sprite.WaveBg;
 import com.mygdx.game.utils.EnemiesEmitter;
@@ -47,6 +48,8 @@ public class GameScreen extends BaseScreen {
     private Sound arrowSound;
     private Sound enemySonarSound;
 
+    private MassageGameOver massageGameOver;
+
     private int countDeath;
 
 
@@ -76,7 +79,7 @@ public class GameScreen extends BaseScreen {
         }
         arrowPool = new ArrowPool();
         explosionPool = new ExplosionPool(atlas,explosionSound);
-        mainShip = new MainShip(atlas,arrowPool,explosionPool,arrowSound);
+        mainShip = new MainShip(atlas,worldBounds,arrowPool,explosionPool,arrowSound);
         enemyPool = new EnemyPool(arrowPool,worldBounds,explosionPool, mainShip, enemySonarSound);
         enemiesEmitter = new EnemiesEmitter(worldBounds,enemyPool,atlas);
         TextureRegion waveRegion = atlas.findRegion("eWave");
@@ -84,6 +87,8 @@ public class GameScreen extends BaseScreen {
         for (int i = 0; i <wave.length ; i++) {
             wave[i] = new Wave(waveRegion, 0f,0.07f,WAVE_HEIGHT);
         }
+        massageGameOver = new MassageGameOver(atlas);
+        startNewGame();
 
     }
 
@@ -107,20 +112,33 @@ public class GameScreen extends BaseScreen {
             w.draw(batch);
         }
         mainShip.draw(batch);
+        if (state==State.GAME_OVER){
+            massageGameOver.draw(batch);
+        }
         batch.end();
     }
     public void update(float delta){
-        for (WaveBg w: waveBg){
-            w.update(delta);
-        }
-        arrowPool.updateActiveSprites(delta);
-        enemyPool.updateActiveSprites(delta);
         explosionPool.updateActiveSprites(delta);
-        enemiesEmitter.generateEnemies(delta);
-        for (Wave w: wave){
-            w.update(delta);
+        switch (state){
+            case PLAYING:
+                for (WaveBg w: waveBg){
+                    w.update(delta);
+                }
+                for (Wave w: wave){
+                    w.update(delta);
+                }
+                arrowPool.updateActiveSprites(delta);
+                enemyPool.updateActiveSprites(delta);
+                enemiesEmitter.generateEnemies(delta);
+                mainShip.update(delta);
+                if (mainShip.isDestroyed()){
+                    state = State.GAME_OVER;
+                }
+                break;
+            case GAME_OVER:
+                music.stop();
+                break;
         }
-        mainShip.update(delta);
 
     }
 
@@ -135,6 +153,7 @@ public class GameScreen extends BaseScreen {
                 enemy.destroy();
                 mainShip.death();
                 mainShip.destroy();
+                state = State.GAME_OVER;
                 return;
             }
         }

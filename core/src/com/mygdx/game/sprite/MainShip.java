@@ -21,12 +21,13 @@ public class MainShip extends Ship {
     /**
      * param reloadInterval for auto shooting
      * */
-    public MainShip(TextureAtlas atlas, ArrowPool arrowPool, ExplosionPool explosionPool, Sound sound) {
-        super(atlas.findRegion("hero"),1,2,2,sound);
+    public MainShip(TextureAtlas atlas,Rect worldBounds, ArrowPool arrowPool, ExplosionPool explosionPool, Sound sound) {
+        super(atlas.findRegion("hero"),1,2,2,sound,worldBounds);
         setHeightProportion(SHIP_HEIGHT);
         this.arrowPool = arrowPool;
         this.arrowRegion = atlas.findRegion("gArrow");
         this.explosionPool = explosionPool;
+        this.worldBounds = worldBounds;
         setNewGame();
 
     }
