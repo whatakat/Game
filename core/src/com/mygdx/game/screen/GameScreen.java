@@ -52,6 +52,8 @@ public class GameScreen extends BaseScreen implements ActionListener {
     private Music explosionSound;
     private Sound arrowSound;
     private Sound enemySonarSound;
+    private Sound hitEnemy;
+    private Music sharkUnderBoat;
 
     private MassageGameOver massageGameOver;
     private ButtonNewGame buttonNewGame;
@@ -79,6 +81,8 @@ public class GameScreen extends BaseScreen implements ActionListener {
         explosionSound = Gdx.audio.newMusic(Gdx.files.internal("sounds/shark_water.mp3"));
         arrowSound = Gdx.audio.newSound(Gdx.files.internal("sounds/arrow.wav"));
         enemySonarSound = Gdx.audio.newSound(Gdx.files.internal("sounds/SonarPing.wav"));
+        hitEnemy = Gdx.audio.newSound(Gdx.files.internal("sounds/arrowSh.wav"));
+        sharkUnderBoat = Gdx.audio.newMusic(Gdx.files.internal("sounds/sharkEnemy.mp3"));
         music.setLooping(true);
         music.play();
 
@@ -177,6 +181,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
             if (enemy.pos.dst2(mainShip.pos)< minDist*minDist/(float)3){
                 enemy.destroy();
                 mainShip.setHp(mainShip.getHp()-2);
+                sharkUnderBoat.play();
                 continue;
             }
             if (enemy.pos.dst2(mainShip.pos)< minDist*minDist&&mainShip.getHp()<3){
@@ -207,7 +212,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
 //                    continue;
 //                }
                 if (arrow.getOwner() != mainShip&&enemy.isArrowCollision(arrow)){
-                    enemy.setVelocity(0f,-0.8f);
+                    enemy.setVelocity(0f,-0.5f);
 
                 }
 
@@ -215,6 +220,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
                     enemy.damage(arrow.getDamage());
                     arrow.destroy();
                     if (!enemy.isDestroyed()&&arrow.getOwner() != enemy){
+                        hitEnemy.play();
                        enemy.setVelocity(0f,-0.03f);//I have change
                     }
                     if (enemy.isDestroyed()){
@@ -260,9 +266,11 @@ public class GameScreen extends BaseScreen implements ActionListener {
         enemyPool.dispose();
         explosionPool.dispose();
         music.dispose();
+        hitEnemy.dispose();
         explosionSound.dispose();
         arrowSound.dispose();
         enemySonarSound.dispose();
+        sharkUnderBoat.dispose();
         font.dispose();
         super.dispose();
     }

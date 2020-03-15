@@ -17,13 +17,6 @@ background_ocean
   orig: 2280, 1080
   offset: 0, 0
   index: -1
-shark
-  rotate: false
-  xy: 2048, 3072
-  size: 1024, 1024
-  orig: 1024, 1024
-  offset: 0, 0
-  index: -1
 echo
   rotate: false
   xy: 0, 558
@@ -33,21 +26,14 @@ echo
   index: -1
 hero
   rotate: false
-  xy: 2048, 2816
-  size: 512, 256
-  orig: 512, 256
-  offset: 0, 0
-  index: -1
-sharkMedium
-  rotate: false
-  xy: 3072, 3840
+  xy: 2048, 3840
   size: 512, 256
   orig: 512, 256
   offset: 0, 0
   index: -1
 sharkSmall
   rotate: false
-  xy: 3584, 3840
+  xy: 409, 712
   size: 512, 256
   orig: 512, 256
   offset: 0, 0
@@ -59,6 +45,13 @@ boatEnemy
   orig: 170, 446
   offset: 0, 0
   index: -1
+sharkMedium
+  rotate: false
+  xy: 2048, 3584
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
 eWave
   rotate: false
   xy: 0, 0
@@ -68,49 +61,42 @@ eWave
   index: -1
 exit
   rotate: false
-  xy: 409, 891
+  xy: 2560, 4019
   size: 256, 77
   orig: 256, 77
   offset: 0, 0
   index: -1
 play
   rotate: false
-  xy: 2048, 2739
+  xy: 409, 635
   size: 256, 77
   orig: 256, 77
   offset: 0, 0
   index: -1
 newGame
   rotate: false
-  xy: 2560, 3004
+  xy: 921, 900
   size: 256, 68
   orig: 256, 68
   offset: 0, 0
   index: -1
 gameOver
   rotate: false
-  xy: 3072, 3783
+  xy: 2048, 3527
   size: 256, 57
   orig: 256, 57
   offset: 0, 0
   index: -1
 ic_shark
   rotate: false
-  xy: 170, 498
+  xy: 2304, 3780
   size: 92, 60
   orig: 92, 60
   offset: 0, 0
   index: -1
-dolphin
-  rotate: false
-  xy: 409, 786
-  size: 45, 105
-  orig: 45, 105
-  offset: 0, 0
-  index: -1
 gArrow
   rotate: false
-  xy: 2048, 2656
+  xy: 170, 475
   size: 32, 83
   orig: 32, 83
   offset: 0, 0
