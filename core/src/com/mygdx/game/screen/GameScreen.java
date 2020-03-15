@@ -110,7 +110,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
         sbStage.setLength(0);
         font.draw(batch,sbCt.append("Count shark:").append(countDeath),worldBounds.getTop(),worldBounds.getTop());
         font.draw(batch,sbHp.append(">").append(mainShip.getHp()),mainShip.pos.x+mainShip.getWidth()/(float)4,mainShip.pos.y);
-        font.draw(batch,sbStage.append("Stage:").append(countDeath),worldBounds.getLeft(),worldBounds.getTop());
+        font.draw(batch,sbStage.append("Stage:").append(enemiesEmitter.getStage()),worldBounds.getLeft(),worldBounds.getTop());
 
     }
 
@@ -154,7 +154,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
                 music.play();
                 arrowPool.updateActiveSprites(delta);
                 enemyPool.updateActiveSprites(delta);
-                enemiesEmitter.generateEnemies(delta);
+                enemiesEmitter.generateEnemies(delta,countDeath);
                 mainShip.update(delta);
                 if (mainShip.isDestroyed()){
                     state = State.GAME_OVER;
@@ -272,6 +272,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
         state = State.PLAYING;
         countDeath = 0;
         mainShip.setNewGame();
+        enemiesEmitter.setToNewGame();
         arrowPool.freeAllActiveSprites();
         enemyPool.freeAllActiveSprites();
         explosionPool.freeAllActiveSprites();

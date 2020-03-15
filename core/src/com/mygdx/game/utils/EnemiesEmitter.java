@@ -48,6 +48,8 @@ public class EnemiesEmitter {
     private TextureRegion arrowRegion;
 
     private EnemyPool enemyPool;
+    private int stage = 1;
+    private int countSharks;
 
     public EnemiesEmitter(Rect worldBounds, EnemyPool enemyPool, TextureAtlas atlas) {
         this.worldBounds = worldBounds;
@@ -60,7 +62,8 @@ public class EnemiesEmitter {
         this.enemyBigRegion = Regions.split(textureRegion2,1,2,2);
         this.arrowRegion = atlas.findRegion("echo");
     }
-    public void generateEnemies(float delta){
+    public void generateEnemies(float delta, int countSharks){
+        stage = countSharks/10+1;
         generateTimer+=delta;
         if (generateTimer>=generateInterval){
             generateTimer  = 0f;
@@ -73,7 +76,7 @@ public class EnemiesEmitter {
                         arrowRegion,
                         ENEMY_SMALL_ARROW_HEIGHT,
                         ENEMY_SMALL_ARROW_VY,
-                        ENEMY_SMALL_ARROW_DAMAGE,
+                        ENEMY_SMALL_ARROW_DAMAGE*stage,
                         ENEMY_SMALL_RELOAD_INTERVAL,
                         ENEMY_SMALL_HEIGHT,
                         ENEMY_SMALL_HP
@@ -85,7 +88,7 @@ public class EnemiesEmitter {
                         arrowRegion,
                         ENEMY_MEDIUM_ARROW_HEIGHT,
                         ENEMY_MEDIUM_ARROW_VY,
-                        ENEMY_MEDIUM_ARROW_DAMAGE,
+                        ENEMY_MEDIUM_ARROW_DAMAGE*stage,
                         ENEMY_MEDIUM_RELOAD_INTERVAL,
                         ENEMY_MEDIUM_HEIGHT,
                         ENEMY_MEDIUM_HP
@@ -97,7 +100,7 @@ public class EnemiesEmitter {
                         arrowRegion,
                         ENEMY_BIG_ARROW_HEIGHT,
                         ENEMY_BIG_ARROW_VY,
-                        ENEMY_BIG_ARROW_DAMAGE,
+                        ENEMY_BIG_ARROW_DAMAGE*stage,
                         ENEMY_BIG_RELOAD_INTERVAL,
                         ENEMY_BIG_HEIGHT,
                         ENEMY_BIG_HP
@@ -108,5 +111,12 @@ public class EnemiesEmitter {
             enemy.setBottom(worldBounds.getTop());
 
         }
+    }
+    public void setToNewGame(){
+        stage = 1;
+    }
+
+    public int getStage() {
+        return stage;
     }
 }
