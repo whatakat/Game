@@ -8,6 +8,8 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Vector2;
+import com.mygdx.game.base.ActionListener;
 import com.mygdx.game.base.BaseScreen;
 import com.mygdx.game.math.Rect;
 import com.mygdx.game.pools.ArrowPool;
@@ -15,6 +17,7 @@ import com.mygdx.game.pools.EnemyPool;
 import com.mygdx.game.pools.ExplosionPool;
 import com.mygdx.game.sprite.Arrow;
 import com.mygdx.game.sprite.Background;
+import com.mygdx.game.sprite.ButtonNewGame;
 import com.mygdx.game.sprite.Enemy;
 import com.mygdx.game.sprite.MainShip;
 import com.mygdx.game.sprite.MassageGameOver;
@@ -24,7 +27,7 @@ import com.mygdx.game.utils.EnemiesEmitter;
 
 import java.util.List;
 
-public class GameScreen extends BaseScreen {
+public class GameScreen extends BaseScreen implements ActionListener {
     private static final int WAVE_COUNT = 300;
     private static final int WAVEBG_COUNT = 3;
     private static final float WAVE_HEIGHT = 0.25f;
@@ -49,6 +52,7 @@ public class GameScreen extends BaseScreen {
     private Sound enemySonarSound;
 
     private MassageGameOver massageGameOver;
+    private ButtonNewGame buttonNewGame;
 
     private int countDeath;
 
@@ -88,7 +92,9 @@ public class GameScreen extends BaseScreen {
             wave[i] = new Wave(waveRegion, 0f,0.07f,WAVE_HEIGHT);
         }
         massageGameOver = new MassageGameOver(atlas);
+        buttonNewGame = new ButtonNewGame(atlas,this);
         startNewGame();
+
 
     }
 
@@ -114,6 +120,7 @@ public class GameScreen extends BaseScreen {
         mainShip.draw(batch);
         if (state==State.GAME_OVER){
             massageGameOver.draw(batch);
+            buttonNewGame.draw(batch);
         }
         batch.end();
     }
@@ -127,6 +134,7 @@ public class GameScreen extends BaseScreen {
                 for (Wave w: wave){
                     w.update(delta);
                 }
+                music.play();
                 arrowPool.updateActiveSprites(delta);
                 enemyPool.updateActiveSprites(delta);
                 enemiesEmitter.generateEnemies(delta);
@@ -136,7 +144,7 @@ public class GameScreen extends BaseScreen {
                 }
                 break;
             case GAME_OVER:
-                music.stop();
+                music.pause();
                 break;
         }
 
@@ -230,6 +238,19 @@ public class GameScreen extends BaseScreen {
         enemySonarSound.dispose();
         super.dispose();
     }
+
+    @Override
+    public void touchDown(Vector2 touch, int pointer) {
+        mainShip.touchDown(touch, pointer);
+        buttonNewGame.touchDown(touch, pointer);
+    }
+
+    @Override
+    public void touchUp(Vector2 touch, int pointer) {
+        mainShip.touchUp(touch, pointer);
+        buttonNewGame.touchUp(touch, pointer);
+    }
+
     public void startNewGame(){
         state = State.PLAYING;
         countDeath = 0;
@@ -237,6 +258,13 @@ public class GameScreen extends BaseScreen {
         arrowPool.freeAllActiveSprites();
         enemyPool.freeAllActiveSprites();
         explosionPool.freeAllActiveSprites();
+
+    }
+    @Override
+    public void actionPerformed(Object src) {
+        if (src == buttonNewGame){
+            startNewGame();
+        }
 
     }
 }
