@@ -26,13 +26,18 @@ public class MainShip extends Ship {
         setHeightProportion(SHIP_HEIGHT);
         this.arrowPool = arrowPool;
         this.arrowRegion = atlas.findRegion("gArrow");
+        this.explosionPool = explosionPool;
+        setNewGame();
+
+    }
+    public void setNewGame(){
+        pos.x = worldBounds.pos.x;
         this.arrowHeight = 0.07f;
         this.arrowV.set(0,1.5f);
         this.arrowDamage = 1;
         this.reloadInterval = 1000f;
-        this.explosionPool = explosionPool;
         this.hp = 100;
-
+        flushDestroy();
     }
 
     @Override
