@@ -10,21 +10,21 @@ import com.mygdx.game.sprite.Enemy;
 
 public class EnemiesEmitter {
 
-    private static final float ENEMY_SMALL_HEIGHT = 0.14f;
+    private static final float ENEMY_SMALL_HEIGHT = 0.17f;
     private static final float ENEMY_SMALL_ARROW_HEIGHT = 0.2f;
     private static final float ENEMY_SMALL_ARROW_VY = -0.7f;
     private static final int ENEMY_SMALL_ARROW_DAMAGE = 0;
-    private static final float ENEMY_SMALL_RELOAD_INTERVAL = 0.7f;
+    private static final float ENEMY_SMALL_RELOAD_INTERVAL = 1.2f;
     private static final int ENEMY_SMALL_HP = 3;
 
     private static final float ENEMY_MEDIUM_HEIGHT = 0.3f;
     private static final float ENEMY_MEDIUM_ARROW_HEIGHT = 0.4f;
     private static final float ENEMY_MEDIUM_ARROW_VY = -0.8f;
     private static final int ENEMY_MEDIUM_ARROW_DAMAGE = 0;
-    private static final float ENEMY_MEDIUM_RELOAD_INTERVAL = 1f;
+    private static final float ENEMY_MEDIUM_RELOAD_INTERVAL = 1.2f;
     private static final int ENEMY_MEDIUM_HP = 10;
 
-    private static final float ENEMY_BIG_HEIGHT = 0.5f;
+    private static final float ENEMY_BIG_HEIGHT = 0.4f;
     private static final float ENEMY_BIG_ARROW_HEIGHT = 0.6f;
     private static final float ENEMY_BIG_ARROW_VY = -0.9f;
     private static final int ENEMY_BIG_ARROW_DAMAGE = 0;
@@ -34,14 +34,14 @@ public class EnemiesEmitter {
 
     private Rect worldBounds;
 
-    private float generateInterval = 2f;
+    private float generateInterval = 1f;
     private float generateTimer;
 
     private TextureRegion[] enemySmallRegion;
     private TextureRegion[] enemyMediumRegion;
     private TextureRegion[] enemyBigRegion;
 
-    private Vector2 enemySmallV = new Vector2(0f,-0.10f);
+    private Vector2 enemySmallV = new Vector2(0f,-0.6f);
     private Vector2 enemyMediumV = new Vector2(0f,-0.05f);
     private Vector2 enemyBigV = new Vector2(0f,-0.04f);
 

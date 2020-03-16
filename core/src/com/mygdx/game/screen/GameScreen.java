@@ -212,16 +212,15 @@ public class GameScreen extends BaseScreen implements ActionListener {
 //                    continue;
 //                }
                 if (arrow.getOwner() != mainShip&&enemy.isArrowCollision(arrow)){
-                    enemy.setVelocity(0f,-0.5f);
-
+                    enemy.setVelocity(0f,-0.3f);
                 }
 
                 if (enemy.isArrowCollision(arrow)){
                     enemy.damage(arrow.getDamage());
                     arrow.destroy();
                     if (!enemy.isDestroyed()&&arrow.getOwner() != enemy){
-                        hitEnemy.play();
                        enemy.setVelocity(0f,-0.03f);//I have change
+                        break;
                     }
                     if (enemy.isDestroyed()){
                         countDeath++;
