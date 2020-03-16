@@ -219,7 +219,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
                     enemy.damage(arrow.getDamage());
                     arrow.destroy();
                     if (!enemy.isDestroyed()&&arrow.getOwner() != enemy){
-                       enemy.setVelocity(0f,-0.03f);//I have change
+                       enemy.setVelocity(0f,-0.03f);
                         break;
                     }
                     if (enemy.isDestroyed()){
