@@ -8,7 +8,7 @@ import com.mygdx.game.base.Sprite;
 
 public class Explosion extends Sprite {
     private Sound sound;
-    private float animateInterval = 0.01f;
+    private float animateInterval = 0.02f;
     private float animateTimer;
 
     public Explosion(TextureRegion region, int rows, int cols, int frames, Sound sound){

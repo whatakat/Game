@@ -77,7 +77,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
         bg = new Texture("textures/background_okean.jpg");
         background = new Background(new TextureRegion(bg));
         music = Gdx.audio.newMusic(Gdx.files.internal("sounds/myBoat.mp3"));
-        explosionSound = Gdx.audio.newSound(Gdx.files.internal("sounds/expShark.wav"));
+        explosionSound = Gdx.audio.newSound(Gdx.files.internal("sounds/expWater.wav"));
         arrowSound = Gdx.audio.newSound(Gdx.files.internal("sounds/arrow.wav"));
         hitEnemy = Gdx.audio.newSound(Gdx.files.internal("sounds/hitShark.wav"));
         sharkUnderBoat = Gdx.audio.newMusic(Gdx.files.internal("sounds/sharkEnemy.mp3"));
