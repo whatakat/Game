@@ -51,7 +51,6 @@ public class GameScreen extends BaseScreen implements ActionListener {
     private Music music;
     private Sound explosionSound;
     private Sound arrowSound;
-    private Sound enemySonarSound;
     private Sound hitEnemy;
     private Music sharkUnderBoat;
 
@@ -78,9 +77,8 @@ public class GameScreen extends BaseScreen implements ActionListener {
         bg = new Texture("textures/background_okean.jpg");
         background = new Background(new TextureRegion(bg));
         music = Gdx.audio.newMusic(Gdx.files.internal("sounds/myBoat.mp3"));
-        explosionSound = Gdx.audio.newSound(Gdx.files.internal("sounds/shark_water.wav"));
+        explosionSound = Gdx.audio.newSound(Gdx.files.internal("sounds/expShark.wav"));
         arrowSound = Gdx.audio.newSound(Gdx.files.internal("sounds/arrow.wav"));
-        enemySonarSound = Gdx.audio.newSound(Gdx.files.internal("sounds/SonarPing.wav"));
         hitEnemy = Gdx.audio.newSound(Gdx.files.internal("sounds/hitShark.wav"));
         sharkUnderBoat = Gdx.audio.newMusic(Gdx.files.internal("sounds/sharkEnemy.mp3"));
         music.setLooping(true);
@@ -268,7 +266,6 @@ public class GameScreen extends BaseScreen implements ActionListener {
         hitEnemy.dispose();
         explosionSound.dispose();
         arrowSound.dispose();
-        enemySonarSound.dispose();
         sharkUnderBoat.dispose();
         font.dispose();
         super.dispose();
