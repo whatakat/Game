@@ -49,7 +49,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
     private ExplosionPool explosionPool;
     private EnemiesEmitter enemiesEmitter;
     private Music music;
-    private Music explosionSound;
+    private Sound explosionSound;
     private Sound arrowSound;
     private Sound enemySonarSound;
     private Sound hitEnemy;
@@ -78,10 +78,10 @@ public class GameScreen extends BaseScreen implements ActionListener {
         bg = new Texture("textures/background_okean.jpg");
         background = new Background(new TextureRegion(bg));
         music = Gdx.audio.newMusic(Gdx.files.internal("sounds/myBoat.mp3"));
-        explosionSound = Gdx.audio.newMusic(Gdx.files.internal("sounds/shark_water.mp3"));
+        explosionSound = Gdx.audio.newSound(Gdx.files.internal("sounds/shark_water.wav"));
         arrowSound = Gdx.audio.newSound(Gdx.files.internal("sounds/arrow.wav"));
         enemySonarSound = Gdx.audio.newSound(Gdx.files.internal("sounds/SonarPing.wav"));
-        hitEnemy = Gdx.audio.newSound(Gdx.files.internal("sounds/arrowSh.wav"));
+        hitEnemy = Gdx.audio.newSound(Gdx.files.internal("sounds/hitShark.wav"));
         sharkUnderBoat = Gdx.audio.newMusic(Gdx.files.internal("sounds/sharkEnemy.mp3"));
         music.setLooping(true);
         music.play();
@@ -95,7 +95,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
         arrowPool = new ArrowPool();
         explosionPool = new ExplosionPool(atlas,explosionSound);
         mainShip = new MainShip(atlas,worldBounds,arrowPool,explosionPool,arrowSound);
-        enemyPool = new EnemyPool(arrowPool,worldBounds,explosionPool, mainShip, enemySonarSound);
+        enemyPool = new EnemyPool(arrowPool,worldBounds,explosionPool, mainShip, hitEnemy);
         enemiesEmitter = new EnemiesEmitter(worldBounds,enemyPool,atlas);
         TextureRegion waveRegion = atlas.findRegion("eWave");
         wave = new Wave[WAVE_COUNT];
@@ -212,14 +212,14 @@ public class GameScreen extends BaseScreen implements ActionListener {
 //                    continue;
 //                }
                 if (arrow.getOwner() != mainShip&&enemy.isArrowCollision(arrow)){
-                    enemy.setVelocity(0f,-0.3f);
+                    enemy.setVelocity(0f,-0.1f);
                 }
 
                 if (enemy.isArrowCollision(arrow)){
                     enemy.damage(arrow.getDamage());
                     arrow.destroy();
                     if (!enemy.isDestroyed()&&arrow.getOwner() != enemy){
-                       enemy.setVelocity(0f,-0.03f);
+                       enemy.setVelocity(0f,-0.04f);
                         break;
                     }
                     if (enemy.isDestroyed()){

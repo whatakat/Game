@@ -10,10 +10,10 @@ import com.mygdx.game.sprite.Explosion;
 public class ExplosionPool extends SpritesPool<Explosion> {
 
 
-    private Music sound;
+    private Sound sound;
     private TextureRegion textureRegion;
 
-    public ExplosionPool(TextureAtlas atlas, Music sound) {
+    public ExplosionPool(TextureAtlas atlas, Sound sound) {
         this.textureRegion = atlas.findRegion("overG");
         this.sound = sound;
     }
