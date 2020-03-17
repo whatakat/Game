@@ -81,7 +81,9 @@ public class MainShip extends Ship {
 
     @Override
     public void death() {
-        super.death();
+        Explosion explosion = explosionPool.obtain();
+        explosion.set(getHeight()*2,pos);
+        hp = 0;
     }
 
     private void checkAndHandleBounds(){
