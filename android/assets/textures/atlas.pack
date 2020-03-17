@@ -87,6 +87,13 @@ boatEnemy
   orig: 170, 446
   offset: 0, 0
   index: -1
+sharkBack
+  rotate: false
+  xy: 3190, 2872
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
 background_ocean
   rotate: false
   xy: 0, 2048

@@ -11,15 +11,15 @@ import com.badlogic.gdx.math.Vector2;
 import com.mygdx.game.base.ActionListener;
 import com.mygdx.game.base.BaseScreen;
 import com.mygdx.game.math.Rect;
-import com.mygdx.game.math.Rnd;
 import com.mygdx.game.sprite.Background;
 import com.mygdx.game.sprite.ButtonExit;
 import com.mygdx.game.sprite.ButtonPlay;
-import com.mygdx.game.sprite.Wave;
+import com.mygdx.game.sprite.SharkBg;
+
 
 public class MenuScreen extends BaseScreen implements ActionListener {
-    private static final int WAVE_COUNT = 0;
-    private static final float WAVE_HEIGHT = 0.13f;
+    private static final int SHARK_COUNT = 1;
+    private static final float SHARK_HEIGHT = 0.2f;
 
     private static final float PRESS_SCALE = 0.9f;
     private static final float BUTTON_HEIGHT = 0.15f;
@@ -27,7 +27,7 @@ public class MenuScreen extends BaseScreen implements ActionListener {
    private Background background;
    private Texture bg;
    private TextureAtlas atlas;
-   private Wave[] wave;
+   private SharkBg[] sharkBgs;
 
    private ButtonExit buttonExit;
    private ButtonPlay buttonPlay;
@@ -48,11 +48,11 @@ public class MenuScreen extends BaseScreen implements ActionListener {
         music = Gdx.audio.newMusic(Gdx.files.internal("sounds/backgroundSound.mp3"));
         music.play();
         atlas = new TextureAtlas("textures/atlas.pack");
-        TextureRegion waveRegion = atlas.findRegion("eWave4");
-        wave = new Wave[WAVE_COUNT];
-        for (int i = 0; i <wave.length ; i++) {
+        TextureRegion waveRegion = atlas.findRegion("sharkBack");
+        sharkBgs = new SharkBg[SHARK_COUNT];
+        for (int i = 0; i <sharkBgs.length ; i++) {
            // wave[i] = new Wave(waveRegion, Rnd.nextFloat(0.005f,-0.005f),Rnd.nextFloat(0.1f,-0.1f),0.1f);
-            wave[i] = new Wave(waveRegion, 0.004f,0.04f,WAVE_HEIGHT);
+            sharkBgs[i] = new SharkBg(waveRegion, 0f,0.01f,SHARK_HEIGHT);
         }
         buttonExit = new ButtonExit(atlas,this,PRESS_SCALE);
         buttonExit.setHeightProportion(BUTTON_HEIGHT);
@@ -71,8 +71,8 @@ public class MenuScreen extends BaseScreen implements ActionListener {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         background.draw(batch);
-        for (Wave w: wave){
-            w.draw(batch);
+        for (SharkBg s: sharkBgs){
+            s.draw(batch);
         }
         buttonExit.draw(batch);
         buttonPlay.draw(batch);
@@ -106,16 +106,16 @@ public class MenuScreen extends BaseScreen implements ActionListener {
     public void resize(Rect worldBounds) {
         super.resize(worldBounds);
         background.resize(worldBounds);
-        for (Wave w: wave){
-            w.resize(worldBounds);
+        for (SharkBg s: sharkBgs){
+            s.resize(worldBounds);
         }
         buttonExit.resize(worldBounds);
         buttonPlay.resize(worldBounds);
 
     }
     public void update(float delta){
-        for (Wave w: wave){
-            w.update(delta);
+        for (SharkBg s: sharkBgs){
+            s.update(delta);
         }
     }
 
