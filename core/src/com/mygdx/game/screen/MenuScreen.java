@@ -51,8 +51,7 @@ public class MenuScreen extends BaseScreen implements ActionListener {
         TextureRegion waveRegion = atlas.findRegion("sharkBack");
         sharkBgs = new SharkBg[SHARK_COUNT];
         for (int i = 0; i <sharkBgs.length ; i++) {
-           // wave[i] = new Wave(waveRegion, Rnd.nextFloat(0.005f,-0.005f),Rnd.nextFloat(0.1f,-0.1f),0.1f);
-            sharkBgs[i] = new SharkBg(waveRegion, 0f,0.01f,SHARK_HEIGHT);
+            sharkBgs[i] = new SharkBg(waveRegion, 0f,0.006f,SHARK_HEIGHT);
         }
         buttonExit = new ButtonExit(atlas,this,PRESS_SCALE);
         buttonExit.setHeightProportion(BUTTON_HEIGHT);

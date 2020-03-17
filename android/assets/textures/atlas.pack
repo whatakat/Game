@@ -80,18 +80,11 @@ echo
   orig: 409, 410
   offset: 0, 0
   index: -1
-boatEnemy
-  rotate: false
-  xy: 3020, 2938
-  size: 170, 446
-  orig: 170, 446
-  offset: 0, 0
-  index: -1
 sharkBack
   rotate: false
-  xy: 3190, 2872
-  size: 512, 512
-  orig: 512, 512
+  xy: 3020, 2790
+  size: 594, 594
+  orig: 594, 594
   offset: 0, 0
   index: -1
 background_ocean
