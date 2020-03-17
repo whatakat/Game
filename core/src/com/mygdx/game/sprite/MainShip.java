@@ -37,7 +37,7 @@ public class MainShip extends Ship {
         this.arrowV.set(0,1.5f);
         this.arrowDamage = 1;
         this.reloadInterval = 1000f;
-        this.hp = 100;
+        this.hp = 10;
         flushDestroy();
     }
 

@@ -22,14 +22,14 @@ public class EnemiesEmitter {
     private static final float ENEMY_MEDIUM_ARROW_VY = -0.8f;
     private static final int ENEMY_MEDIUM_ARROW_DAMAGE = 0;
     private static final float ENEMY_MEDIUM_RELOAD_INTERVAL = 1.2f;
-    private static final int ENEMY_MEDIUM_HP = 10;
+    private static final int ENEMY_MEDIUM_HP = 6;
 
     private static final float ENEMY_BIG_HEIGHT = 0.4f;
     private static final float ENEMY_BIG_ARROW_HEIGHT = 0.6f;
     private static final float ENEMY_BIG_ARROW_VY = -0.9f;
     private static final int ENEMY_BIG_ARROW_DAMAGE = 0;
     private static final float ENEMY_BIG_RELOAD_INTERVAL = 1.2f;
-    private static final int ENEMY_BIG_HP = 20;
+    private static final int ENEMY_BIG_HP = 9;
 
 
     private Rect worldBounds;
