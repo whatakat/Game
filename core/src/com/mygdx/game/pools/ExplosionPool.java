@@ -13,8 +13,8 @@ public class ExplosionPool extends SpritesPool<Explosion> {
     private Sound sound;
     private TextureRegion textureRegion;
 
-    public ExplosionPool(TextureAtlas atlas, Sound sound) {
-        this.textureRegion = atlas.findRegion("overG");
+    public ExplosionPool(TextureAtlas atlas, Sound sound, String region) {
+        this.textureRegion = atlas.findRegion(region);
         this.sound = sound;
     }
 

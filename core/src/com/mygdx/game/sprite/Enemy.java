@@ -10,6 +10,7 @@ import com.mygdx.game.pools.ExplosionPool;
 
 public class Enemy extends Ship {
 
+
     private enum State{DESCENT,FIGHT}
 
     private MainShip mainShip;

@@ -46,7 +46,8 @@ public class GameScreen extends BaseScreen implements ActionListener {
     private WaveBg[] waveBg;
     private ArrowPool arrowPool;
     private EnemyPool enemyPool;
-    private ExplosionPool explosionPool;
+    private ExplosionPool explosionPoolShark;
+    private ExplosionPool explosionPoolShip;
     private EnemiesEmitter enemiesEmitter;
     private Music music;
     private Sound explosionSound;
@@ -91,9 +92,9 @@ public class GameScreen extends BaseScreen implements ActionListener {
             waveBg[i] = new WaveBg(waveBgRegion,0f,SPEED_WAVE,1f);
         }
         arrowPool = new ArrowPool();
-        explosionPool = new ExplosionPool(atlas,explosionSound);
-        mainShip = new MainShip(atlas,worldBounds,arrowPool,explosionPool,arrowSound);
-        enemyPool = new EnemyPool(arrowPool,worldBounds,explosionPool, mainShip, hitEnemy);
+        explosionPoolShark = new ExplosionPool(atlas,explosionSound,"overG");
+        mainShip = new MainShip(atlas,worldBounds,arrowPool,explosionPoolShark,arrowSound);
+        enemyPool = new EnemyPool(arrowPool,worldBounds,explosionPoolShark, mainShip, hitEnemy);
         enemiesEmitter = new EnemiesEmitter(worldBounds,enemyPool,atlas);
         TextureRegion waveRegion = atlas.findRegion("eWave");
         wave = new Wave[WAVE_COUNT];
@@ -131,7 +132,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
         }
         arrowPool.drawActiveSprites(batch);
         enemyPool.drawActiveSprites(batch);
-        explosionPool.drawActiveSprites(batch);
+        explosionPoolShark.drawActiveSprites(batch);
         for (Wave w: wave){
             w.draw(batch);
         }
@@ -144,7 +145,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
         batch.end();
     }
     public void update(float delta){
-        explosionPool.updateActiveSprites(delta);
+        explosionPoolShark.updateActiveSprites(delta);
         switch (state){
             case PLAYING:
                 for (WaveBg w: waveBg){
@@ -233,7 +234,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
     private void deleteAllDestroyed(){
         arrowPool.freeAllDestroyedActiveSprites();
         enemyPool.freeAllDestroyedActiveSprites();
-        explosionPool.freeAllDestroyedActiveSprites();
+        explosionPoolShark.freeAllDestroyedActiveSprites();
 
     }
 
@@ -261,7 +262,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
         atlas.dispose();
         arrowPool.dispose();
         enemyPool.dispose();
-        explosionPool.dispose();
+        explosionPoolShark.dispose();
         music.dispose();
         hitEnemy.dispose();
         explosionSound.dispose();
@@ -290,7 +291,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
         enemiesEmitter.setToNewGame();
         arrowPool.freeAllActiveSprites();
         enemyPool.freeAllActiveSprites();
-        explosionPool.freeAllActiveSprites();
+        explosionPoolShark.freeAllActiveSprites();
 
     }
     @Override
