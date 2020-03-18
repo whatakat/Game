@@ -201,9 +201,9 @@ public class GameScreen extends BaseScreen implements ActionListener {
                 continue;
             }
             if (mainShip.isArrowCollision(arrow)){
-                //mainShip.damage(arrow.getDamage());
-                //arrow.destroy();
-                arrow.v.set(0f,0.5f);
+                mainShip.damage(arrow.getDamage());
+                arrow.destroy();
+               // arrow.v.set(0f,0.5f);
             }
         }
         for (Enemy enemy: enemyList){
@@ -211,20 +211,25 @@ public class GameScreen extends BaseScreen implements ActionListener {
                 continue;
             }
             for (Arrow arrow: arrowList){
-//                if (arrow.getOwner() != mainShip || arrow.isDestroyed()){
-//                    continue;
-//                }
-                if (arrow.getOwner() != mainShip&&enemy.isArrowCollision(arrow)){
-                    enemy.setVelocity(0f,-0.1f);
+                if (arrow.getOwner() != mainShip || arrow.isDestroyed()){
+                    continue;
                 }
+                if (mainShip.isArrowCollision(arrow)&&arrow.getOwner() != mainShip){
+                    enemy.setVelocity(0f,-0.3f);//I have change
+                    break;
+                }
+//                if (arrow.getOwner() != mainShip&&enemy.isArrowCollision(arrow)){
+//                    enemy.setVelocity(0f,-0.1f);
+//                }
 
                 if (enemy.isArrowCollision(arrow)){
                     enemy.damage(arrow.getDamage());
                     arrow.destroy();
-                    if (!enemy.isDestroyed()&&arrow.getOwner() != enemy){
-                       enemy.setVelocity(0f,-0.04f);
-                        break;
-                    }
+
+//                    if (!enemy.isDestroyed()&&arrow.getOwner() != enemy){
+//                       enemy.setVelocity(0f,-0.04f);
+//                        break;
+//                    }
                     if (enemy.isDestroyed()){
                         countDeath++;
                         break;
