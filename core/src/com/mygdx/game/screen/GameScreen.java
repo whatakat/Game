@@ -203,7 +203,6 @@ public class GameScreen extends BaseScreen implements ActionListener {
             if (mainShip.isArrowCollision(arrow)){
                 mainShip.damage(arrow.getDamage());
                 arrow.destroy();
-               // arrow.v.set(0f,0.5f);
             }
         }
         for (Enemy enemy: enemyList){
@@ -214,22 +213,10 @@ public class GameScreen extends BaseScreen implements ActionListener {
                 if (arrow.getOwner() != mainShip || arrow.isDestroyed()){
                     continue;
                 }
-                if (mainShip.isArrowCollision(arrow)&&arrow.getOwner() != mainShip){
-                    enemy.setVelocity(0f,-0.3f);//I have change
-                    break;
-                }
-//                if (arrow.getOwner() != mainShip&&enemy.isArrowCollision(arrow)){
-//                    enemy.setVelocity(0f,-0.1f);
-//                }
-
                 if (enemy.isArrowCollision(arrow)){
                     enemy.damage(arrow.getDamage());
                     arrow.destroy();
-
-//                    if (!enemy.isDestroyed()&&arrow.getOwner() != enemy){
-//                       enemy.setVelocity(0f,-0.04f);
-//                        break;
-//                    }
+                    enemy.setVelocity(0f,-0.03f);//I have change
                     if (enemy.isDestroyed()){
                         countDeath++;
                         break;
