@@ -216,7 +216,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
                 if (enemy.isArrowCollision(arrow)){
                     enemy.damage(arrow.getDamage());
                     arrow.destroy();
-                    enemy.setVelocity(0f,-0.03f);//I have change
+                    enemy.setVelocity(0f,-0.3f);
                     if (enemy.isDestroyed()){
                         countDeath++;
                         break;

@@ -84,4 +84,10 @@ public class Enemy extends Ship {
     public void setVelocity(float x, float y){
         this.v.set(x,y);
     }
+
+    @Override
+    protected void shoot() {
+        Arrow arrow = arrowPool.obtain();
+        arrow.set(this,arrowRegion,pos, arrowV, arrowHeight,arrow,arrowDamage);
+    }
 }
