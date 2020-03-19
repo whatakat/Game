@@ -14,7 +14,7 @@ public class MainShip extends Ship {
     float currentEnginePower;
     float maxEnginePower;
 
-    private static final float SHIP_HEIGHT = 0.16f;
+    private static final float SHIP_HEIGHT = 0.19f;
     private static final float BOTTOM_MARGIN = 0.05f;
     private Vector2 v = new Vector2();
     private Rect worldBounds;
@@ -33,7 +33,7 @@ public class MainShip extends Ship {
     }
     public void setNewGame(){
         pos.x = worldBounds.pos.x;
-        this.arrowHeight = 0.07f;
+        this.arrowHeight = 0.09f;
         this.arrowV.set(0,1.5f);
         this.arrowDamage = 1;
         this.reloadInterval = 1000f;
@@ -69,9 +69,9 @@ public class MainShip extends Ship {
             currentEnginePower+=100*delta;
             if (currentEnginePower>maxEnginePower)currentEnginePower = maxEnginePower;
             if (tx<300f&&ty<300f){
-                v.add(-0.6f,0f);
+                v.add(-0.5f,0f);
             }else if (tx>300f&&ty<300f&&tx<800f) {
-                v.add(0.6f, 0f);
+                v.add(0.5f, 0f);
             }
 
         }
