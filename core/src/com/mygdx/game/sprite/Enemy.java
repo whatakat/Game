@@ -76,8 +76,8 @@ public class Enemy extends Ship {
         this.hp = hp;
     }
     public boolean isArrowCollision(Rect arrow){
-        return !(arrow.getRight()<getLeft()
-                ||arrow.getLeft()>getRight()
+        return !(arrow.getRight()<pos.x
+                ||arrow.getLeft()>pos.x
                 ||arrow.getBottom()>getTop()
                 ||arrow.getTop()<pos.y);
     }
