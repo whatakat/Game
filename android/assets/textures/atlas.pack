@@ -5,84 +5,84 @@ filter: Nearest,Nearest
 repeat: none
 gameOver
   rotate: false
-  xy: 0, 3327
+  xy: 0, 3468
   size: 256, 57
   orig: 256, 57
   offset: 0, 0
   index: -1
 ic_shark
   rotate: false
-  xy: 256, 3324
+  xy: 256, 3465
   size: 92, 60
   orig: 92, 60
   offset: 0, 0
   index: -1
 newGame
   rotate: false
-  xy: 348, 3316
+  xy: 348, 3457
   size: 256, 68
   orig: 256, 68
   offset: 0, 0
   index: -1
 exit
   rotate: false
-  xy: 604, 3307
+  xy: 604, 3448
   size: 256, 77
   orig: 256, 77
   offset: 0, 0
   index: -1
 play
   rotate: false
-  xy: 860, 3307
+  xy: 860, 3448
   size: 256, 77
   orig: 256, 77
   offset: 0, 0
   index: -1
 gArrow
   rotate: false
-  xy: 1116, 3301
+  xy: 1116, 3442
   size: 32, 83
   orig: 32, 83
   offset: 0, 0
   index: -1
 eWave
   rotate: false
-  xy: 1148, 3272
+  xy: 1148, 3413
   size: 183, 112
   orig: 183, 112
   offset: 0, 0
   index: -1
-hero
-  rotate: false
-  xy: 1331, 3128
-  size: 512, 256
-  orig: 512, 256
-  offset: 0, 0
-  index: -1
 sharkMedium
   rotate: false
-  xy: 1843, 3128
+  xy: 1331, 3269
   size: 256, 256
   orig: 256, 256
   offset: 0, 0
   index: -1
 sharkSmall
   rotate: false
-  xy: 2099, 3128
+  xy: 1587, 3269
   size: 512, 256
   orig: 512, 256
   offset: 0, 0
   index: -1
+hero
+  rotate: false
+  xy: 2099, 3128
+  size: 512, 397
+  orig: 512, 397
+  offset: 0, 0
+  index: -1
 echo
   rotate: false
-  xy: 2611, 2974
+  xy: 2611, 3115
   size: 409, 410
   orig: 409, 410
   offset: 0, 0
   index: -1
 sharkBack
   rotate: false
-  xy: 3020, 2790
+  xy: 3020, 2931
   size: 594, 594
   orig: 594, 594
   offset: 0, 0
