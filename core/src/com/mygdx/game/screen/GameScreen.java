@@ -32,7 +32,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
     private static final int WAVE_COUNT = 300;
     private static final int WAVEBG_COUNT = 3;
     private static final float WAVE_HEIGHT = 0.25f;
-    private float SPEED_WAVE = 0.03f;
+    private float SPEED_WAVE = 0.1f;
     private static final float FONT_SIZE = 0.02f;
 
     private enum State{PLAYING, GAME_OVER}
@@ -216,7 +216,7 @@ public class GameScreen extends BaseScreen implements ActionListener {
                 if (enemy.isArrowCollision(arrow)){
                     enemy.damage(arrow.getDamage());
                     arrow.destroy();
-                    enemy.setVelocity(0f,-0.3f);
+                    enemy.setVelocity(0f,-0.1f);
                     if (enemy.isDestroyed()){
                         countDeath++;
                         break;

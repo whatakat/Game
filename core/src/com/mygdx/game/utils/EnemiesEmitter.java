@@ -41,9 +41,9 @@ public class EnemiesEmitter {
     private TextureRegion[] enemyMediumRegion;
     private TextureRegion[] enemyBigRegion;
 
-    private Vector2 enemySmallV = new Vector2(0f,-0.06f);
-    private Vector2 enemyMediumV = new Vector2(0f,-0.05f);
-    private Vector2 enemyBigV = new Vector2(0f,-0.04f);
+    private Vector2 enemySmallV = new Vector2(0f,-0.2f);
+    private Vector2 enemyMediumV = new Vector2(0f,-0.2f);
+    private Vector2 enemyBigV = new Vector2(0f,-0.2f);
 
     private TextureRegion arrowRegion;
 
